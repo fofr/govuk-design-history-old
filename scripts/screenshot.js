@@ -13,10 +13,9 @@
   ]
 */
 const paths = [
-  { title: 'Index page', path: '/'},
-  { title: 'Terms and conditions', path: '/terms-conditions'}
+  { title: 'Design history index', path: '/'}
 ];
-const domain = 'https://find-postgraduate-teacher-training.education.gov.uk';
+const domain = 'https://design-history.herokuapp.com';
 
 // Dependencies
 const webshot = require('webshot');

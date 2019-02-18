@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% set title = 'A generated example' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.designHistoryBreadcrumbs() }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'Design history index', id: 'design-history-index' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+  
+  {{ designHistory.screenshot('Design history index', 'design-history-index', '/public/images/a-generated-example/design-history-index.png', '') }}
+
+{% endblock %}
