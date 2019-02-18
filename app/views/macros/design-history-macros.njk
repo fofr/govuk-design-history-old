@@ -11,8 +11,7 @@
 
 {% macro designHistoryBreadcrumbs() %}
   {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
-
-  <div class="dont-print">
+  <div class="design-history-dont-print">
     {{
       govukBreadcrumbs({
         items: [
@@ -27,17 +26,17 @@
 {% endmacro %}
 
 {% macro screenshot(title, id, image, text = '', headingClass = 'govuk-heading-l', headingLevel = 'h2') %}
-<div class="design-history-item govuk-!-margin-bottom-9">
-  <{{headingLevel}} class="{{headingClass}}" id="{{ id }}">{{ title }}</{{headingLevel}}>
+<div class="design-history-screenshot govuk-!-margin-bottom-9">
+  <{{headingLevel}} class="{{headingClass}} design-history-screenshot__heading" id="{{ id }}">{{ title }}</{{headingLevel}}>
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds design-history-screenshot">
-      <div class="govuk-!-margin-bottom-6">
-        <a href="{{ image }}">
-          <img src="{{ image }}" width="630" alt="Screenshot of {{ title }}" />
+    <div class="govuk-grid-column-two-thirds design-history-screenshot__container">
+      <div class="govuk-!-margin-bottom-6 design-history-screenshot__image-container">
+        <a href="{{ image }}" class="design-history-screenshot__image-link">
+          <img src="{{ thumbnail }}" width="630" alt="Screenshot of {{ title }}" class="design-history-screenshot__image" />
         </a>
       </div>
-      <div class="design-history-text">
         {{ text | safe }}
+      <div class="design-history-screenshot__text">
       </div>
     </div>
   </div>
