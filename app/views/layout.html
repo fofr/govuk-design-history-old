@@ -33,7 +33,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  {{ serviceName }}
 {% endblock %}
 
 {% block header %}
@@ -45,6 +45,11 @@
     serviceUrl: "/",
     containerClasses: "govuk-width-container"
   }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% block breadcrumbs %}{% endblock %}
+  {% block backLink %}{% endblock %}
 {% endblock %}
 
 {% if useAutoStoreData %}
