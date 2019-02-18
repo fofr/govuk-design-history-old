@@ -17,7 +17,7 @@
       govukBreadcrumbs({
         items: [
           {
-            href: "/history",
+            href: "/",
             text: "Design history"
           }
         ]
@@ -26,14 +26,14 @@
   </div>
 {% endmacro %}
 
-{% macro screenshot(title, id, thumbnail, full, text = '', headingClass = 'govuk-heading-l', headingLevel = 'h2') %}
+{% macro screenshot(title, id, image, text = '', headingClass = 'govuk-heading-l', headingLevel = 'h2') %}
 <div class="design-history-item govuk-!-margin-bottom-9">
   <{{headingLevel}} class="{{headingClass}}" id="{{ id }}">{{ title }}</{{headingLevel}}>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds design-history-screenshot">
       <div class="govuk-!-margin-bottom-6">
-        <a href="{{ full }}">
-          <img src="{{ thumbnail }}" width="630" alt="Screenshot of {{ title }}" />
+        <a href="{{ image }}">
+          <img src="{{ image }}" width="630" alt="Screenshot of {{ title }}" />
         </a>
       </div>
       <div class="design-history-text">
