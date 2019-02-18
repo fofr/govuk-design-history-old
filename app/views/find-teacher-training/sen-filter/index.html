@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = 'Special educational needs (SEN) filter' %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
@@ -34,9 +34,9 @@
     { text: 'Subject filter with SEN option', id: 'subject-filter-with-sen' },
     { text: 'Results with SEN filter enabled', id: 'results-with-sen-filter' }
   ] %}
-  {{ macros.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents) }}
 
-  {{ macros.screenshot('Subject filter with SEN option', 'subject-filter-with-sen', '/public/images/find-teacher-training/sen-filter/thumbnails/01-subject-filter-with-sen.png', '/public/images/find-teacher-training/sen-filter/01-subject-filter-with-sen.png', '') }}
+  {{ designHistory.screenshot('Subject filter with SEN option', 'subject-filter-with-sen', '/public/images/find-teacher-training/sen-filter/thumbnails/01-subject-filter-with-sen.png', '/public/images/find-teacher-training/sen-filter/01-subject-filter-with-sen.png', '') }}
 
-  {{ macros.screenshot('Results with SEN filter enabled', 'results-with-sen-filter', '/public/images/find-teacher-training/sen-filter/thumbnails/02-results-with-sen-filter.png', '/public/images/find-teacher-training/sen-filter/02-results-with-sen-filter.png', '') }}
+  {{ designHistory.screenshot('Results with SEN filter enabled', 'results-with-sen-filter', '/public/images/find-teacher-training/sen-filter/thumbnails/02-results-with-sen-filter.png', '/public/images/find-teacher-training/sen-filter/02-results-with-sen-filter.png', '') }}
 {% endblock %}

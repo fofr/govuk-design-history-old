@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}Course listing variants{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
 <style>

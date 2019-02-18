@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = 'Results on a map – Text on labels' %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
@@ -72,25 +72,25 @@
     { text: 'Result open on mobile', id: 'result-open-on-mobile' },
     { text: 'Results in Brighton on mobile', id: 'results-in-brighton-on-mobile' }
   ] %}
-  {{ macros.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents) }}
 
-{{ macros.screenshot('Primary in London as loaded', 'primary-in-london-on-load', '/public/images/find-teacher-training/map-3/thumbnails/01-primary-in-london-on-load.png', '/public/images/find-teacher-training/map-3/01-primary-in-london-on-load.png', '') }}
+{{ designHistory.screenshot('Primary in London as loaded', 'primary-in-london-on-load', '/public/images/find-teacher-training/map-3/thumbnails/01-primary-in-london-on-load.png', '/public/images/find-teacher-training/map-3/01-primary-in-london-on-load.png', '') }}
 
-{{ macros.screenshot('Result open', 'result-open', '/public/images/find-teacher-training/map-3/thumbnails/02-result-open.png', '/public/images/find-teacher-training/map-3/02-result-open.png', '') }}
+{{ designHistory.screenshot('Result open', 'result-open', '/public/images/find-teacher-training/map-3/thumbnails/02-result-open.png', '/public/images/find-teacher-training/map-3/02-result-open.png', '') }}
 
-{{ macros.screenshot('Zoomed out once', 'zoomed-out-once', '/public/images/find-teacher-training/map-3/thumbnails/03-zoomed-out-once.png', '/public/images/find-teacher-training/map-3/03-zoomed-out-once.png', '') }}
+{{ designHistory.screenshot('Zoomed out once', 'zoomed-out-once', '/public/images/find-teacher-training/map-3/thumbnails/03-zoomed-out-once.png', '/public/images/find-teacher-training/map-3/03-zoomed-out-once.png', '') }}
 
-{{ macros.screenshot('Zoomed right out', 'zoomed-right-out', '/public/images/find-teacher-training/map-3/thumbnails/04-zoomed-right-out.png', '/public/images/find-teacher-training/map-3/04-zoomed-right-out.png', '') }}
+{{ designHistory.screenshot('Zoomed right out', 'zoomed-right-out', '/public/images/find-teacher-training/map-3/thumbnails/04-zoomed-right-out.png', '/public/images/find-teacher-training/map-3/04-zoomed-right-out.png', '') }}
 
-{{ macros.screenshot('Results in Cornwall', 'results-in-cornwall', '/public/images/find-teacher-training/map-3/thumbnails/05-results-in-cornwall.png', '/public/images/find-teacher-training/map-3/05-results-in-cornwall.png', '') }}
+{{ designHistory.screenshot('Results in Cornwall', 'results-in-cornwall', '/public/images/find-teacher-training/map-3/thumbnails/05-results-in-cornwall.png', '/public/images/find-teacher-training/map-3/05-results-in-cornwall.png', '') }}
 
-{{ macros.screenshot('Multiple providers result open', 'multiple-providers-result-open', '/public/images/find-teacher-training/map-3/thumbnails/06-multiple-providers-result-open.png', '/public/images/find-teacher-training/map-3/06-multiple-providers-result-open.png', '') }}
+{{ designHistory.screenshot('Multiple providers result open', 'multiple-providers-result-open', '/public/images/find-teacher-training/map-3/thumbnails/06-multiple-providers-result-open.png', '/public/images/find-teacher-training/map-3/06-multiple-providers-result-open.png', '') }}
 
-{{ macros.screenshot('Zoomed right out', 'zoomed-right-out-2', '/public/images/find-teacher-training/map-3/thumbnails/07-zoomed-right-out.png', '/public/images/find-teacher-training/map-3/07-zoomed-right-out.png', '') }}
+{{ designHistory.screenshot('Zoomed right out', 'zoomed-right-out-2', '/public/images/find-teacher-training/map-3/thumbnails/07-zoomed-right-out.png', '/public/images/find-teacher-training/map-3/07-zoomed-right-out.png', '') }}
 
-{{ macros.screenshot('Mobile view', 'mobile-view', '/public/images/find-teacher-training/map-3/thumbnails/08-mobile-view.png', '/public/images/find-teacher-training/map-3/08-mobile-view.png', '') }}
+{{ designHistory.screenshot('Mobile view', 'mobile-view', '/public/images/find-teacher-training/map-3/thumbnails/08-mobile-view.png', '/public/images/find-teacher-training/map-3/08-mobile-view.png', '') }}
 
-{{ macros.screenshot('Result open on mobile', 'result-open-on-mobile', '/public/images/find-teacher-training/map-3/thumbnails/09-result-open-on-mobile.png', '/public/images/find-teacher-training/map-3/09-result-open-on-mobile.png', '') }}
+{{ designHistory.screenshot('Result open on mobile', 'result-open-on-mobile', '/public/images/find-teacher-training/map-3/thumbnails/09-result-open-on-mobile.png', '/public/images/find-teacher-training/map-3/09-result-open-on-mobile.png', '') }}
 
-{{ macros.screenshot('Results in Brighton on mobile', 'results-in-brighton-on-mobile', '/public/images/find-teacher-training/map-3/thumbnails/10-results-in-brighton-on-mobile.png', '/public/images/find-teacher-training/map-3/10-results-in-brighton-on-mobile.png', '') }}
+{{ designHistory.screenshot('Results in Brighton on mobile', 'results-in-brighton-on-mobile', '/public/images/find-teacher-training/map-3/thumbnails/10-results-in-brighton-on-mobile.png', '/public/images/find-teacher-training/map-3/10-results-in-brighton-on-mobile.png', '') }}
 {% endblock %}

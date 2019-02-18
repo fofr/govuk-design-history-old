@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = 'Showing a map in the filters column' %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
@@ -31,17 +31,17 @@
     { text: 'Mobile view scrolled', id: 'mobile-view-scrolled' },
     { text: 'Full view map on mobile', id: 'full-view-map-on-mobile' }
   ] %}
-  {{ macros.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents) }}
 
-{{ macros.screenshot('Map in filters', 'map-in-filters', '/public/images/find-teacher-training/map-4/thumbnails/01-map-in-filters.png', '/public/images/find-teacher-training/map-4/01-map-in-filters.png', '') }}
+{{ designHistory.screenshot('Map in filters', 'map-in-filters', '/public/images/find-teacher-training/map-4/thumbnails/01-map-in-filters.png', '/public/images/find-teacher-training/map-4/01-map-in-filters.png', '') }}
 
-{{ macros.screenshot('Full view map when clicked', 'full-view-map-when-clicked', '/public/images/find-teacher-training/map-4/thumbnails/02-full-view-map-when-clicked.png', '/public/images/find-teacher-training/map-4/02-full-view-map-when-clicked.png', '') }}
+{{ designHistory.screenshot('Full view map when clicked', 'full-view-map-when-clicked', '/public/images/find-teacher-training/map-4/thumbnails/02-full-view-map-when-clicked.png', '/public/images/find-teacher-training/map-4/02-full-view-map-when-clicked.png', '') }}
 
-{{ macros.screenshot('Full view map zoomed out', 'full-view-map-zoomed-out', '/public/images/find-teacher-training/map-4/thumbnails/03-full-view-map-zoomed-out.png', '/public/images/find-teacher-training/map-4/03-full-view-map-zoomed-out.png', '') }}
+{{ designHistory.screenshot('Full view map zoomed out', 'full-view-map-zoomed-out', '/public/images/find-teacher-training/map-4/thumbnails/03-full-view-map-zoomed-out.png', '/public/images/find-teacher-training/map-4/03-full-view-map-zoomed-out.png', '') }}
 
-{{ macros.screenshot('Map in filters on mobile', 'map-in-filters-on-mobile', '/public/images/find-teacher-training/map-4/thumbnails/04-map-in-filters-on-mobile.png', '/public/images/find-teacher-training/map-4/04-map-in-filters-on-mobile.png', '') }}
+{{ designHistory.screenshot('Map in filters on mobile', 'map-in-filters-on-mobile', '/public/images/find-teacher-training/map-4/thumbnails/04-map-in-filters-on-mobile.png', '/public/images/find-teacher-training/map-4/04-map-in-filters-on-mobile.png', '') }}
 
-{{ macros.screenshot('Mobile view scrolled', 'mobile-view-scrolled', '/public/images/find-teacher-training/map-4/thumbnails/05-mobile-view-scrolled.png', '/public/images/find-teacher-training/map-4/05-mobile-view-scrolled.png', '') }}
+{{ designHistory.screenshot('Mobile view scrolled', 'mobile-view-scrolled', '/public/images/find-teacher-training/map-4/thumbnails/05-mobile-view-scrolled.png', '/public/images/find-teacher-training/map-4/05-mobile-view-scrolled.png', '') }}
 
-{{ macros.screenshot('Full view map on mobile', 'full-view-map-on-mobile', '/public/images/find-teacher-training/map-4/thumbnails/06-full-view-map-on-mobile.png', '/public/images/find-teacher-training/map-4/06-full-view-map-on-mobile.png', '') }}
+{{ designHistory.screenshot('Full view map on mobile', 'full-view-map-on-mobile', '/public/images/find-teacher-training/map-4/thumbnails/06-full-view-map-on-mobile.png', '/public/images/find-teacher-training/map-4/06-full-view-map-on-mobile.png', '') }}
 {% endblock %}

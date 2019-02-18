@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = 'What we launched – 2 October 2018' %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
@@ -28,9 +28,9 @@
     { text: 'Full course page (PGDE)', id: 'full-course-page-pgde' },
     { text: 'Course not enriched', id: 'course-not-enriched' }
   ] %}
-  {{ macros.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents) }}
 
-  {{ macros.screenshot('GOV.UK start page', 'govuk-start-page', '/public/images/find-teacher-training/live-launch/thumbnails/01-govuk-start-page.png', '/public/images/find-teacher-training/live-launch/01-govuk-start-page.png', '
+  {{ designHistory.screenshot('GOV.UK start page', 'govuk-start-page', '/public/images/find-teacher-training/live-launch/thumbnails/01-govuk-start-page.png', '/public/images/find-teacher-training/live-launch/01-govuk-start-page.png', '
     <p>
       <a href="https://www.gov.uk/guidance/find-postgraduate-teacher-training-courses-in-england">Go to GOV.UK start page</a>
     </p>
@@ -53,29 +53,29 @@
     </ul>
   ') }}
 
-  {{ macros.screenshot('Find by location', 'find-by-location', '/public/images/find-teacher-training/live-launch/thumbnails/01-find-by-location.png', '/public/images/find-teacher-training/live-launch/01-find-by-location.png', '') }}
+  {{ designHistory.screenshot('Find by location', 'find-by-location', '/public/images/find-teacher-training/live-launch/thumbnails/01-find-by-location.png', '/public/images/find-teacher-training/live-launch/01-find-by-location.png', '') }}
 
-  {{ macros.screenshot('Find by location (provider selected)', 'find-by-location-provided-selected', '/public/images/find-teacher-training/live-launch/thumbnails/02-find-by-location-provided-selected.png', '/public/images/find-teacher-training/live-launch/02-find-by-location-provided-selected.png', '') }}
+  {{ designHistory.screenshot('Find by location (provider selected)', 'find-by-location-provided-selected', '/public/images/find-teacher-training/live-launch/thumbnails/02-find-by-location-provided-selected.png', '/public/images/find-teacher-training/live-launch/02-find-by-location-provided-selected.png', '') }}
 
-  {{ macros.screenshot('Find by subject', 'find-by-subject', '/public/images/find-teacher-training/live-launch/thumbnails/03-find-by-subject.png', '/public/images/find-teacher-training/live-launch/03-find-by-subject.png', '') }}
+  {{ designHistory.screenshot('Find by subject', 'find-by-subject', '/public/images/find-teacher-training/live-launch/thumbnails/03-find-by-subject.png', '/public/images/find-teacher-training/live-launch/03-find-by-subject.png', '') }}
 
-  {{ macros.screenshot('Search results', 'search-results', '/public/images/find-teacher-training/live-launch/thumbnails/04-search-results.png', '/public/images/find-teacher-training/live-launch/04-search-results.png', '') }}
+  {{ designHistory.screenshot('Search results', 'search-results', '/public/images/find-teacher-training/live-launch/thumbnails/04-search-results.png', '/public/images/find-teacher-training/live-launch/04-search-results.png', '') }}
 
-  {{ macros.screenshot('Further education results', 'further-education-results', '/public/images/find-teacher-training/live-launch/thumbnails/05-further-education-results.png', '/public/images/find-teacher-training/live-launch/05-further-education-results.png', '') }}
+  {{ designHistory.screenshot('Further education results', 'further-education-results', '/public/images/find-teacher-training/live-launch/thumbnails/05-further-education-results.png', '/public/images/find-teacher-training/live-launch/05-further-education-results.png', '') }}
 
-  {{ macros.screenshot('Study type filter', 'study-type-filter', '/public/images/find-teacher-training/live-launch/thumbnails/06-study-type-filter.png', '/public/images/find-teacher-training/live-launch/06-study-type-filter.png', '') }}
+  {{ designHistory.screenshot('Study type filter', 'study-type-filter', '/public/images/find-teacher-training/live-launch/thumbnails/06-study-type-filter.png', '/public/images/find-teacher-training/live-launch/06-study-type-filter.png', '') }}
 
-  {{ macros.screenshot('Qualification filter', 'qualification-filter', '/public/images/find-teacher-training/live-launch/thumbnails/07-qualification-filter.png', '/public/images/find-teacher-training/live-launch/07-qualification-filter.png', '') }}
+  {{ designHistory.screenshot('Qualification filter', 'qualification-filter', '/public/images/find-teacher-training/live-launch/thumbnails/07-qualification-filter.png', '/public/images/find-teacher-training/live-launch/07-qualification-filter.png', '') }}
 
-  {{ macros.screenshot('Salary filter', 'salary-filter', '/public/images/find-teacher-training/live-launch/thumbnails/09-salary-filter.png', '/public/images/find-teacher-training/live-launch/09-salary-filter.png', '') }}
+  {{ designHistory.screenshot('Salary filter', 'salary-filter', '/public/images/find-teacher-training/live-launch/thumbnails/09-salary-filter.png', '/public/images/find-teacher-training/live-launch/09-salary-filter.png', '') }}
 
-  {{ macros.screenshot('No results', 'no-results', '/public/images/find-teacher-training/live-launch/thumbnails/10-no-results.png', '/public/images/find-teacher-training/live-launch/10-no-results.png', '') }}
+  {{ designHistory.screenshot('No results', 'no-results', '/public/images/find-teacher-training/live-launch/thumbnails/10-no-results.png', '/public/images/find-teacher-training/live-launch/10-no-results.png', '') }}
 
-  {{ macros.screenshot('Full course page', 'full-course-page', '/public/images/find-teacher-training/live-launch/thumbnails/11-full-course-page.png', '/public/images/find-teacher-training/live-launch/11-full-course-page.png', '') }}
+  {{ designHistory.screenshot('Full course page', 'full-course-page', '/public/images/find-teacher-training/live-launch/thumbnails/11-full-course-page.png', '/public/images/find-teacher-training/live-launch/11-full-course-page.png', '') }}
 
-  {{ macros.screenshot('Full course page with salary', 'full-course-page-with-salary', '/public/images/find-teacher-training/live-launch/thumbnails/12-full-course-page-with-salary.png', '/public/images/find-teacher-training/live-launch/12-full-course-page-with-salary.png', '') }}
+  {{ designHistory.screenshot('Full course page with salary', 'full-course-page-with-salary', '/public/images/find-teacher-training/live-launch/thumbnails/12-full-course-page-with-salary.png', '/public/images/find-teacher-training/live-launch/12-full-course-page-with-salary.png', '') }}
 
-  {{ macros.screenshot('Full course page (PGDE)', 'full-course-page-pgde', '/public/images/find-teacher-training/live-launch/thumbnails/13-full-course-page-pgde.png', '/public/images/find-teacher-training/live-launch/13-full-course-page-pgde.png', '') }}
+  {{ designHistory.screenshot('Full course page (PGDE)', 'full-course-page-pgde', '/public/images/find-teacher-training/live-launch/thumbnails/13-full-course-page-pgde.png', '/public/images/find-teacher-training/live-launch/13-full-course-page-pgde.png', '') }}
 
-  {{ macros.screenshot('Course not enriched', 'course-not-enriched', '/public/images/find-teacher-training/live-launch/thumbnails/14-course-not-enriched.png', '/public/images/find-teacher-training/live-launch/14-course-not-enriched.png', '') }}
+  {{ designHistory.screenshot('Course not enriched', 'course-not-enriched', '/public/images/find-teacher-training/live-launch/thumbnails/14-course-not-enriched.png', '/public/images/find-teacher-training/live-launch/14-course-not-enriched.png', '') }}
 {% endblock %}

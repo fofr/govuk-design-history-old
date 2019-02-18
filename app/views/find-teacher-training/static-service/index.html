@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = 'Static failover service' %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
@@ -23,15 +23,15 @@
     { text: 'Pick a subject', id: 'pick-a-subject' },
     { text: 'Results without filters', id: 'results-without-filters' }
   ] %}
-  {{ macros.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents) }}
 
-{{ macros.screenshot('Initial sketch', 'initial-sketch', '/public/images/find-teacher-training/static-service/thumbnails/01-initial-sketch.jpg', '/public/images/find-teacher-training/static-service/01-initial-sketch.jpg', '') }}
+{{ designHistory.screenshot('Initial sketch', 'initial-sketch', '/public/images/find-teacher-training/static-service/thumbnails/01-initial-sketch.jpg', '/public/images/find-teacher-training/static-service/01-initial-sketch.jpg', '') }}
 
-{{ macros.screenshot('Find by location', 'find-by-location', '/public/images/find-teacher-training/static-service/thumbnails/02-find-by-location.png', '/public/images/find-teacher-training/static-service/02-find-by-location.png', '') }}
+{{ designHistory.screenshot('Find by location', 'find-by-location', '/public/images/find-teacher-training/static-service/thumbnails/02-find-by-location.png', '/public/images/find-teacher-training/static-service/02-find-by-location.png', '') }}
 
-{{ macros.screenshot('Pick a location', 'pick-a-location', '/public/images/find-teacher-training/static-service/thumbnails/03-pick-a-location.png', '/public/images/find-teacher-training/static-service/03-pick-a-location.png', '') }}
+{{ designHistory.screenshot('Pick a location', 'pick-a-location', '/public/images/find-teacher-training/static-service/thumbnails/03-pick-a-location.png', '/public/images/find-teacher-training/static-service/03-pick-a-location.png', '') }}
 
-{{ macros.screenshot('Pick a subject', 'pick-a-subject', '/public/images/find-teacher-training/static-service/thumbnails/04-pick-a-subject.png', '/public/images/find-teacher-training/static-service/04-pick-a-subject.png', '') }}
+{{ designHistory.screenshot('Pick a subject', 'pick-a-subject', '/public/images/find-teacher-training/static-service/thumbnails/04-pick-a-subject.png', '/public/images/find-teacher-training/static-service/04-pick-a-subject.png', '') }}
 
-{{ macros.screenshot('Results without filters', 'results-without-filters', '/public/images/find-teacher-training/static-service/thumbnails/05-results-without-filters.png', '/public/images/find-teacher-training/static-service/05-results-without-filters.png', '') }}
+{{ designHistory.screenshot('Results without filters', 'results-without-filters', '/public/images/find-teacher-training/static-service/thumbnails/05-results-without-filters.png', '/public/images/find-teacher-training/static-service/05-results-without-filters.png', '') }}
 {% endblock %}

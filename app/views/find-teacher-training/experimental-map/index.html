@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = 'Results on a map – Full screen' %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
@@ -64,13 +64,13 @@
     { text: 'Results on a map mobile', id: 'results-on-a-map-mobile' },
     { text: 'Mobile filter open', id: 'mobile-filter-open' }
   ] %}
-  {{ macros.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents) }}
 
-{{ macros.screenshot('Results on a map', 'results-on-a-map', '/public/images/find-teacher-training/experimental-map/thumbnails/01-results-on-a-map.png', '/public/images/find-teacher-training/experimental-map/01-results-on-a-map.png', '') }}
+{{ designHistory.screenshot('Results on a map', 'results-on-a-map', '/public/images/find-teacher-training/experimental-map/thumbnails/01-results-on-a-map.png', '/public/images/find-teacher-training/experimental-map/01-results-on-a-map.png', '') }}
 
-{{ macros.screenshot('01b results open on map', '01b-results-open-on-map', '/public/images/find-teacher-training/experimental-map/thumbnails/01b-results-open-on-map.png', '/public/images/find-teacher-training/experimental-map/01b-results-open-on-map.png', '') }}
+{{ designHistory.screenshot('01b results open on map', '01b-results-open-on-map', '/public/images/find-teacher-training/experimental-map/thumbnails/01b-results-open-on-map.png', '/public/images/find-teacher-training/experimental-map/01b-results-open-on-map.png', '') }}
 
-{{ macros.screenshot('Results on a map mobile', 'results-on-a-map-mobile', '/public/images/find-teacher-training/experimental-map/thumbnails/02-results-on-a-map-mobile.png', '/public/images/find-teacher-training/experimental-map/02-results-on-a-map-mobile.png', '') }}
+{{ designHistory.screenshot('Results on a map mobile', 'results-on-a-map-mobile', '/public/images/find-teacher-training/experimental-map/thumbnails/02-results-on-a-map-mobile.png', '/public/images/find-teacher-training/experimental-map/02-results-on-a-map-mobile.png', '') }}
 
-{{ macros.screenshot('Mobile filter open', 'mobile-filter-open', '/public/images/find-teacher-training/experimental-map/thumbnails/03-mobile-filter-open.png', '/public/images/find-teacher-training/experimental-map/03-mobile-filter-open.png', '') }}
+{{ designHistory.screenshot('Mobile filter open', 'mobile-filter-open', '/public/images/find-teacher-training/experimental-map/thumbnails/03-mobile-filter-open.png', '/public/images/find-teacher-training/experimental-map/03-mobile-filter-open.png', '') }}
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = 'Just the UCAS data' %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
@@ -63,18 +63,18 @@
     { text: 'Change subject', id: 'change-subject' },
     { text: 'Minimum course page', id: 'minimum-course-page' }
   ] %}
-  {{ macros.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents) }}
 
-  {{ macros.screenshot('Index', 'index', '/public/images/find-teacher-training/all-courses-minimum/thumbnails/01-index.png', '/public/images/find-teacher-training/all-courses-minimum/01-index.png', '') }}
+  {{ designHistory.screenshot('Index', 'index', '/public/images/find-teacher-training/all-courses-minimum/thumbnails/01-index.png', '/public/images/find-teacher-training/all-courses-minimum/01-index.png', '') }}
 
-  {{ macros.screenshot('Find by location', 'find-by-location', '/public/images/find-teacher-training/all-courses-minimum/thumbnails/02-find-by-location.png', '/public/images/find-teacher-training/all-courses-minimum/02-find-by-location.png', '
+  {{ designHistory.screenshot('Find by location', 'find-by-location', '/public/images/find-teacher-training/all-courses-minimum/thumbnails/02-find-by-location.png', '/public/images/find-teacher-training/all-courses-minimum/02-find-by-location.png', '
     <h3 class="govuk-heading-m">Results</h3>
     <p>As expected, location continues to be the number 1 need for users and the first choice was selected.</p>
     <p>“I can’t travel far with kids at the moment”</p>
     <p>“Wanted to do Physics with Maths, but closest was Sheffield, which was too far to travel”</p>
   ') }}
 
-  {{ macros.screenshot('Teacher training courses', 'teacher-training-courses', '/public/images/find-teacher-training/all-courses-minimum/thumbnails/03-teacher-training-courses.png', '/public/images/find-teacher-training/all-courses-minimum/03-teacher-training-courses.png', '
+  {{ designHistory.screenshot('Teacher training courses', 'teacher-training-courses', '/public/images/find-teacher-training/all-courses-minimum/thumbnails/03-teacher-training-courses.png', '/public/images/find-teacher-training/all-courses-minimum/03-teacher-training-courses.png', '
     <h3 class="govuk-heading-m">Search results</h3>
     <p>The results have been updated from the private beta to make it easier to differentiate them. Changes include:</p>
     <ul class="govuk-list govuk-list--bullet">
@@ -100,7 +100,7 @@
     <p>Participant 1 didn’t know if courses were salaried or not, “<a href="https://lookback.io/watch/m3ue4g3QBwbt7pq9G?t=31m31s">None of them tell you if they are salaried or not – I assume it’s not salaried</a>” (no salaried courses were shown, they were looking for unsalaried courses because they had a bursary)</p>
   ') }}
 
-  {{ macros.screenshot('Change subject', 'change-subject', '/public/images/find-teacher-training/all-courses-minimum/thumbnails/04-change-subject.png', '/public/images/find-teacher-training/all-courses-minimum/04-change-subject.png', '
+  {{ designHistory.screenshot('Change subject', 'change-subject', '/public/images/find-teacher-training/all-courses-minimum/thumbnails/04-change-subject.png', '/public/images/find-teacher-training/all-courses-minimum/04-change-subject.png', '
     <p>UCAS doesn’t have subjects for "Primary general", "Primary mathematics" or "Primary physical education".</p>
     <p>Business education is more commonly referred to as business studies.</p>
     <p>The alphabetical listing seems arbitrary.</p>
@@ -110,7 +110,7 @@
     <p>Before research we iterated the long list of subjects into <a href="/find-teacher-training/mvp-iteration-jul-25#find-by-subject-collapsed">a grouped list</a>.</p>
   ') }}
 
-  {{ macros.screenshot('Minimum course page', 'minimum-course-page', '/public/images/find-teacher-training/all-courses-minimum/thumbnails/05-minimum-course-page.png', '/public/images/find-teacher-training/all-courses-minimum/05-minimum-course-page.png', '
+  {{ designHistory.screenshot('Minimum course page', 'minimum-course-page', '/public/images/find-teacher-training/all-courses-minimum/thumbnails/05-minimum-course-page.png', '/public/images/find-teacher-training/all-courses-minimum/05-minimum-course-page.png', '
     <p>The course website, not shown here, was added prior to research.</p>
 
     <h3 class="govuk-heading-m">Results</h3>

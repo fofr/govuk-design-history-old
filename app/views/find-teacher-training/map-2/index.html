@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = 'Results on a map – User research 18 October' %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
@@ -95,19 +95,19 @@
     { text: 'Single result open on mobile', id: 'single-result-open-on-mobile' },
     { text: 'Multiple courses open on mobile', id: 'multiple-courses-open-on-mobile' }
   ] %}
-  {{ macros.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents) }}
 
-{{ macros.screenshot('List of results', 'list-of-results', '/public/images/find-teacher-training/map-2/thumbnails/01-list-of-results.png', '/public/images/find-teacher-training/map-2/01-list-of-results.png', '') }}
+{{ designHistory.screenshot('List of results', 'list-of-results', '/public/images/find-teacher-training/map-2/thumbnails/01-list-of-results.png', '/public/images/find-teacher-training/map-2/01-list-of-results.png', '') }}
 
-{{ macros.screenshot('Results on a map', 'results-on-a-map', '/public/images/find-teacher-training/map-2/thumbnails/02-results-on-a-map.png', '/public/images/find-teacher-training/map-2/02-results-on-a-map.png', '') }}
+{{ designHistory.screenshot('Results on a map', 'results-on-a-map', '/public/images/find-teacher-training/map-2/thumbnails/02-results-on-a-map.png', '/public/images/find-teacher-training/map-2/02-results-on-a-map.png', '') }}
 
-{{ macros.screenshot('Result open on a map', 'result-open-on-a-map', '/public/images/find-teacher-training/map-2/thumbnails/03-result-open-on-a-map.png', '/public/images/find-teacher-training/map-2/03-result-open-on-a-map.png', '') }}
+{{ designHistory.screenshot('Result open on a map', 'result-open-on-a-map', '/public/images/find-teacher-training/map-2/thumbnails/03-result-open-on-a-map.png', '/public/images/find-teacher-training/map-2/03-result-open-on-a-map.png', '') }}
 
-{{ macros.screenshot('Another result open on a map', 'another-result-open-on-a-map', '/public/images/find-teacher-training/map-2/thumbnails/04-another-result-open-on-a-map.png', '/public/images/find-teacher-training/map-2/04-another-result-open-on-a-map.png', '') }}
+{{ designHistory.screenshot('Another result open on a map', 'another-result-open-on-a-map', '/public/images/find-teacher-training/map-2/thumbnails/04-another-result-open-on-a-map.png', '/public/images/find-teacher-training/map-2/04-another-result-open-on-a-map.png', '') }}
 
-{{ macros.screenshot('Mobile results for london', 'mobile-results-for-london', '/public/images/find-teacher-training/map-2/thumbnails/05-mobile-results-for-london.png', '/public/images/find-teacher-training/map-2/05-mobile-results-for-london.png', '') }}
+{{ designHistory.screenshot('Mobile results for london', 'mobile-results-for-london', '/public/images/find-teacher-training/map-2/thumbnails/05-mobile-results-for-london.png', '/public/images/find-teacher-training/map-2/05-mobile-results-for-london.png', '') }}
 
-{{ macros.screenshot('Single result open on mobile', 'single-result-open-on-mobile', '/public/images/find-teacher-training/map-2/thumbnails/06-single-result-open-on-mobile.png', '/public/images/find-teacher-training/map-2/06-single-result-open-on-mobile.png', '') }}
+{{ designHistory.screenshot('Single result open on mobile', 'single-result-open-on-mobile', '/public/images/find-teacher-training/map-2/thumbnails/06-single-result-open-on-mobile.png', '/public/images/find-teacher-training/map-2/06-single-result-open-on-mobile.png', '') }}
 
-{{ macros.screenshot('Multiple courses open on mobile', 'multiple-courses-open-on-mobile', '/public/images/find-teacher-training/map-2/thumbnails/07-multiple-courses-open-on-mobile.png', '/public/images/find-teacher-training/map-2/07-multiple-courses-open-on-mobile.png', '') }}
+{{ designHistory.screenshot('Multiple courses open on mobile', 'multiple-courses-open-on-mobile', '/public/images/find-teacher-training/map-2/thumbnails/07-multiple-courses-open-on-mobile.png', '/public/images/find-teacher-training/map-2/07-multiple-courses-open-on-mobile.png', '') }}
 {% endblock %}

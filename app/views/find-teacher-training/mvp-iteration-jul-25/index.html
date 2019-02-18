@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = 'Just the UCAS data – 25 July iteration' %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
@@ -28,9 +28,9 @@
     { text: 'Teacher training courses', id: 'teacher-training-courses' },
     { text: 'Minimum course page', id: 'minimum-course-page' }
   ] %}
-  {{ macros.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents) }}
 
-  {{ macros.screenshot('Find by subject collapsed', 'find-by-subject-collapsed', '/public/images/find-teacher-training/mvp-iteration-jul-25/thumbnails/01-find-by-subject-collapsed.png', '/public/images/find-teacher-training/mvp-iteration-jul-25/01-find-by-subject-collapsed.png', '
+  {{ designHistory.screenshot('Find by subject collapsed', 'find-by-subject-collapsed', '/public/images/find-teacher-training/mvp-iteration-jul-25/thumbnails/01-find-by-subject-collapsed.png', '/public/images/find-teacher-training/mvp-iteration-jul-25/01-find-by-subject-collapsed.png', '
     <p>Rather than listing alphabetically, group subjects by categories.</p>
 
     <h3 class="govuk-heading-m">Results</h3>
@@ -42,9 +42,9 @@
     <p>As expected, some of the subject names weren’t clear. For example: “<a href="https://lookback.io/watch/QCBC3KYjNxtEuQH5R?t=16m22s">I’m not sure what Social science means</a>”</p>
   ') }}
 
-  {{ macros.screenshot('Find by subject expanded', 'find-by-subject-expanded', '/public/images/find-teacher-training/mvp-iteration-jul-25/thumbnails/03-find-by-subject-expanded.png', '/public/images/find-teacher-training/mvp-iteration-jul-25/03-find-by-subject-expanded.png', '') }}
+  {{ designHistory.screenshot('Find by subject expanded', 'find-by-subject-expanded', '/public/images/find-teacher-training/mvp-iteration-jul-25/thumbnails/03-find-by-subject-expanded.png', '/public/images/find-teacher-training/mvp-iteration-jul-25/03-find-by-subject-expanded.png', '') }}
 
-  {{ macros.screenshot('Teacher training courses', 'teacher-training-courses', '/public/images/find-teacher-training/mvp-iteration-jul-25/thumbnails/04-teacher-training-courses.png', '/public/images/find-teacher-training/mvp-iteration-jul-25/04-teacher-training-courses.png', '') }}
+  {{ designHistory.screenshot('Teacher training courses', 'teacher-training-courses', '/public/images/find-teacher-training/mvp-iteration-jul-25/thumbnails/04-teacher-training-courses.png', '/public/images/find-teacher-training/mvp-iteration-jul-25/04-teacher-training-courses.png', '') }}
 
-  {{ macros.screenshot('Minimum course page', 'minimum-course-page', '/public/images/find-teacher-training/mvp-iteration-jul-25/thumbnails/05-minimum-course-page.png', '/public/images/find-teacher-training/mvp-iteration-jul-25/05-minimum-course-page.png', '') }}
+  {{ designHistory.screenshot('Minimum course page', 'minimum-course-page', '/public/images/find-teacher-training/mvp-iteration-jul-25/thumbnails/05-minimum-course-page.png', '/public/images/find-teacher-training/mvp-iteration-jul-25/05-minimum-course-page.png', '') }}
 {% endblock %}

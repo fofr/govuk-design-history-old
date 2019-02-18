@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}Alpha version 3{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">Alpha version 3</h1>
@@ -19,21 +19,21 @@
   { text: 'About the course', id: 'about-the-course' },
   { text: 'Modules', id: 'modules' }
   ] %}
-  {{ macros.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents) }}
 
-  {{ macros.screenshot('Index', 'index', '/public/images/find-teacher-training/alpha-version-3/thumbnails/01-index.png', '/public/images/find-teacher-training/alpha-version-3/01-index.png', '') }}
+  {{ designHistory.screenshot('Index', 'index', '/public/images/find-teacher-training/alpha-version-3/thumbnails/01-index.png', '/public/images/find-teacher-training/alpha-version-3/01-index.png', '') }}
 
-  {{ macros.screenshot('Choose your search', 'choose-your-search', '/public/images/find-teacher-training/alpha-version-3/thumbnails/02-choose-your-search.png', '/public/images/find-teacher-training/alpha-version-3/02-choose-your-search.png', '') }}
+  {{ designHistory.screenshot('Choose your search', 'choose-your-search', '/public/images/find-teacher-training/alpha-version-3/thumbnails/02-choose-your-search.png', '/public/images/find-teacher-training/alpha-version-3/02-choose-your-search.png', '') }}
 
-  {{ macros.screenshot('What subject', 'what-subject', '/public/images/find-teacher-training/alpha-version-3/thumbnails/03-what-subject.png', '/public/images/find-teacher-training/alpha-version-3/03-what-subject.png', '') }}
+  {{ designHistory.screenshot('What subject', 'what-subject', '/public/images/find-teacher-training/alpha-version-3/thumbnails/03-what-subject.png', '/public/images/find-teacher-training/alpha-version-3/03-what-subject.png', '') }}
 
-  {{ macros.screenshot('Financial support', 'financial-support', '/public/images/find-teacher-training/alpha-version-3/thumbnails/04-financial-support.png', '/public/images/find-teacher-training/alpha-version-3/04-financial-support.png', '') }}
+  {{ designHistory.screenshot('Financial support', 'financial-support', '/public/images/find-teacher-training/alpha-version-3/thumbnails/04-financial-support.png', '/public/images/find-teacher-training/alpha-version-3/04-financial-support.png', '') }}
 
-  {{ macros.screenshot('Search results', 'search-results', '/public/images/find-teacher-training/alpha-version-3/thumbnails/05-search-results.png', '/public/images/find-teacher-training/alpha-version-3/05-search-results.png', '') }}
+  {{ designHistory.screenshot('Search results', 'search-results', '/public/images/find-teacher-training/alpha-version-3/thumbnails/05-search-results.png', '/public/images/find-teacher-training/alpha-version-3/05-search-results.png', '') }}
 
-  {{ macros.screenshot('Course details', 'course-details', '/public/images/find-teacher-training/alpha-version-3/thumbnails/06-course-details.png', '/public/images/find-teacher-training/alpha-version-3/06-course-details.png', '') }}
+  {{ designHistory.screenshot('Course details', 'course-details', '/public/images/find-teacher-training/alpha-version-3/thumbnails/06-course-details.png', '/public/images/find-teacher-training/alpha-version-3/06-course-details.png', '') }}
 
-  {{ macros.screenshot('About the course', 'about-the-course', '/public/images/find-teacher-training/alpha-version-3/thumbnails/07-about-the-course.png', '/public/images/find-teacher-training/alpha-version-3/07-about-the-course.png', '') }}
+  {{ designHistory.screenshot('About the course', 'about-the-course', '/public/images/find-teacher-training/alpha-version-3/thumbnails/07-about-the-course.png', '/public/images/find-teacher-training/alpha-version-3/07-about-the-course.png', '') }}
 
-  {{ macros.screenshot('Modules', 'modules', '/public/images/find-teacher-training/alpha-version-3/thumbnails/08-modules.png', '/public/images/find-teacher-training/alpha-version-3/08-modules.png', '') }}
+  {{ designHistory.screenshot('Modules', 'modules', '/public/images/find-teacher-training/alpha-version-3/thumbnails/08-modules.png', '/public/images/find-teacher-training/alpha-version-3/08-modules.png', '') }}
 {% endblock %}

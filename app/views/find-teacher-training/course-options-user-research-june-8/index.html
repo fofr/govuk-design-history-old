@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = "Folded courses research 8 June 2018" %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
@@ -45,13 +45,13 @@
   { text: 'Third course', id: 'third-course' },
   { text: 'Fourth course', id: 'fourth-course' }
   ] %}
-  {{ macros.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents) }}
 
-  {{ macros.screenshot('Index', 'index', '/public/images/find-teacher-training/course-options-user-research-june-8/thumbnails/01-index.png', '/public/images/find-teacher-training/course-options-user-research-june-8/01-index.png', '') }}
+  {{ designHistory.screenshot('Index', 'index', '/public/images/find-teacher-training/course-options-user-research-june-8/thumbnails/01-index.png', '/public/images/find-teacher-training/course-options-user-research-june-8/01-index.png', '') }}
 
-  {{ macros.screenshot('Find by location', 'find-by-location', '/public/images/find-teacher-training/course-options-user-research-june-8/thumbnails/02-find-by-location.png', '/public/images/find-teacher-training/course-options-user-research-june-8/02-find-by-location.png', '') }}
+  {{ designHistory.screenshot('Find by location', 'find-by-location', '/public/images/find-teacher-training/course-options-user-research-june-8/thumbnails/02-find-by-location.png', '/public/images/find-teacher-training/course-options-user-research-june-8/02-find-by-location.png', '') }}
 
-  {{ macros.screenshot('Search results with variants', 'search-results-with-variants', '/public/images/find-teacher-training/course-options-user-research-june-8/thumbnails/03-search-results-with-variants.png', '/public/images/find-teacher-training/course-options-user-research-june-8/03-search-results-with-variants.png', '
+  {{ designHistory.screenshot('Search results with variants', 'search-results-with-variants', '/public/images/find-teacher-training/course-options-user-research-june-8/thumbnails/03-search-results-with-variants.png', '/public/images/find-teacher-training/course-options-user-research-june-8/03-search-results-with-variants.png', '
     <p>There seems to be an understanding once participants arrive at the course listings that there are multiple options in one course. <a href="https://lookback.io/watch/8QnFPjo5LYrFdFBdd?t=22m16.5s-26m58s">Participant 121 understands two courses folded into one</a>.
 
     <p>Looking at the first result: “it kind of looks like there’s two options – do the PGCE with the bursary, or drop the PGCE and get a salary … and they don’t offer part time”</p>
@@ -61,13 +61,13 @@
     <p>Looking at the second result, participant 122 doesn’t see the folded options, he only sees the bottom of the two options – ‘for the SCITT route you’re only getting your QTS, not your PGCE’. It seems to be due to his assumption that SCITTs dont do a PGCE. However <a href="https://lookback.io/watch/Z3nCygSqTdw3agSGh?t=17m50.8s-22m24s">he says it’s due to a it not being visually clear</a>.</p>
   ') }}
 
-  {{ macros.screenshot('First course', 'first-course', '/public/images/find-teacher-training/course-options-user-research-june-8/thumbnails/04-first-course.png', '/public/images/find-teacher-training/course-options-user-research-june-8/04-first-course.png', '
+  {{ designHistory.screenshot('First course', 'first-course', '/public/images/find-teacher-training/course-options-user-research-june-8/thumbnails/04-first-course.png', '/public/images/find-teacher-training/course-options-user-research-june-8/04-first-course.png', '
     <p>The folded Apply option doesn’t seem to work with participant 122 in the sense that <a href="https://lookback.io/watch/Z3nCygSqTdw3agSGh?t=31m11.7s-35m45s">they don’t see it or click it</a>.</p>
   ') }}
 
-  {{ macros.screenshot('Second course', 'second-course', '/public/images/find-teacher-training/course-options-user-research-june-8/thumbnails/05-second-course.png', '/public/images/find-teacher-training/course-options-user-research-june-8/05-second-course.png', '') }}
+  {{ designHistory.screenshot('Second course', 'second-course', '/public/images/find-teacher-training/course-options-user-research-june-8/thumbnails/05-second-course.png', '/public/images/find-teacher-training/course-options-user-research-june-8/05-second-course.png', '') }}
 
-  {{ macros.screenshot('Third course', 'third-course', '/public/images/find-teacher-training/course-options-user-research-june-8/thumbnails/06-third-course.png', '/public/images/find-teacher-training/course-options-user-research-june-8/06-third-course.png', '') }}
+  {{ designHistory.screenshot('Third course', 'third-course', '/public/images/find-teacher-training/course-options-user-research-june-8/thumbnails/06-third-course.png', '/public/images/find-teacher-training/course-options-user-research-june-8/06-third-course.png', '') }}
 
-  {{ macros.screenshot('Fourth course', 'fourth-course', '/public/images/find-teacher-training/course-options-user-research-june-8/thumbnails/07-fourth-course.png', '/public/images/find-teacher-training/course-options-user-research-june-8/07-fourth-course.png', '') }}
+  {{ designHistory.screenshot('Fourth course', 'fourth-course', '/public/images/find-teacher-training/course-options-user-research-june-8/thumbnails/07-fourth-course.png', '/public/images/find-teacher-training/course-options-user-research-june-8/07-fourth-course.png', '') }}
 {% endblock %}

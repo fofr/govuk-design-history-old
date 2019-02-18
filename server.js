@@ -289,7 +289,7 @@ app.use(function (req, res, next) {
 
     if (req.path.includes('find-teacher')) {
       items.push({
-        text: 'Find teacher training',
+        text: 'Find postgraduate teacher training',
         href: '/find-teacher-training'
       })
     }

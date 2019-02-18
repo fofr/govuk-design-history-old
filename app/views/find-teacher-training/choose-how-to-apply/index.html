@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = 'Choose how to apply' %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
@@ -19,19 +19,19 @@
     { text: 'Apply on UCAS', id: 'apply-on-ucas' },
     { text: 'UCAS login page', id: 'ucas-apply-page' }
   ] %}
-  {{ macros.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents) }}
 
-  {{ macros.screenshot('User journey', 'user-journey', '/public/images/find-teacher-training/choose-how-to-apply/apply-flow.svg', '/public/images/find-teacher-training/choose-how-to-apply/apply-flow.svg', '
+  {{ designHistory.screenshot('User journey', 'user-journey', '/public/images/find-teacher-training/choose-how-to-apply/apply-flow.svg', '/public/images/find-teacher-training/choose-how-to-apply/apply-flow.svg', '
     <p>
       <a href="https://docs.google.com/drawings/d/1kSIYsL1JaMADJkDT1gavtsasHTCOhZRbHMY9M4Oc9nE/edit?usp=sharing">Google drawing</a>
     </p>
   ') }}
 
-  {{ macros.screenshot('Choose how to apply', 'choose-how-to-apply', '/public/images/find-teacher-training/choose-how-to-apply/thumbnails/01-choose-how-to-apply.png', '/public/images/find-teacher-training/choose-how-to-apply/01-choose-how-to-apply.png', '') }}
+  {{ designHistory.screenshot('Choose how to apply', 'choose-how-to-apply', '/public/images/find-teacher-training/choose-how-to-apply/thumbnails/01-choose-how-to-apply.png', '/public/images/find-teacher-training/choose-how-to-apply/01-choose-how-to-apply.png', '') }}
 
-  {{ macros.screenshot('Choose how to apply (UCAS selected)', 'choose-how-to-apply-ucas-selected', '/public/images/find-teacher-training/choose-how-to-apply/thumbnails/01-choose-how-to-apply-ucas-selected.png', '/public/images/find-teacher-training/choose-how-to-apply/01-choose-how-to-apply-ucas-selected.png', '') }}
+  {{ designHistory.screenshot('Choose how to apply (UCAS selected)', 'choose-how-to-apply-ucas-selected', '/public/images/find-teacher-training/choose-how-to-apply/thumbnails/01-choose-how-to-apply-ucas-selected.png', '/public/images/find-teacher-training/choose-how-to-apply/01-choose-how-to-apply-ucas-selected.png', '') }}
 
-  {{ macros.screenshot('Apply on UCAS', 'apply-on-ucas', '/public/images/find-teacher-training/choose-how-to-apply/thumbnails/02-apply-on-ucas.png', '/public/images/find-teacher-training/choose-how-to-apply/02-apply-on-ucas.png', '') }}
+  {{ designHistory.screenshot('Apply on UCAS', 'apply-on-ucas', '/public/images/find-teacher-training/choose-how-to-apply/thumbnails/02-apply-on-ucas.png', '/public/images/find-teacher-training/choose-how-to-apply/02-apply-on-ucas.png', '') }}
 
-  {{ macros.screenshot('UCAS login page', 'ucas-apply-page', '/public/images/find-teacher-training/choose-how-to-apply/thumbnails/03-ucas-apply-page.png', '/public/images/find-teacher-training/choose-how-to-apply/03-ucas-apply-page.png', '') }}
+  {{ designHistory.screenshot('UCAS login page', 'ucas-apply-page', '/public/images/find-teacher-training/choose-how-to-apply/thumbnails/03-ucas-apply-page.png', '/public/images/find-teacher-training/choose-how-to-apply/03-ucas-apply-page.png', '') }}
 {% endblock %}

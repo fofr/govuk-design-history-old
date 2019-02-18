@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = 'SEND survey and updates' %}
 {% block pageTitle %}SEND Survey and Updates{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl"><abbr title="Special educational needs and disability">SEND</abbr> survey and updates</h1>
@@ -14,7 +14,7 @@
         { text: 'Subjects', id: 'subjects' },
         { text: 'Subjects with SEND selected', id: 'subjects-with-send-selected' }
       ] %}
-      {{ macros.screenshotContents(contents) }}
+      {{ designHistory.screenshotContents(contents) }}
 
       <p>We received feedback from a provider that we were falsely advertising SEND courses on the Find tool:</p>
 
@@ -84,9 +84,9 @@
       <p>There should be a critical distinction between policy and the way we advertise our courses to candidates. Policy have failed to acknowledge that the ITT criteria clearly stipulates how providers should offer their SEND training, not how candidates should interpret this policy. </p>
       <p>Text sits alongside the tick box to clearly indicate that this is not a “phase”, but a specialism.</p>
 
-      {{ macros.screenshot('Subjects', 'subjects', '/public/images/find-teacher-training/send-updates/thumbnails/01-subjects.png', '/public/images/find-teacher-training/send-updates/01-subjects.png', '') }}
+      {{ designHistory.screenshot('Subjects', 'subjects', '/public/images/find-teacher-training/send-updates/thumbnails/01-subjects.png', '/public/images/find-teacher-training/send-updates/01-subjects.png', '') }}
 
-      {{ macros.screenshot('Subjects with SEND selected', 'subjects-with-send-selected', '/public/images/find-teacher-training/send-updates/thumbnails/02-subjects-with-send-selected.png', '/public/images/find-teacher-training/send-updates/02-subjects-with-send-selected.png', '') }}
+      {{ designHistory.screenshot('Subjects with SEND selected', 'subjects-with-send-selected', '/public/images/find-teacher-training/send-updates/thumbnails/02-subjects-with-send-selected.png', '/public/images/find-teacher-training/send-updates/02-subjects-with-send-selected.png', '') }}
     </div>
   </div>
 {% endblock %}

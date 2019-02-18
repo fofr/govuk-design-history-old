@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = 'Iterate course titles' %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
@@ -34,9 +34,9 @@
     { text: 'Search results', id: 'search-results' },
     { text: 'Course', id: 'course' }
   ] %}
-  {{ macros.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents) }}
 
-  {{ macros.screenshot('Search results', 'search-results', '/public/images/find-teacher-training/tweaked-course-titles/thumbnails/01-search-results.png', '/public/images/find-teacher-training/tweaked-course-titles/01-search-results.png', '') }}
+  {{ designHistory.screenshot('Search results', 'search-results', '/public/images/find-teacher-training/tweaked-course-titles/thumbnails/01-search-results.png', '/public/images/find-teacher-training/tweaked-course-titles/01-search-results.png', '') }}
 
-  {{ macros.screenshot('Course', 'course', '/public/images/find-teacher-training/tweaked-course-titles/thumbnails/02-course.png', '/public/images/find-teacher-training/tweaked-course-titles/02-course.png', '') }}
+  {{ designHistory.screenshot('Course', 'course', '/public/images/find-teacher-training/tweaked-course-titles/thumbnails/02-course.png', '/public/images/find-teacher-training/tweaked-course-titles/02-course.png', '') }}
 {% endblock %}

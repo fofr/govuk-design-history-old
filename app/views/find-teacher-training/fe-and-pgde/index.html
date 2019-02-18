@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = 'PGDE and further education courses' %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
@@ -66,11 +66,11 @@
     { text: 'Further education search results', id: 'further-education-results' },
     { text: 'Full course page (PGDE)', id: 'full-course-page-pgde' }
   ] %}
-  {{ macros.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents) }}
 
-  {{ macros.screenshot('Qualification filter', 'qualification-filter', '/public/images/find-teacher-training/live-launch/thumbnails/07-qualification-filter.png', '/public/images/find-teacher-training/live-launch/07-qualification-filter.png', '') }}
+  {{ designHistory.screenshot('Qualification filter', 'qualification-filter', '/public/images/find-teacher-training/live-launch/thumbnails/07-qualification-filter.png', '/public/images/find-teacher-training/live-launch/07-qualification-filter.png', '') }}
 
-  {{ macros.screenshot('Further education results', 'further-education-results', '/public/images/find-teacher-training/live-launch/thumbnails/05-further-education-results.png', '/public/images/find-teacher-training/live-launch/05-further-education-results.png', '') }}
+  {{ designHistory.screenshot('Further education results', 'further-education-results', '/public/images/find-teacher-training/live-launch/thumbnails/05-further-education-results.png', '/public/images/find-teacher-training/live-launch/05-further-education-results.png', '') }}
 
-  {{ macros.screenshot('Full course page (PGDE)', 'full-course-page-pgde', '/public/images/find-teacher-training/live-launch/thumbnails/13-full-course-page-pgde.png', '/public/images/find-teacher-training/live-launch/13-full-course-page-pgde.png', '') }}
+  {{ designHistory.screenshot('Full course page (PGDE)', 'full-course-page-pgde', '/public/images/find-teacher-training/live-launch/thumbnails/13-full-course-page-pgde.png', '/public/images/find-teacher-training/live-launch/13-full-course-page-pgde.png', '') }}
 {% endblock %}

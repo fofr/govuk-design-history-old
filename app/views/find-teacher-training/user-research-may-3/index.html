@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 {% block pageTitle %}User research 3 May 2018{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">User research 3 May 2018</h1>
 
   <p class="lede">In this round we tested the <a href="/find-teacher-training/private-beta-launch">private beta as launched</a>, with one change.</p>
 
-  {{ macros.screenshot('Search by location', 'search-by-location', '/public/images/find-teacher-training/user-research-may-3/thumbnails/01-search-by-location.png', '/public/images/find-teacher-training/user-research-may-3/01-search-by-location.png', '
+  {{ designHistory.screenshot('Search by location', 'search-by-location', '/public/images/find-teacher-training/user-research-may-3/thumbnails/01-search-by-location.png', '/public/images/find-teacher-training/user-research-may-3/01-search-by-location.png', '
     <p>Trial a wider default search radius, increasing from 5 to 20 miles.</p>
 
     <h3 class="govuk-heading-m">Result</h3>

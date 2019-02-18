@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = 'Results on a map – Full screen iteration' %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ macros.designHistoryBreadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
@@ -98,15 +98,15 @@
     { text: 'Another provider open on map', id: 'another-provider-open-on-map' },
     { text: 'Provider with one course open on map', id: 'provider-with-one-course-open-on-map' }
   ] %}
-  {{ macros.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents) }}
 
-{{ macros.screenshot('Training locations and providers on a map', 'training-locations-and-providers-on-map', '/public/images/find-teacher-training/experimental-map/thumbnails/04-training-locations-and-providers-on-map.png', '/public/images/find-teacher-training/experimental-map/04-training-locations-and-providers-on-map.png', '') }}
+{{ designHistory.screenshot('Training locations and providers on a map', 'training-locations-and-providers-on-map', '/public/images/find-teacher-training/experimental-map/thumbnails/04-training-locations-and-providers-on-map.png', '/public/images/find-teacher-training/experimental-map/04-training-locations-and-providers-on-map.png', '') }}
 
-{{ macros.screenshot('Training location open on map', 'training-location-open-on-map', '/public/images/find-teacher-training/experimental-map/thumbnails/05-training-location-open-on-map.png', '/public/images/find-teacher-training/experimental-map/05-training-location-open-on-map.png', '') }}
+{{ designHistory.screenshot('Training location open on map', 'training-location-open-on-map', '/public/images/find-teacher-training/experimental-map/thumbnails/05-training-location-open-on-map.png', '/public/images/find-teacher-training/experimental-map/05-training-location-open-on-map.png', '') }}
 
-{{ macros.screenshot('Provider open on map', 'provider-open-on-map', '/public/images/find-teacher-training/experimental-map/thumbnails/06-provider-open-on-map.png', '/public/images/find-teacher-training/experimental-map/06-provider-open-on-map.png', '') }}
+{{ designHistory.screenshot('Provider open on map', 'provider-open-on-map', '/public/images/find-teacher-training/experimental-map/thumbnails/06-provider-open-on-map.png', '/public/images/find-teacher-training/experimental-map/06-provider-open-on-map.png', '') }}
 
-{{ macros.screenshot('Another provider open on map', 'another-provider-open-on-map', '/public/images/find-teacher-training/experimental-map/thumbnails/07-another-provider-open-on-map.png', '/public/images/find-teacher-training/experimental-map/07-another-provider-open-on-map.png', '') }}
+{{ designHistory.screenshot('Another provider open on map', 'another-provider-open-on-map', '/public/images/find-teacher-training/experimental-map/thumbnails/07-another-provider-open-on-map.png', '/public/images/find-teacher-training/experimental-map/07-another-provider-open-on-map.png', '') }}
 
-{{ macros.screenshot('Provider with one course open on map', 'provider-with-one-course-open-on-map', '/public/images/find-teacher-training/experimental-map/thumbnails/08-provider-with-one-course-open-on-map.png', '/public/images/find-teacher-training/experimental-map/08-provider-with-one-course-open-on-map.png', '') }}
+{{ designHistory.screenshot('Provider with one course open on map', 'provider-with-one-course-open-on-map', '/public/images/find-teacher-training/experimental-map/thumbnails/08-provider-with-one-course-open-on-map.png', '/public/images/find-teacher-training/experimental-map/08-provider-with-one-course-open-on-map.png', '') }}
 {% endblock %}
