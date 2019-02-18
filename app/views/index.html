@@ -9,8 +9,58 @@
         {{ title }}
       </h1>
       <p>
-        A place to document designs.
+        A place for documenting designs based on the GOV.UK prototyping kit.
       </p>
+
+      <h2 class="govuk-heading-l">Take screenshots</h2>
+
+      <h3 class="govuk-heading-m">Configure</h3>
+
+      <p>In `scripts/screenshot.js` you should set:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the domain you want to capture (eg a locally running prototype at localhost:3000 or an Heroku app)</li>
+        <li>the paths on that domain with the titles you want to give them</li>
+      </ul>
+
+      <p>Example paths:</p>
+      <pre class="govuk-inset-text">
+paths = [
+  { title: 'Index page', path: '/'},
+  { title: 'Terms and conditions', path: '/terms-conditions'}
+]</pre>
+
+      <h3 class="govuk-heading-m">Run</h3>
+
+      <pre class="govuk-inset-text">
+node scripts/screenshot.js "A generated example"</pre>
+
+      <p>This will:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>visit each page and save a screenshot</li>
+        <li>save screenshots in a new directory</li>
+        <li>generate an index page with screenshots listed in order</li>
+      </ul>
+
+      <p>Example output:</p>
+
+      <pre class="govuk-inset-text">
+node scripts/screenshot.js "A generated example"
+Index generated: app/views/a-generated-example/index.html
+https://design-history.herokuapp.com/
+ >> app/assets/images/a-generated-example/design-history-index.png</pre>
+
+      <p>
+        <a href="https://github.com/fofr/govuk-design-history/blob/master/commit/eba8f4fbcb11e3f50b3084711ad9f90ebc59898e">Example commit</a>, <a href="/a-generated-example">example page</a>.
+      </p>
+
+      <h3 class="govuk-heading-m">Document</h3>
+
+      <p>When the index page and images are generated it’s easy to begin documenting those designs.</p>
+
+      <h3 class="govuk-heading-m">Publish</h3>
+
+      <p>You can easily publish your design history to Heroku to create a linkable, shareable design artefact.</p>
     </div>
   </div>
 {% endblock %}
