@@ -282,7 +282,7 @@ app.use(function (req, res, next) {
 
     if (req.path.includes('publish-teacher')) {
       items.push({
-        text: 'Publish teacher training',
+        text: 'Publish teacher training courses',
         href: '/publish-teacher-training'
       })
     }

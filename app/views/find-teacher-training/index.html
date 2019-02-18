@@ -1,9 +1,12 @@
 {% extends "layout.html" %}
-{% block pageTitle %}Design history{% endblock %}
+{% set title = 'Find postgraduate teacher training' %}
+{% block pageTitle %}{{ title }}{% endblock %}
 
 {% block content %}
-
-  <h1 class="govuk-heading-xl">Design history</h1>
+  <h1 class="govuk-heading-xl">
+    <span class="govuk-caption-l">Design history</span>
+    {{ title }}
+  </h1>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
