@@ -42,6 +42,7 @@
     "portscanner": "^2.1.1",
     "prompt": "^1.0.0",
     "require-dir": "^1.0.0",
+    "sharp": "^0.21.1",
     "sync-request": "^6.0.0",
     "universal-analytics": "^0.4.16",
     "uuid": "^3.2.1",

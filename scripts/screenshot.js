@@ -20,14 +20,16 @@ const domain = 'https://design-history.herokuapp.com';
 // Dependencies
 const webshot = require('webshot');
 const fs = require('fs');
+const sharp = require('sharp');
 
 // Arguments
 const title = process.argv.slice(-1)[0];
 warnIfNoArguments(title);
 
 const directoryName = title.replace(/ +/g, '-').toLowerCase();
-const directory = 'app/assets/images/' + directoryName;
-const indexDirectory = 'app/views/' + directoryName;
+const imageDirectory = `app/assets/images/${directoryName}`;
+const indexDirectory = `app/views/${directoryName}`;
+const thumbnailDirectory = `${imageDirectory}/thumbnails`;
 
 // Run
 function start() {
@@ -47,8 +49,12 @@ function warnIfNoArguments(title) {
 }
 
 function makeDirectories() {
-  if (!fs.existsSync(directory)){
-    fs.mkdirSync(directory);
+  if (!fs.existsSync(imageDirectory)){
+    fs.mkdirSync(imageDirectory);
+  }
+
+  if (!fs.existsSync(thumbnailDirectory)){
+    fs.mkdirSync(thumbnailDirectory);
   }
 
   if (!fs.existsSync(indexDirectory)){
@@ -59,8 +65,10 @@ function makeDirectories() {
 function decoratePaths() {
   paths.forEach(function(item, index) {
     item.id = item.title.replace(/ +/g, '-').toLowerCase();
-    item.file = `${directory}/${item.id}.png`;
+    item.file = `${imageDirectory}/${item.id}.png`;
+    item.thumbnailFile = `${thumbnailDirectory}/${item.id}.png`;
     item.src = item.file.replace('app/assets', '/public');
+    item.thumbnailSrc = item.thumbnailFile.replace('app/assets', '/public');
   });
 }
 
@@ -85,7 +93,10 @@ function takeScreenshots() {
       domain + item.path,
       item.file,
       webshotOptions,
-      function(err) { console.log(`${domain + item.path} \n >> ${item.file}`); }
+      function(err) {
+        sharp(item.file).resize(630, null).toFile(item.thumbnailFile);
+        console.log(`${domain + item.path} \n >> ${item.file}`);
+      }
     );
   });
 }
@@ -115,7 +126,7 @@ function generatePage() {
 
   paths.forEach(function(item, index) {
     template += `
-  {{ designHistory.screenshot('${item.title}', '${item.id}', '${item.src}', '') }}
+  {{ designHistory.screenshot('${item.title}', '${item.id}', '${item.thumbnailSrc}', '${item.src}', '') }}
 `;
 
     contents += `${index > 0 ? ', ': ''}

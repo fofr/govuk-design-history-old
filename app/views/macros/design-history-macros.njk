@@ -25,7 +25,7 @@
   </div>
 {% endmacro %}
 
-{% macro screenshot(title, id, image, text = '', headingClass = 'govuk-heading-l', headingLevel = 'h2') %}
+{% macro screenshot(title, id, thumbnail, image, html = '', headingClass = 'govuk-heading-l', headingLevel = 'h2') %}
 <div class="design-history-screenshot govuk-!-margin-bottom-9">
   <{{headingLevel}} class="{{headingClass}} design-history-screenshot__heading" id="{{ id }}">{{ title }}</{{headingLevel}}>
   <div class="govuk-grid-row">
@@ -35,8 +35,8 @@
           <img src="{{ thumbnail }}" width="630" alt="Screenshot of {{ title }}" class="design-history-screenshot__image" />
         </a>
       </div>
-        {{ text | safe }}
       <div class="design-history-screenshot__text">
+        {{ html | safe }}
       </div>
     </div>
   </div>
