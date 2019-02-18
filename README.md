@@ -1,6 +1,17 @@
-# Document GOV.UK designs and prototypes
+# Document the history of your designs
 
-A place for documenting designs based on the GOV.UK prototyping kit.
+Design history is built using the [GOV.UK prototyping kit](https://github.com/alphagov/govuk-prototype-kit).
+
+You should fork this repository and use its tools to begin documenting your designs.
+
+## Document your designs
+
+This repository makes it easy to:
+
+* screenshot your designs
+* create pages of screenshots to document designs
+* document designs using the [GOV.UK Design System](https://design-system.service.gov.uk/)
+* make designs shareable and linkable
 
 ## Take screenshots
 
