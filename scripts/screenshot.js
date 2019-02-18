@@ -27,8 +27,8 @@ const title = process.argv.slice(-1)[0];
 warnIfNoArguments(title);
 
 const directoryName = title.replace(/ +/g, '-').toLowerCase();
-const directory = 'app/assets/images/history/' + directoryName;
-const indexDirectory = 'app/views/history/' + directoryName;
+const directory = 'app/assets/images/' + directoryName;
+const indexDirectory = 'app/views/' + directoryName;
 
 // Run
 function start() {
