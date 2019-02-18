@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set title = 'Hide discontinued training locations' %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ designHistory.breadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
 <main id="content" role="main design-history">

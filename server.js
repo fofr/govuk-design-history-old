@@ -276,6 +276,30 @@ if (useDocumentation) {
   documentationApp.use('/', documentationRoutes)
 }
 
+app.use(function (req, res, next) {
+  nunjucksAppEnv.addGlobal('breadcrumbItems', function(text) {
+    var items = [ { text: 'Design history', href: '/' } ];
+
+    if (req.path.includes('publish-teacher')) {
+      items.push({
+        text: 'Publish teacher training',
+        href: '/publish-teacher-training'
+      })
+    }
+
+    if (req.path.includes('find-teacher')) {
+      items.push({
+        text: 'Find teacher training',
+        href: '/find-teacher-training'
+      })
+    }
+
+    return items;
+  })
+
+  next()
+});
+
 if (useV6) {
   // Clone app locals to v6 app locals
   v6App.locals = Object.assign({}, app.locals)
