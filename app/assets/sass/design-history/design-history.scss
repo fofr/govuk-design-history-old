@@ -1,0 +1,18 @@
+@include govuk-media-query($media-type: print) {
+  .design-history-dont-print {
+    display: none;
+  }
+
+  .design-history-screenshot {
+    page-break-before: always;
+
+    // Hide image URLs
+    a:after {
+      display: none;
+    }
+  }
+
+  .govuk-template {
+    background: #fff;
+  }
+}
