@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% set title = 'Ucas course examples' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.designHistoryBreadcrumbs() }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {{ designHistory.screenshot('UCAS – Bath spa', 'UCAS-bath-spa', '/public/images/publish-teacher-training/ucas-course-examples/thumbnails/01-UCAS-bath-spa.png', '/public/images/publish-teacher-training/ucas-course-examples/01-UCAS-bath-spa.png', '') }}
+
+  {{ designHistory.screenshot('UCAS – Bishop stortford', 'UCAS-bishop-stortford', '/public/images/publish-teacher-training/ucas-course-examples/thumbnails/02-UCAS-bishop-stortford.png', '/public/images/publish-teacher-training/ucas-course-examples/02-UCAS-bishop-stortford.png', '') }}
+
+  {{ designHistory.screenshot('UCAS – 3 rivers', 'UCAS-3-rivers', '/public/images/publish-teacher-training/ucas-course-examples/thumbnails/03-UCAS-3-rivers.png', '/public/images/publish-teacher-training/ucas-course-examples/03-UCAS-3-rivers.png', '') }}
+
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% set title = 'Iteration 28 June 2018' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.designHistoryBreadcrumbs() }}{% endblock %}
+
+{% block content %}
+<main id="content" role="main design-history">
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>As with the <a href="/publish-teacher-training/iteration-june-26">previous iteration</a>, we ran an unmoderated research session with this design where we asked providers to complete a course listing, the user recorded their input to a <a href="https://lookback.io/watch/ACpaee3SkiuGxS5CD">session on Lookback</a>.</p>
+
+      <p>In this iteration we:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>added character counts</li>
+        <li>made interview process optional</li>
+        <li>hid incomplete optional fields from preview</li>
+        <li>added fields for international course fees</li>
+      </ul>
+
+      <p>Based on the first submission, which was mostly copy and pasted text, we quickly added word counts to each field. We expect character counts to limit input and to trigger users into editing their text down.</p>
+
+      <p><a href="https://docs.google.com/document/d/19zLJb1fplLHmrxZ2VlPsWCfdhqfK0DuoyKjCog8eeAE/edit?usp=sharing">Feedback from the first session</a> indicated that details of an involved interview process may discourage users from applying.</p>
+
+      <p>We clarified which fields were optional and refined the preview to hide incomplete optional fields.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+  { text: 'PGCE with QTS course option', id: 'PGCE with QTS course option' },
+  { text: 'QTS with salary course option', id: 'QTS with salary course option' },
+  { text: 'About your organisation', id: 'About your organisation' },
+  { text: 'Requirements and eligibility', id: 'Requirements and eligibility' },
+  { text: 'Preview', id: 'preview' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('PGCE with QTS course option', 'PGCE with QTS course option', '/public/images/publish-teacher-training/iteration-june-28/thumbnails/04-PGCE with QTS course option.png', '/public/images/publish-teacher-training/iteration-june-28/04-PGCE with QTS course option.png', '') }}
+
+  {{ designHistory.screenshot('QTS with salary course option', 'QTS with salary course option', '/public/images/publish-teacher-training/iteration-june-28/thumbnails/05-QTS with salary course option.png', '/public/images/publish-teacher-training/iteration-june-28/05-QTS with salary course option.png', '') }}
+
+  {{ designHistory.screenshot('About your organisation', 'About your organisation', '/public/images/publish-teacher-training/iteration-june-28/thumbnails/06-About your organisation.png', '/public/images/publish-teacher-training/iteration-june-28/06-About your organisation.png', '') }}
+
+  {{ designHistory.screenshot('Requirements and eligibility', 'Requirements and eligibility', '/public/images/publish-teacher-training/iteration-june-28/thumbnails/07-Requirements and eligibility.png', '/public/images/publish-teacher-training/iteration-june-28/07-Requirements and eligibility.png', '') }}
+
+  {{ designHistory.screenshot('Preview', 'preview', '/public/images/publish-teacher-training/iteration-june-28/thumbnails/08-preview.png', '/public/images/publish-teacher-training/iteration-june-28/08-preview.png', '') }}
+
+
+{% endblock %}

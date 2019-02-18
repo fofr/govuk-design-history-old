@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% set title = 'A read only view' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.designHistoryBreadcrumbs() }}{% endblock %}
+
+{% block content %}
+<main id="content" role="main design-history">
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>As part of preparing providers for the upcoming service we wanted to give them read-only access to the service so they could see what information was needed and begin writing their content.</p>
+      <p>The team instead chose to provide a document with guidance on the fields rather than a half built interface which would be confusing.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+  { text: 'We imported', id: 'we-imported' },
+  { text: 'Courses', id: 'courses' },
+  { text: 'Course', id: 'course' },
+  { text: 'Course details from ucas', id: 'course-details-from-ucas' },
+  { text: 'About this course', id: 'about-this-course' },
+  { text: 'About this training provider', id: 'about-this-training-provider' },
+  { text: 'Course requirements', id: 'course-requirements' },
+  { text: 'Qualification', id: 'qualification' },
+  { text: 'Salary', id: 'salary' },
+  { text: 'Preview', id: 'preview' },
+  { text: 'Schools', id: 'schools' },
+  { text: 'Organisation', id: 'organisation' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('We imported', 'we-imported', '/public/images/publish-teacher-training/read-only/thumbnails/01-we-imported.png', '/public/images/publish-teacher-training/read-only/01-we-imported.png', '') }}
+
+  {{ designHistory.screenshot('Courses', 'courses', '/public/images/publish-teacher-training/read-only/thumbnails/02-courses.png', '/public/images/publish-teacher-training/read-only/02-courses.png', '') }}
+
+  {{ designHistory.screenshot('Course', 'course', '/public/images/publish-teacher-training/read-only/thumbnails/03-course.png', '/public/images/publish-teacher-training/read-only/03-course.png', '') }}
+
+  {{ designHistory.screenshot('Course details from ucas', 'course-details-from-ucas', '/public/images/publish-teacher-training/read-only/thumbnails/04-course-details-from-ucas.png', '/public/images/publish-teacher-training/read-only/04-course-details-from-ucas.png', '') }}
+
+  {{ designHistory.screenshot('About this course', 'about-this-course', '/public/images/publish-teacher-training/read-only/thumbnails/05-about-this-course.png', '/public/images/publish-teacher-training/read-only/05-about-this-course.png', '') }}
+
+  {{ designHistory.screenshot('About this training provider', 'about-this-training-provider', '/public/images/publish-teacher-training/read-only/thumbnails/06-about-this-training-provider.png', '/public/images/publish-teacher-training/read-only/06-about-this-training-provider.png', '') }}
+
+  {{ designHistory.screenshot('Course requirements', 'course-requirements', '/public/images/publish-teacher-training/read-only/thumbnails/07-course-requirements.png', '/public/images/publish-teacher-training/read-only/07-course-requirements.png', '') }}
+
+  {{ designHistory.screenshot('Qualification', 'qualification', '/public/images/publish-teacher-training/read-only/thumbnails/08-qualification.png', '/public/images/publish-teacher-training/read-only/08-qualification.png', '') }}
+
+  {{ designHistory.screenshot('Salary', 'salary', '/public/images/publish-teacher-training/read-only/thumbnails/09-salary.png', '/public/images/publish-teacher-training/read-only/09-salary.png', '') }}
+
+  {{ designHistory.screenshot('Preview', 'preview', '/public/images/publish-teacher-training/read-only/thumbnails/10-preview.png', '/public/images/publish-teacher-training/read-only/10-preview.png', '') }}
+
+  {{ designHistory.screenshot('Schools', 'schools', '/public/images/publish-teacher-training/read-only/thumbnails/11-schools.png', '/public/images/publish-teacher-training/read-only/11-schools.png', '') }}
+
+  {{ designHistory.screenshot('Organisation', 'organisation', '/public/images/publish-teacher-training/read-only/thumbnails/12-organisation.png', '/public/images/publish-teacher-training/read-only/12-organisation.png', '') }}
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+
+{% extends "layout.html" %}
+{% set title = 'New course wizard' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.designHistoryBreadcrumbs() }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>First attempts at a ‘one thing per page’ approach to creating a course.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+  { text: 'Title', id: 'title' },
+  { text: 'Qualifications', id: 'qualifications' },
+  { text: 'Start date', id: 'start-date' },
+  { text: 'Duration', id: 'duration' },
+  { text: 'Applications open', id: 'applications-open' },
+  { text: 'Application codes', id: 'application-codes' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Title', 'title', '/public/images/publish-teacher-training/new-course-wizard/thumbnails/01-title.png', '/public/images/publish-teacher-training/new-course-wizard/01-title.png', '') }}
+
+  {{ designHistory.screenshot('Qualifications', 'qualifications', '/public/images/publish-teacher-training/new-course-wizard/thumbnails/02-qualifications.png', '/public/images/publish-teacher-training/new-course-wizard/02-qualifications.png', '') }}
+
+  {{ designHistory.screenshot('Start date', 'start-date', '/public/images/publish-teacher-training/new-course-wizard/thumbnails/03-start-date.png', '/public/images/publish-teacher-training/new-course-wizard/03-start-date.png', '') }}
+
+  {{ designHistory.screenshot('Duration', 'duration', '/public/images/publish-teacher-training/new-course-wizard/thumbnails/04-duration.png', '/public/images/publish-teacher-training/new-course-wizard/04-duration.png', '') }}
+
+  {{ designHistory.screenshot('Applications open', 'applications-open', '/public/images/publish-teacher-training/new-course-wizard/thumbnails/05-applications-open.png', '/public/images/publish-teacher-training/new-course-wizard/05-applications-open.png', '') }}
+
+  {{ designHistory.screenshot('Application codes', 'application-codes', '/public/images/publish-teacher-training/new-course-wizard/thumbnails/06-application-codes.png', '/public/images/publish-teacher-training/new-course-wizard/06-application-codes.png', '') }}
+
+
+{% endblock %}

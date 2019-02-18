@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% set title = 'Details from UCAS' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.designHistoryBreadcrumbs() }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {{ designHistory.screenshot('Course with UCAS details section', 'course', '/public/images/publish-teacher-training/details-from-ucas/thumbnails/01-course.png', '/public/images/publish-teacher-training/details-from-ucas/01-course.png', '') }}
+
+  {{ designHistory.screenshot('Details from ucas', 'details-from-ucas', '/public/images/publish-teacher-training/details-from-ucas/thumbnails/02-details-from-ucas.png', '/public/images/publish-teacher-training/details-from-ucas/02-details-from-ucas.png', '
+    <p>Present each UCAS course with fields and names as close as possible to UCAS, for familiarity and consistency.</p>
+  ') }}
+
+
+{% endblock %}

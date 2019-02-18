@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% set title = 'Vacancies – Iteration 14 January' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.designHistoryBreadcrumbs() }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'Close course (one training location)', id: 'close-course-one-training-location' },
+    { text: 'Open course (one training location)', id: 'open-course-one-training-location' },
+    { text: 'Close course validation', id: 'close-course-validation' },
+    { text: 'Open course validation', id: 'open-course-validation' },
+    { text: 'Edit vacancies (multiple training locations)', id: 'edit-vacancies-multiple-training-locations' },
+    { text: 'Organisation', id: 'organisation' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Close course (one training location)', 'close-course-one-training-location', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/thumbnails/01-close-course-one-training-location.png', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/01-close-course-one-training-location.png', '') }}
+
+  {{ designHistory.screenshot('Open course (one training location)', 'open-course-one-training-location', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/thumbnails/02-open-course-one-training-location.png', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/02-open-course-one-training-location.png', '') }}
+
+  {{ designHistory.screenshot('Close course validation', 'close-course-validation', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/thumbnails/01-close-course-validation.png', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/01-close-course-validation.png', '') }}
+
+  {{ designHistory.screenshot('Open course validation', 'open-course-validation', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/thumbnails/02-open-course-validation.png', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/02-open-course-validation.png', '') }}
+
+  {{ designHistory.screenshot('Edit vacancies (multiple training locations)', 'edit-vacancies-multiple-training-locations', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/thumbnails/03-edit-vacancies-multiple-training-locations.png', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/03-edit-vacancies-multiple-training-locations.png', '') }}
+
+  {{ designHistory.screenshot('Organisation', 'organisation', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/thumbnails/04-organisation.png', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/04-organisation.png', '') }}
+
+{% endblock %}

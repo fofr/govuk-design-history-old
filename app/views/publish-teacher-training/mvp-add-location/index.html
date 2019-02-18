@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% set title = 'Minimum viable Add training location' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.designHistoryBreadcrumbs() }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>A much simplified training location flow. It replicates what is available on UCAS, without any extras.</p>
+
+      <p>This design represents a baseline we could build first. We’d then iterate towards the training location wizards, adding a <a href="/publish-teacher-training/schools-autocomplete">school autocomplete</a>, <a href="/publish-teacher-training/new-training-location">then different types of location</a> along with <a href="/publish-teacher-training/new-training-location-region">regions or areas</a>.</p>
+
+      <p>We’d also avoid having to categorise existing locations into types, though doing this at rollover might be the only appropriate time.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Add training location', id: 'add-new-training-location' },
+    { text: 'Edit training location', id: 'edit-training-location' },
+    { text: 'Locations', id: 'locations' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Add training location', 'add-new-training-location', '/public/images/publish-teacher-training/mvp-add-location/thumbnails/01-add-new-training-location.png', '/public/images/publish-teacher-training/mvp-add-location/01-add-new-training-location.png', '') }}
+
+  {{ designHistory.screenshot('Edit training location', 'edit-training-location', '/public/images/publish-teacher-training/mvp-add-location/thumbnails/02-edit-training-location.png', '/public/images/publish-teacher-training/mvp-add-location/02-edit-training-location.png', '') }}
+
+  {{ designHistory.screenshot('Locations', 'locations', '/public/images/publish-teacher-training/mvp-add-location/thumbnails/03-locations.png', '/public/images/publish-teacher-training/mvp-add-location/03-locations.png', '') }}
+
+{% endblock %}
