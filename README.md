@@ -1,8 +1,8 @@
 # Document the history of your designs
 
-[Design history](https://design-history.herokuapp.com/) is built using the [GOV.UK prototyping kit](https://github.com/alphagov/govuk-prototype-kit).
+[Design history](https://design-history.herokuapp.com/) is an application built using the [GOV.UK prototyping kit](https://github.com/alphagov/govuk-prototype-kit).
 
-You should fork this repository and use its tools to begin documenting your designs.
+Fork this repository to use its tools and begin documenting your designs.
 
 ## Document your designs
 
@@ -11,6 +11,7 @@ This repository makes it easy to:
 * screenshot your designs
 * create pages of screenshots to document designs
 * document designs using the [GOV.UK Design System](https://design-system.service.gov.uk/)
+* print pages of designs
 * make designs shareable and linkable
 
 ## Take screenshots
