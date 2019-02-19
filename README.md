@@ -14,6 +14,11 @@ This repository makes it easy to:
 * print pages of designs
 * make designs shareable and linkable
 
+Some examples of design history in use:
+
+* https://bat-design-history.herokuapp.com/
+* https://bat-design-history.herokuapp.com/find-teacher-training/choose-how-to-apply
+
 ## Take screenshots
 
 ### Configure
