@@ -32,7 +32,7 @@ paths = [
 ### Run
 
 ```bash
-node scripts/screenshot.js "A generated example"
+node scripts/screenshot.js "a-generated-example"
 ```
 
 This will:
@@ -42,7 +42,7 @@ This will:
 
 Example output:
 ```
-node scripts/screenshot.js "A generated example"
+node scripts/screenshot.js "a-generated-example"
 Index generated: app/views/a-generated-example/index.html
 https://design-history.herokuapp.com/
  >> app/assets/images/a-generated-example/design-history-index.png
