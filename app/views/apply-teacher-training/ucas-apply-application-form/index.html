@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% set title = 'UCAS Apply – Application form' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'Welcome to UCAS teacher training', id: '11-welcome-to-ucas-teacher-training' },
+    { text: 'Personal details', id: '12-personal-details' },
+    { text: 'Course choices', id: '13-course-choices' },
+    { text: 'Course choice', id: '14-course-choice' },
+    { text: 'Course choice made', id: '15-course-choice-made' },
+    { text: 'Criminal declaration in course choice', id: '16-criminal-declaration-in-course-choice' },
+    { text: 'Course choices with a choice', id: '17-course-choices-with-a-choice' },
+    { text: 'Education', id: '18-education' },
+    { text: 'Add school or college', id: '19-add-school-or-college' },
+    { text: 'Add qualification', id: '20-add-qualification' },
+    { text: 'School and work experience', id: '21-school-and-work-experience' },
+    { text: 'Add school and work experience', id: '22-add-school-and-work-experience' },
+    { text: 'Personal statement', id: '23-personal-statement' },
+    { text: 'References', id: '24-references' },
+    { text: 'Add referee details', id: '25-add-referee-details' },
+    { text: 'Example of errors in form', id: '26-example-of-errors-in-form' },
+    { text: 'Application summary', id: '27-application-summary' },
+    { text: 'Section completion statuses', id: '28-section-completion-statuses' },
+    { text: 'Check form', id: '29-check-form' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Welcome to UCAS teacher training', '11-welcome-to-ucas-teacher-training', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/11-welcome-to-ucas-teacher-training.png', '/public/images/apply-teacher-training/ucas-apply-application-form/11-welcome-to-ucas-teacher-training.png', '') }}
+
+  {{ designHistory.screenshot('Personal details', '12-personal-details', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/12-personal-details.png', '/public/images/apply-teacher-training/ucas-apply-application-form/12-personal-details.png', '') }}
+
+  {{ designHistory.screenshot('Course choices', '13-course-choices', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/13-course-choices.png', '/public/images/apply-teacher-training/ucas-apply-application-form/13-course-choices.png', '') }}
+
+  {{ designHistory.screenshot('Course choice', '14-course-choice', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/14-course-choice.png', '/public/images/apply-teacher-training/ucas-apply-application-form/14-course-choice.png', '') }}
+
+  {{ designHistory.screenshot('Course choice made', '15-course-choice-made', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/15-course-choice-made.png', '/public/images/apply-teacher-training/ucas-apply-application-form/15-course-choice-made.png', '') }}
+
+  {{ designHistory.screenshot('Criminal declaration in course choice', '16-criminal-declaration-in-course-choice', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/16-criminal-declaration-in-course-choice.png', '/public/images/apply-teacher-training/ucas-apply-application-form/16-criminal-declaration-in-course-choice.png', '') }}
+
+  {{ designHistory.screenshot('Course choices with a choice', '17-course-choices-with-a-choice', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/17-course-choices-with-a-choice.png', '/public/images/apply-teacher-training/ucas-apply-application-form/17-course-choices-with-a-choice.png', '') }}
+
+  {{ designHistory.screenshot('Education', '18-education', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/18-education.png', '/public/images/apply-teacher-training/ucas-apply-application-form/18-education.png', '') }}
+
+  {{ designHistory.screenshot('Add school or college', '19-add-school-or-college', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/19-add-school-or-college.png', '/public/images/apply-teacher-training/ucas-apply-application-form/19-add-school-or-college.png', '') }}
+
+  {{ designHistory.screenshot('Add qualification', '20-add-qualification', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/20-add-qualification.png', '/public/images/apply-teacher-training/ucas-apply-application-form/20-add-qualification.png', '') }}
+
+  {{ designHistory.screenshot('School and work experience', '21-school-and-work-experience', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/21-school-and-work-experience.png', '/public/images/apply-teacher-training/ucas-apply-application-form/21-school-and-work-experience.png', '') }}
+
+  {{ designHistory.screenshot('Add school and work experience', '22-add-school-and-work-experience', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/22-add-school-and-work-experience.png', '/public/images/apply-teacher-training/ucas-apply-application-form/22-add-school-and-work-experience.png', '') }}
+
+  {{ designHistory.screenshot('Personal statement', '23-personal-statement', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/23-personal-statement.png', '/public/images/apply-teacher-training/ucas-apply-application-form/23-personal-statement.png', '') }}
+
+  {{ designHistory.screenshot('References', '24-references', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/24-references.png', '/public/images/apply-teacher-training/ucas-apply-application-form/24-references.png', '') }}
+
+  {{ designHistory.screenshot('Add referee details', '25-add-referee-details', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/25-add-referee-details.png', '/public/images/apply-teacher-training/ucas-apply-application-form/25-add-referee-details.png', '') }}
+
+  {{ designHistory.screenshot('Example of errors in form', '26-example-of-errors-in-form', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/26-example-of-errors-in-form.png', '/public/images/apply-teacher-training/ucas-apply-application-form/26-example-of-errors-in-form.png', '') }}
+
+  {{ designHistory.screenshot('Application summary', '27-application-summary', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/27-application-summary.png', '/public/images/apply-teacher-training/ucas-apply-application-form/27-application-summary.png', '') }}
+
+  {{ designHistory.screenshot('Section completion statuses', '28-section-completion-statuses', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/28-section-completion-statuses.png', '/public/images/apply-teacher-training/ucas-apply-application-form/28-section-completion-statuses.png', '') }}
+
+  {{ designHistory.screenshot('Check form', '29-check-form', '/public/images/apply-teacher-training/ucas-apply-application-form/thumbnails/29-check-form.png', '/public/images/apply-teacher-training/ucas-apply-application-form/29-check-form.png', '') }}
+
+{% endblock %}

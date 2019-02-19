@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% set title = 'UCAS Apply – Sign up' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'Welcome', id: '01-welcome' },
+    { text: 'Terms and conditions', id: '02-terms-and-conditions' },
+    { text: 'Initial details', id: '03-initial-details' },
+    { text: 'Previous contact', id: '04-previous-contact' },
+    { text: 'Postal address', id: '05-postal-address' },
+    { text: 'Postal address 2', id: '06-postal-address-2' },
+    { text: 'Postal address 3', id: '07-postal-address-3' },
+    { text: 'Personal details', id: '08-personal-details' },
+    { text: 'Security', id: '09-security' },
+    { text: 'Registration successful', id: '10-registration-successful' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Welcome', '01-welcome', '/public/images/apply-teacher-training/ucas-apply-sign-up/thumbnails/01-welcome.png', '/public/images/apply-teacher-training/ucas-apply-sign-up/01-welcome.png', '') }}
+
+  {{ designHistory.screenshot('Terms and conditions', '02-terms-and-conditions', '/public/images/apply-teacher-training/ucas-apply-sign-up/thumbnails/02-terms-and-conditions.png', '/public/images/apply-teacher-training/ucas-apply-sign-up/02-terms-and-conditions.png', '') }}
+
+  {{ designHistory.screenshot('Initial details', '03-initial-details', '/public/images/apply-teacher-training/ucas-apply-sign-up/thumbnails/03-initial-details.png', '/public/images/apply-teacher-training/ucas-apply-sign-up/03-initial-details.png', '') }}
+
+  {{ designHistory.screenshot('Previous contact', '04-previous-contact', '/public/images/apply-teacher-training/ucas-apply-sign-up/thumbnails/04-previous-contact.png', '/public/images/apply-teacher-training/ucas-apply-sign-up/04-previous-contact.png', '') }}
+
+  {{ designHistory.screenshot('Postal address', '05-postal-address', '/public/images/apply-teacher-training/ucas-apply-sign-up/thumbnails/05-postal-address.png', '/public/images/apply-teacher-training/ucas-apply-sign-up/05-postal-address.png', '') }}
+
+  {{ designHistory.screenshot('Postal address 2', '06-postal-address-2', '/public/images/apply-teacher-training/ucas-apply-sign-up/thumbnails/06-postal-address-2.png', '/public/images/apply-teacher-training/ucas-apply-sign-up/06-postal-address-2.png', '') }}
+
+  {{ designHistory.screenshot('Postal address 3', '07-postal-address-3', '/public/images/apply-teacher-training/ucas-apply-sign-up/thumbnails/07-postal-address-3.png', '/public/images/apply-teacher-training/ucas-apply-sign-up/07-postal-address-3.png', '') }}
+
+  {{ designHistory.screenshot('Personal details', '08-personal-details', '/public/images/apply-teacher-training/ucas-apply-sign-up/thumbnails/08-personal-details.png', '/public/images/apply-teacher-training/ucas-apply-sign-up/08-personal-details.png', '') }}
+
+  {{ designHistory.screenshot('Security', '09-security', '/public/images/apply-teacher-training/ucas-apply-sign-up/thumbnails/09-security.png', '/public/images/apply-teacher-training/ucas-apply-sign-up/09-security.png', '') }}
+
+  {{ designHistory.screenshot('Registration successful', '10-registration-successful', '/public/images/apply-teacher-training/ucas-apply-sign-up/thumbnails/10-registration-successful.png', '/public/images/apply-teacher-training/ucas-apply-sign-up/10-registration-successful.png', '') }}
+
+{% endblock %}

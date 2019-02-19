@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% set title = 'UCAS Apply – Referee form' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'Referee giving reference', id: '30-referee-giving-reference' },
+    { text: 'Referee giving their details', id: '31-referee-giving-their-details' },
+    { text: 'Referee viewing applicants details', id: '32-referee-viewing-applicants-details' },
+    { text: 'Referee creating reference', id: '33-referee-creating-reference' },
+    { text: 'Referee confirming reference', id: '34-referee-confirming-reference' },
+    { text: 'Referee finished', id: '35-referee-finished' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Referee giving reference', '30-referee-giving-reference', '/public/images/apply-teacher-training/ucas-apply-referee-form/thumbnails/30-referee-giving-reference.png', '/public/images/apply-teacher-training/ucas-apply-referee-form/30-referee-giving-reference.png', '') }}
+
+  {{ designHistory.screenshot('Referee giving their details', '31-referee-giving-their-details', '/public/images/apply-teacher-training/ucas-apply-referee-form/thumbnails/31-referee-giving-their-details.png', '/public/images/apply-teacher-training/ucas-apply-referee-form/31-referee-giving-their-details.png', '') }}
+
+  {{ designHistory.screenshot('Referee viewing applicants details', '32-referee-viewing-applicants-details', '/public/images/apply-teacher-training/ucas-apply-referee-form/thumbnails/32-referee-viewing-applicants-details.png', '/public/images/apply-teacher-training/ucas-apply-referee-form/32-referee-viewing-applicants-details.png', '') }}
+
+  {{ designHistory.screenshot('Referee creating reference', '33-referee-creating-reference', '/public/images/apply-teacher-training/ucas-apply-referee-form/thumbnails/33-referee-creating-reference.png', '/public/images/apply-teacher-training/ucas-apply-referee-form/33-referee-creating-reference.png', '') }}
+
+  {{ designHistory.screenshot('Referee confirming reference', '34-referee-confirming-reference', '/public/images/apply-teacher-training/ucas-apply-referee-form/thumbnails/34-referee-confirming-reference.png', '/public/images/apply-teacher-training/ucas-apply-referee-form/34-referee-confirming-reference.png', '') }}
+
+  {{ designHistory.screenshot('Referee finished', '35-referee-finished', '/public/images/apply-teacher-training/ucas-apply-referee-form/thumbnails/35-referee-finished.png', '/public/images/apply-teacher-training/ucas-apply-referee-form/35-referee-finished.png', '') }}
+
+{% endblock %}
