@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% set title = 'Apply – August 2018' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>The Apply designs as they stood at the end of August 2018.</p>
+
+      <p>Our designer Vin documented these on <a href="https://dfedigital.atlassian.net/wiki/spaces/BaT/pages/279314433/Designs">confluence</a>:</p>
+
+      <div class="govuk-inset-text">
+        <p>When the free form application was tested with providers, they unanimously told us that they needed more factual / structured data. </p>
+
+        <p>Providers also need to know qualifications beyond the mandatory qualifications. This need is to address the eligibility criteria for candidates who might be applying to a subject that they do not have a degree in.</p>
+
+        <p>A detailed work history would help providers assess the eligibility of career changers if their work is relevant to the subject they would like to teach. This also helps the providers get a holistic picture of the candidate. (We believe that 5 years of the latest work history may be enough for the providers to decide on the eligibility of the candidates.)</p>
+
+        <p>Yet to be tested.</p>
+      </div>
+
+      <p>
+        <a href="https://bat-manage-applications.herokuapp.com/candidate/v05/">https://bat-manage-applications.herokuapp.com/candidate/v05/</a>
+      </p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Your application', id: 'your-application' },
+    { text: 'Personal details', id: 'personal-details' },
+    { text: 'Contact details', id: 'contact-details' },
+    { text: 'UK status', id: 'uk-status' },
+    { text: 'Education', id: 'education' },
+    { text: 'Work history', id: 'work-history' },
+    { text: 'Experience and motivation', id: 'experience-and-motivation' },
+    { text: 'Confirmation', id: 'confirmation' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Your application', 'your-application', '/public/images/apply-teacher-training/apply-august-2018/thumbnails/your-application.png', '/public/images/apply-teacher-training/apply-august-2018/your-application.png', '') }}
+
+  {{ designHistory.screenshot('Personal details', 'personal-details', '/public/images/apply-teacher-training/apply-august-2018/thumbnails/personal-details.png', '/public/images/apply-teacher-training/apply-august-2018/personal-details.png', '') }}
+
+  {{ designHistory.screenshot('Contact details', 'contact-details', '/public/images/apply-teacher-training/apply-august-2018/thumbnails/contact-details.png', '/public/images/apply-teacher-training/apply-august-2018/contact-details.png', '') }}
+
+  {{ designHistory.screenshot('UK status', 'uk-status', '/public/images/apply-teacher-training/apply-august-2018/thumbnails/uk-status.png', '/public/images/apply-teacher-training/apply-august-2018/uk-status.png', '') }}
+
+  {{ designHistory.screenshot('Education', 'education', '/public/images/apply-teacher-training/apply-august-2018/thumbnails/education.png', '/public/images/apply-teacher-training/apply-august-2018/education.png', '') }}
+
+  {{ designHistory.screenshot('Work history', 'work-history', '/public/images/apply-teacher-training/apply-august-2018/thumbnails/work-history.png', '/public/images/apply-teacher-training/apply-august-2018/work-history.png', '') }}
+
+  {{ designHistory.screenshot('Experience and motivation', 'experience-and-motivation', '/public/images/apply-teacher-training/apply-august-2018/thumbnails/experience-and-motivation.png', '/public/images/apply-teacher-training/apply-august-2018/experience-and-motivation.png', '') }}
+
+  {{ designHistory.screenshot('Confirmation', 'confirmation', '/public/images/apply-teacher-training/apply-august-2018/thumbnails/confirmation.png', '/public/images/apply-teacher-training/apply-august-2018/confirmation.png', '') }}
+
+{% endblock %}
