@@ -4,7 +4,7 @@
   Set paths to an array of named paths (see example)
 
   Run:
-  node scripts/screenshot.js "Title of page"
+  node scripts/screenshot.js name-of-directory
 
   Example paths:
   paths = [
@@ -23,10 +23,11 @@ const fs = require('fs');
 const sharp = require('sharp');
 
 // Arguments
-const title = process.argv.slice(-1)[0];
-warnIfNoArguments(title);
+const directoryName = process.argv.slice(-1)[0];
+warnIfNoArguments();
 
-const directoryName = title.replace(/ +/g, '-').toLowerCase();
+var title = directoryName.replace(/-/g, ' ');
+title = title.charAt(0).toUpperCase() + title.slice(1)
 const imageDirectory = `app/assets/images/${directoryName}`;
 const indexDirectory = `app/views/${directoryName}`;
 const thumbnailDirectory = `${imageDirectory}/thumbnails`;
@@ -41,9 +42,9 @@ function start() {
 
 function warnIfNoArguments(title) {
   // TODO: Use a better check for an argument
-  if (title.startsWith('/Users')) {
+  if (directoryName.startsWith('/Users')) {
     console.log('No arguments set');
-    console.log('Please set a title: `node scripts/screenshot.js "Title of page"`');
+    console.log('Please set a directory name: `node scripts/screenshot.js "name-of-directory"`');
     return;
   }
 }
