@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% set title = 'Apply – December 2018' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>The Apply designs as they stood at the end of December 2018.</p>
+
+      <p>Our designer Faz looked at capturing the same fields needed in the UCAS process but by using the GOV.UK design patterns.</p>
+
+      <p>
+        <a href="https://bat-apply-prototype.herokuapp.com/">https://bat-apply-prototype.herokuapp.com/</a> (batapply/batapply1)
+      </p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Apply landing page', id: 'apply-landing-page' },
+    { text: 'Create an account', id: 'create-an-account' },
+    { text: 'Your application', id: 'your-application' },
+    { text: 'Personal details', id: 'personal-details' },
+    { text: 'Contact details', id: 'contact-details' },
+    { text: 'UK Address', id: 'uk-address' },
+    { text: 'International Address', id: 'international-address' },
+    { text: 'British Forces Post Office Address', id: 'british-forces-post-office-address' },
+    { text: 'Correspondence', id: 'correspondence' },
+    { text: 'Correspondence (UK)', id: 'correspondence-(uk)' },
+    { text: 'Correspondence (International)', id: 'correspondence-(international)' },
+    { text: 'Check your eligibility', id: 'check-your-eligibility' },
+    { text: 'Add a degree', id: 'add-a-degree' },
+    { text: 'Enter degree', id: 'enter-degree' },
+    { text: 'Add GCSEs', id: 'add-gcses' },
+    { text: 'Add Maths equivlanet', id: 'add-maths-equivlanet' },
+    { text: 'Add Science GCSE', id: 'add-science-gcse' },
+    { text: 'Your qualifications', id: 'your-qualifications' },
+    { text: 'Work history', id: 'work-history' },
+    { text: 'Enter a job', id: 'enter-a-job' },
+    { text: 'Work history overview', id: 'work-history-overview' },
+    { text: 'Add GCSEs', id: 'add-gcses' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Apply landing page', 'apply-landing-page', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/apply-landing-page.png', '/public/images/apply-teacher-training/apply-december-2018/apply-landing-page.png', '') }}
+
+  {{ designHistory.screenshot('Create an account', 'create-an-account', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/create-an-account.png', '/public/images/apply-teacher-training/apply-december-2018/create-an-account.png', '') }}
+
+  {{ designHistory.screenshot('Your application', 'your-application', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/your-application.png', '/public/images/apply-teacher-training/apply-december-2018/your-application.png', '') }}
+
+  {{ designHistory.screenshot('Personal details', 'personal-details', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/personal-details.png', '/public/images/apply-teacher-training/apply-december-2018/personal-details.png', '') }}
+
+  {{ designHistory.screenshot('Contact details', 'contact-details', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/contact-details.png', '/public/images/apply-teacher-training/apply-december-2018/contact-details.png', '') }}
+
+  {{ designHistory.screenshot('UK Address', 'uk-address', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/uk-address.png', '/public/images/apply-teacher-training/apply-december-2018/uk-address.png', '') }}
+
+  {{ designHistory.screenshot('International Address', 'international-address', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/international-address.png', '/public/images/apply-teacher-training/apply-december-2018/international-address.png', '') }}
+
+  {{ designHistory.screenshot('British Forces Post Office Address', 'british-forces-post-office-address', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/british-forces-post-office-address.png', '/public/images/apply-teacher-training/apply-december-2018/british-forces-post-office-address.png', '') }}
+
+  {{ designHistory.screenshot('Correspondence', 'correspondence', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/correspondence.png', '/public/images/apply-teacher-training/apply-december-2018/correspondence.png', '') }}
+
+  {{ designHistory.screenshot('Correspondence (UK)', 'correspondence-(uk)', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/correspondence-(uk).png', '/public/images/apply-teacher-training/apply-december-2018/correspondence-(uk).png', '') }}
+
+  {{ designHistory.screenshot('Correspondence (International)', 'correspondence-(international)', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/correspondence-(international).png', '/public/images/apply-teacher-training/apply-december-2018/correspondence-(international).png', '') }}
+
+  {{ designHistory.screenshot('Check your eligibility', 'check-your-eligibility', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/check-your-eligibility.png', '/public/images/apply-teacher-training/apply-december-2018/check-your-eligibility.png', '') }}
+
+  {{ designHistory.screenshot('Add a degree', 'add-a-degree', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/add-a-degree.png', '/public/images/apply-teacher-training/apply-december-2018/add-a-degree.png', '') }}
+
+  {{ designHistory.screenshot('Enter degree', 'enter-degree', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/enter-degree.png', '/public/images/apply-teacher-training/apply-december-2018/enter-degree.png', '') }}
+
+  {{ designHistory.screenshot('Add GCSEs', 'add-gcses', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/add-gcses.png', '/public/images/apply-teacher-training/apply-december-2018/add-gcses.png', '') }}
+
+  {{ designHistory.screenshot('Add Maths equivlanet', 'add-maths-equivlanet', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/add-maths-equivlanet.png', '/public/images/apply-teacher-training/apply-december-2018/add-maths-equivlanet.png', '') }}
+
+  {{ designHistory.screenshot('Add Science GCSE', 'add-science-gcse', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/add-science-gcse.png', '/public/images/apply-teacher-training/apply-december-2018/add-science-gcse.png', '') }}
+
+  {{ designHistory.screenshot('Your qualifications', 'your-qualifications', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/your-qualifications.png', '/public/images/apply-teacher-training/apply-december-2018/your-qualifications.png', '') }}
+
+  {{ designHistory.screenshot('Work history', 'work-history', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/work-history.png', '/public/images/apply-teacher-training/apply-december-2018/work-history.png', '') }}
+
+  {{ designHistory.screenshot('Enter a job', 'enter-a-job', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/enter-a-job.png', '/public/images/apply-teacher-training/apply-december-2018/enter-a-job.png', '') }}
+
+  {{ designHistory.screenshot('Work history overview', 'work-history-overview', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/work-history-overview.png', '/public/images/apply-teacher-training/apply-december-2018/work-history-overview.png', '') }}
+
+  {{ designHistory.screenshot('Add GCSEs', 'add-gcses', '/public/images/apply-teacher-training/apply-december-2018/thumbnails/add-gcses.png', '/public/images/apply-teacher-training/apply-december-2018/add-gcses.png', '') }}
+
+{% endblock %}
