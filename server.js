@@ -294,6 +294,13 @@ app.use(function (req, res, next) {
       })
     }
 
+    if (req.path.includes('apply-teacher')) {
+      items.push({
+        text: 'Apply for postgraduate teacher training',
+        href: '/apply-teacher-training'
+      })
+    }
+
     return items;
   })
 
