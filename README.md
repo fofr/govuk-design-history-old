@@ -1,8 +1,8 @@
-# Document the history of your designs
+# Becoming a teacher design history
 
-[Design history](https://design-history.herokuapp.com/) is built using the [GOV.UK prototyping kit](https://github.com/alphagov/govuk-prototype-kit).
+https://bat-design-history.herokuapp.com/
 
-You should fork this repository and use its tools to begin documenting your designs.
+[Design history](https://github.com/fofr/govuk-design-history) is an app built using the [GOV.UK prototyping kit](https://github.com/alphagov/govuk-prototype-kit).
 
 ## Document your designs
 
