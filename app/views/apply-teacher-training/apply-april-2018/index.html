@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% set title = 'Application and summary' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Our designer Vin documented these on <a href="https://dfedigital.atlassian.net/wiki/spaces/BaT/pages/279314433/Designs">confluence</a>.</p>
+
+      <h2 class="govuk-heading-l">Using UCAS as a backend</h2>
+
+      <p>Hypothesis: Using UCAS as our back end will enable us to deliver a usable and viable service (with application sections being as is in UCAS)</p>
+
+      <p>One of the options for private beta is to use UCAS as the back end for our service. We would like to understand would the users be able to complete the UCAS application in GOV.UK front end with relative ease.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Application', id: 'application' },
+    { text: 'Application summary (full)', id: 'application-summary-(full)' },
+    { text: 'Application summary (reduced)', id: 'application-summary-(reduced)' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Application', 'application', '/public/images/apply-teacher-training/apply-april-2018/thumbnails/application.png', '/public/images/apply-teacher-training/apply-april-2018/application.png', '
+    <p><a href="https://bat-apply.herokuapp.com/v01/application">Link to prototype</a></p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Residence details was irrelevant for UK citizens</li>
+      <li>Disabilities section was too inflexible to add the necessary conditions</li>
+      <li>Hard to answer "Why have you chosen this provider?"</li>
+      <li>Education details section is too inflexible to add all the formal / in-formal qualifications </li>
+      <li>Need to clearly differentiate between the work and school experience</li>
+    </ul>
+  ') }}
+
+  {{ designHistory.screenshot('Application summary (full)', 'application-summary-(full)', '/public/images/apply-teacher-training/apply-april-2018/thumbnails/application-summary-(full).png', '/public/images/apply-teacher-training/apply-april-2018/application-summary-(full).png', '
+    <p><a href="https://bat-apply.herokuapp.com/v01/application/applicationSummary">Link to prototype</a></p>
+
+    <p>Preview screen a candidate sees after completing an application</p>
+
+    <p>This will be maximum a set of data the providers would need to know in an application if the candidate is worth offering an interview. This design spike will allow the technical team to explore if all of this data can be fed into the existing UCAS application system. The design can be used as a discussion point with Candidates and Providers to explore the ideal data needed in an application.</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>References are a must, at the least for safeguarding purposes</li>
+      <li>Few providers wanted to know the break down of the degree modules if the degree was not relevant to the subject being applied for</li>
+      <li>Having disability data is helpful to organise the logistics for the interview and for providing equal opportunities</li>
+      <li>Criminal convictions declaration is a must</li>
+      <li>As part of the personal statement, need to know the interest of the candidate in the chosen subject and the chosen age group</li>
+    </ul>
+  ') }}
+
+  {{ designHistory.screenshot('Application summary (reduced)', 'application-summary-(reduced)', '/public/images/apply-teacher-training/apply-april-2018/thumbnails/application-summary-(reduced).png', '/public/images/apply-teacher-training/apply-april-2018/application-summary-(reduced).png', '
+    <p><a href="https://bat-apply.herokuapp.com/v01/application/applicationSummary_strippedDown">Link to prototype</a></p>
+
+    <p>Preview screen a candidate sees after completing an application</p>
+
+    <p>To explore the minimum set of information that providers need to know without which they will not be able to offer a candidate an interview</p>
+
+    <p>Without having the references and personal statement the providers are unable to make a decision if the candidate is worth offering an interview</p>
+  ') }}
+
+{% endblock %}
