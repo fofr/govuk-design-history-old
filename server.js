@@ -278,7 +278,11 @@ if (useDocumentation) {
 
 app.use(function (req, res, next) {
   nunjucksAppEnv.addGlobal('breadcrumbItems', function(text) {
-    var items = [ { text: 'Design history', href: '/' } ];
+    var items = [ { text: 'Become a teacher design history', href: '/' } ];
+
+    if (req.path.match(/teacher-training\/?$/)) {
+      return items;
+    }
 
     if (req.path.includes('publish-teacher')) {
       items.push({

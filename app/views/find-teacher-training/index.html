@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 {% set title = 'Find postgraduate teacher training' %}
 {% block pageTitle %}{{ title }}{% endblock %}
-{% block breadcrumbs %}{{ designHistory.breadcrumbs() }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">
-    <span class="govuk-caption-l">Design history</span>
     {{ title }}
   </h1>
 
