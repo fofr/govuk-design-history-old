@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+{% set title = 'About you, qualifications and experience' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Our designer Vin documented these on <a href="https://dfedigital.atlassian.net/wiki/spaces/BaT/pages/279314433/Designs">confluence</a>.</p>
+
+      <p><a href="https://bat-apply.herokuapp.com/v02/application">Link to the prototype</a></p>
+
+      <h2 class="govuk-heading-l">Using UCAS as a backend</h2>
+
+      <p>Hypothesis: Using UCAS as our back end will enable us to deliver a usable and viable service (with tweaking the sections in the UCAS for their relevance and usability)</p>
+
+      <p>One of the options for private beta is to use UCAS as the back end for our service. In the initial rounds of testing we figured out that the form was way too lengthy with lots of irrelevant sections and inflexible. We believe that eliminating irrelevant sections and adding the necessary data to to various other free text fields in UCAS will make the application more relevant and easy for the candidates to fill in</p>
+
+      <h2 class="govuk-heading-l">Findings</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Trying to retro fit an ideal application into UCAS leads to confusion, as many sections do not match the UCAS format</li>
+        <li>The form is still tedious inspite of the usability improvements</li>
+        <li>The strict format of UCAS is a turn off for many candidates</li>
+        <li>Education details section is too inflexible to add all the formal / in-formal qualifications </li>
+        <li>Need to clearly differentiate between the work and school experience</li>
+      </ul>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Your application', id: 'your-application' },
+    { text: 'Personal details', id: 'personal-details' },
+    { text: 'Contact details', id: 'contact-details' },
+    { text: 'Citizenship', id: 'citizenship' },
+    { text: 'Citizenship (no)', id: 'citizenship-no' },
+    { text: 'Citizenship (yes)', id: 'citizenship-yes' },
+    { text: 'Professional skills tests', id: 'professional-skills-tests' },
+    { text: 'Professional skills tests (expanded)', id: 'professional-skills-tests-expanded' },
+    { text: 'Disabilities or special needs', id: 'disabilities-or-special-needs' },
+    { text: 'Your teaching ambitions', id: 'your-teaching-ambitions' },
+    { text: 'Qualifications', id: 'qualifications' },
+    { text: 'Add a qualification in English', id: 'add-a-qualification-in-english' },
+    { text: 'Add a qualification in English (part 2)', id: 'add-a-qualification-in-english-(part-2)' },
+    { text: 'Add a degree', id: 'add-a-degree' },
+    { text: 'Highest qualification', id: 'highest-qualification' },
+    { text: 'Add other GCSE qualifications', id: 'add-other-gcse-qualifications' },
+    { text: 'Add A levels', id: 'add-a-levels' },
+    { text: 'Add A levels (part 2)', id: 'add-a-levels-(part-2)' },
+    { text: 'Add language', id: 'add-language' },
+    { text: 'Other qualification', id: 'other-qualification' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Your application', 'your-application', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/your-application.png', '/public/images/apply-teacher-training/apply-may-2018/your-application.png', '') }}
+
+  {{ designHistory.screenshot('Personal details', 'personal-details', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/personal-details.png', '/public/images/apply-teacher-training/apply-may-2018/personal-details.png', '') }}
+
+  {{ designHistory.screenshot('Contact details', 'contact-details', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/contact-details.png', '/public/images/apply-teacher-training/apply-may-2018/contact-details.png', '') }}
+
+  {{ designHistory.screenshot('Citizenship', 'citizenship', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/citizenship.png', '/public/images/apply-teacher-training/apply-may-2018/citizenship.png', '') }}
+
+  {{ designHistory.screenshot('Citizenship (no)', 'citizenship-no', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/citizenship-no.png', '/public/images/apply-teacher-training/apply-may-2018/citizenship-no.png', '') }}
+
+  {{ designHistory.screenshot('Citizenship (yes)', 'citizenship-yes', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/citizenship-yes.png', '/public/images/apply-teacher-training/apply-may-2018/citizenship-yes.png', '') }}
+
+  {{ designHistory.screenshot('Professional skills tests', 'professional-skills-tests', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/professional-skills-tests.png', '/public/images/apply-teacher-training/apply-may-2018/professional-skills-tests.png', '') }}
+
+  {{ designHistory.screenshot('Professional skills tests (expanded)', 'professional-skills-tests-expanded', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/professional-skills-tests-expanded.png', '/public/images/apply-teacher-training/apply-may-2018/professional-skills-tests-expanded.png', '') }}
+
+  {{ designHistory.screenshot('Disabilities or special needs', 'disabilities-or-special-needs', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/disabilities-or-special-needs.png', '/public/images/apply-teacher-training/apply-may-2018/disabilities-or-special-needs.png', '') }}
+
+  {{ designHistory.screenshot('Your teaching ambitions', 'your-teaching-ambitions', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/your-teaching-ambitions.png', '/public/images/apply-teacher-training/apply-may-2018/your-teaching-ambitions.png', '') }}
+
+  {{ designHistory.screenshot('Qualifications', 'qualifications', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/qualifications.png', '/public/images/apply-teacher-training/apply-may-2018/qualifications.png', '') }}
+
+  {{ designHistory.screenshot('Add a qualification in English', 'add-a-qualification-in-english', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/add-a-qualification-in-english.png', '/public/images/apply-teacher-training/apply-may-2018/add-a-qualification-in-english.png', '') }}
+
+  {{ designHistory.screenshot('Add a qualification in English (part 2)', 'add-a-qualification-in-english-(part-2)', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/add-a-qualification-in-english-(part-2).png', '/public/images/apply-teacher-training/apply-may-2018/add-a-qualification-in-english-(part-2).png', '') }}
+
+  {{ designHistory.screenshot('Add a degree', 'add-a-degree', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/add-a-degree.png', '/public/images/apply-teacher-training/apply-may-2018/add-a-degree.png', '') }}
+
+  {{ designHistory.screenshot('Highest qualification', 'highest-qualification', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/highest-qualification.png', '/public/images/apply-teacher-training/apply-may-2018/highest-qualification.png', '') }}
+
+  {{ designHistory.screenshot('Add other GCSE qualifications', 'add-other-gcse-qualifications', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/add-other-gcse-qualifications.png', '/public/images/apply-teacher-training/apply-may-2018/add-other-gcse-qualifications.png', '') }}
+
+  {{ designHistory.screenshot('Add A levels', 'add-a-levels', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/add-a-levels.png', '/public/images/apply-teacher-training/apply-may-2018/add-a-levels.png', '') }}
+
+  {{ designHistory.screenshot('Add A levels (part 2)', 'add-a-levels-(part-2)', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/add-a-levels-(part-2).png', '/public/images/apply-teacher-training/apply-may-2018/add-a-levels-(part-2).png', '') }}
+
+  {{ designHistory.screenshot('Add language', 'add-language', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/add-language.png', '/public/images/apply-teacher-training/apply-may-2018/add-language.png', '') }}
+
+  {{ designHistory.screenshot('Other qualification', 'other-qualification', '/public/images/apply-teacher-training/apply-may-2018/thumbnails/other-qualification.png', '/public/images/apply-teacher-training/apply-may-2018/other-qualification.png', '') }}
+{% endblock %}
