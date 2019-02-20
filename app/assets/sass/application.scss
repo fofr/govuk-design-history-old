@@ -1,6 +1,9 @@
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
 
+// Not in design system:
+$button-colour: #00823b;
+
 // Import GOV.UK Frontend and any extension styles if extensions have been configured
 @import "lib/extensions/extensions";
 
@@ -16,3 +19,37 @@ $govuk-global-styles: true;
 @import "design-history/design-history";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+// Publish documentation styles
+// /publish-teacher-training/publish-states
+
+.phase-tag-small {
+  padding: 4px 8px 1px;
+}
+
+.phase-tag-no-content {
+  background: govuk-colour("white");
+  color: govuk-colour("grey-1");
+  border: 2px solid lighten(govuk-colour("grey-1"), 10%);
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+.phase-tag-not-running {
+  background: govuk-colour("grey-3");
+  color: govuk-colour("black");
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+.phase-tag-draft {
+  background: govuk-colour("orange");
+}
+
+.phase-tag-published {
+  background: $button-colour;
+}
+
+.empty {
+  color: govuk-colour("grey-1");
+}
