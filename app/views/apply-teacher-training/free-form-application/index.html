@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% set title = 'Free form application and qualifications' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Our designer Vin documented these on <a href="https://dfedigital.atlassian.net/wiki/spaces/BaT/pages/279314433/Designs">confluence</a> (Project Bluesky).</p>
+
+      <p><a href="https://bat-apply.herokuapp.com/v04_2/application/index">Link to prototype</a></p>
+
+      <p>In user testing sessions, we've seen candidates with varied education and experience. Using structured format for data in the previous prototypes was a roadblock, as most candidates did not find their profile fitting into a standard format.</p>
+
+      <p>Candidates want to express more about themselves than just giving mandatory data.</p>
+
+      <h2 class="govuk-heading-l">Candidate findings</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Candidates received the light weight, free format application form well</li>
+        <li>Candidates rely  on the help text to figure out what has to be filled in the sections</li>
+        <li>Having work experience and skills in different pages leads to confusion, since candidates do not have a visibility of the next sections of the application.</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">Provider findings</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Providers found that the application contents are not detailed enough for them to make a decision on the application</li>
+        <li>Providers need factual data about the education and work</li>
+      </ul>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Your application', id: 'your-application' },
+    { text: 'Personal details', id: 'personal-details' },
+    { text: 'Your qualifications', id: 'your-qualifications' },
+    { text: 'Your qualifications (expanded)', id: 'your-qualifications-expanded' },
+    { text: 'Your teaching experience and motivation', id: 'your-teaching-experience-and-motivation' },
+    { text: 'References', id: 'references' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Your application', 'your-application', '/public/images/apply-teacher-training/free-form-application/thumbnails/your-application.png', '/public/images/apply-teacher-training/free-form-application/your-application.png', '') }}
+
+  {{ designHistory.screenshot('Personal details', 'personal-details', '/public/images/apply-teacher-training/free-form-application/thumbnails/personal-details.png', '/public/images/apply-teacher-training/free-form-application/personal-details.png', '') }}
+
+  {{ designHistory.screenshot('Your qualifications', 'your-qualifications', '/public/images/apply-teacher-training/free-form-application/thumbnails/your-qualifications.png', '/public/images/apply-teacher-training/free-form-application/your-qualifications.png', '') }}
+
+  {{ designHistory.screenshot('Your qualifications (expanded)', 'your-qualifications-expanded', '/public/images/apply-teacher-training/free-form-application/thumbnails/your-qualifications-expanded.png', '/public/images/apply-teacher-training/free-form-application/your-qualifications-expanded.png', '') }}
+
+  {{ designHistory.screenshot('Your teaching experience and motivation', 'your-teaching-experience-and-motivation', '/public/images/apply-teacher-training/free-form-application/thumbnails/your-teaching-experience-and-motivation.png', '/public/images/apply-teacher-training/free-form-application/your-teaching-experience-and-motivation.png', '') }}
+
+  {{ designHistory.screenshot('References', 'references', '/public/images/apply-teacher-training/free-form-application/thumbnails/references.png', '/public/images/apply-teacher-training/free-form-application/references.png', '') }}
+{% endblock %}
