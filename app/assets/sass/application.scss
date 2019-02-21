@@ -20,6 +20,44 @@ $button-colour: #00823b;
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+// Markdown styles
+.markdown {
+  ul {
+    @extend .govuk-list;
+    @extend .govuk-list--bullet;
+  }
+
+  h1 {
+    @extend .govuk-heading-xl;
+  }
+
+  h2 {
+    @extend .govuk-heading-l;
+  }
+
+  h3 {
+    @extend .govuk-heading-m;
+  }
+
+  h4 {
+    @extend .govuk-heading-s;
+  }
+}
+
+// Email styles
+
+.bat-email {
+  border: 5px solid $govuk-border-colour;
+  padding: govuk-spacing(6);
+  margin-bottom: govuk-spacing(4);
+}
+
+.bat-email-subject {
+  padding-bottom: govuk-spacing(4);
+  margin-bottom: govuk-spacing(6);
+  border-bottom: 2px solid $govuk-border-colour;
+}
+
 // Publish documentation styles
 // /publish-teacher-training/publish-states
 

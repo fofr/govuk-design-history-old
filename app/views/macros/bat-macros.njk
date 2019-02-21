@@ -1,0 +1,7 @@
+{% macro email(subject, content) %}
+  <div class="bat-email">
+    <h2 class="govuk-heading-m bat-email-subject">{{ subject }}</h2>
+
+    {{ markdown(content) | safe }}
+  </div>
+{% endmacro %}
