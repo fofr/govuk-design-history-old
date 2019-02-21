@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% set title = 'Rollover wizard' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'Organisation with rollover prompt', id: 'organisation-with-rollover-prompt' },
+    { text: 'Start rollover', id: 'start-rollover' },
+    { text: 'Pick courses', id: 'pick-courses' },
+    { text: 'Pick locations', id: 'pick-locations' },
+    { text: 'Confirm', id: 'confirm' },
+    { text: 'Organisation after rollover', id: 'organisation-after-rollover' },
+    { text: 'Current cycle after rollover', id: 'current-cycle-after-rollover' },
+    { text: 'Next cycle after rollover', id: 'next-cycle-after-rollover' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Organisation with rollover prompt', 'organisation-with-rollover-prompt', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/organisation-with-rollover-prompt.png', '/public/images/publish-teacher-training/rollover-wizard/organisation-with-rollover-prompt.png', '') }}
+
+  {{ designHistory.screenshot('Start rollover', 'start-rollover', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/start-rollover.png', '/public/images/publish-teacher-training/rollover-wizard/start-rollover.png', '') }}
+
+  {{ designHistory.screenshot('Pick courses', 'pick-courses', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/pick-courses.png', '/public/images/publish-teacher-training/rollover-wizard/pick-courses.png', '') }}
+
+  {{ designHistory.screenshot('Pick locations', 'pick-locations', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/pick-locations.png', '/public/images/publish-teacher-training/rollover-wizard/pick-locations.png', '') }}
+
+  {{ designHistory.screenshot('Confirm', 'confirm', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/confirm.png', '/public/images/publish-teacher-training/rollover-wizard/confirm.png', '') }}
+
+  {{ designHistory.screenshot('Organisation after rollover', 'organisation-after-rollover', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/organisation-after-rollover.png', '/public/images/publish-teacher-training/rollover-wizard/organisation-after-rollover.png', '') }}
+
+  {{ designHistory.screenshot('Current cycle after rollover', 'current-cycle-after-rollover', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/current-cycle-after-rollover.png', '/public/images/publish-teacher-training/rollover-wizard/current-cycle-after-rollover.png', '') }}
+
+  {{ designHistory.screenshot('Next cycle after rollover', 'next-cycle-after-rollover', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/next-cycle-after-rollover.png', '/public/images/publish-teacher-training/rollover-wizard/next-cycle-after-rollover.png', '') }}
+
+{% endblock %}
