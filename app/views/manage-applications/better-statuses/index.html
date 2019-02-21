@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% set title = 'Fewer statuses' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Our designer Vin documented these on <a href="https://dfedigital.atlassian.net/wiki/spaces/BaT/pages/279314433/Designs">confluence</a>.</p>
+
+      <p><a href="https://bat-manage-applications.herokuapp.com/provider/v02/index">Link to the prototype</a></p>
+
+      <p>A minimum viable service that could allow the providers to access and manage their ITT applications.</p>
+
+      <p>The team thought the statuses were not relevant and came up with a minimal set of statuses for an application.</p>
+
+      <p><a href="https://docs.google.com/document/d/1qQOvPcnvskyvwaTqtEUD2CAZjKfcYr7v0rlK_kcDhaA/edit?usp=sharing">Minimal and maximal statuses</a></p>
+
+      <h2 class="govuk-heading-l">Findings</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Needs extra info to track recruitment progress</li>
+        <li>routes - ie. SCITT, SD, salaried, school/campus (?)</li>
+        <li>Need to be able to scan quickly - Download to print/save</li>
+        <li>Design hunch: ability to extract data</li>
+        <li>In review - confusing; expectation to have “interview offered”</li>
+        <li>Recruited - confusing; expectation to have conditional/unconditional</li>
+        <li>Rejected -  contentious topic!</li>
+        <li>need more options to reflect real life scenarios (No places, Not suitable for teaching, Eligibility (no evidence), No show, No time to meet conditions)</li>
+      </ul>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Dashboard', id: 'dashboard' },
+    { text: 'New applications', id: 'new-applications' },
+    { text: 'New application', id: 'new-application' },
+    { text: 'Change application status', id: 'change-application-status' },
+    { text: 'Recruited applications', id: 'recruited-applications' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Dashboard', 'dashboard', '/public/images/manage-applications/better-statuses/thumbnails/dashboard.png', '/public/images/manage-applications/better-statuses/dashboard.png', '') }}
+
+  {{ designHistory.screenshot('New applications', 'new-applications', '/public/images/manage-applications/better-statuses/thumbnails/new-applications.png', '/public/images/manage-applications/better-statuses/new-applications.png', '') }}
+
+  {{ designHistory.screenshot('New application', 'new-application', '/public/images/manage-applications/better-statuses/thumbnails/new-application.png', '/public/images/manage-applications/better-statuses/new-application.png', '') }}
+
+  {{ designHistory.screenshot('Change application status', 'change-application-status', '/public/images/manage-applications/better-statuses/thumbnails/change-application-status.png', '/public/images/manage-applications/better-statuses/change-application-status.png', '') }}
+
+  {{ designHistory.screenshot('Recruited applications', 'recruited-applications', '/public/images/manage-applications/better-statuses/thumbnails/recruited-applications.png', '/public/images/manage-applications/better-statuses/recruited-applications.png', '') }}
+
+{% endblock %}
