@@ -281,7 +281,7 @@ app.use(function (req, res, next) {
   nunjucksAppEnv.addGlobal('breadcrumbItems', function(text) {
     var items = [ { text: 'Becoming a teacher design history', href: '/' } ];
 
-    if (req.path.match(/teacher-training\/?$/)) {
+    if (req.path.match(/(teacher-training|manage-applications)\/?$/)) {
       return items;
     }
 
@@ -303,6 +303,13 @@ app.use(function (req, res, next) {
       items.push({
         text: 'Apply for postgraduate teacher training',
         href: '/apply-teacher-training'
+      })
+    }
+
+    if (req.path.includes('manage-applications')) {
+      items.push({
+        text: 'Manage teacher training applications',
+        href: '/manage-applications'
       })
     }
 
