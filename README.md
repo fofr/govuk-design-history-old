@@ -1,4 +1,4 @@
-# Become a teacher design history
+# Becoming a teacher design history
 
 https://bat-design-history.herokuapp.com/
 
