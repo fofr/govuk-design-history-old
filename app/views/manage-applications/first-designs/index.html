@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% set title = 'First designs for a minimum viable service' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Our designer Vin documented these on <a href="https://dfedigital.atlassian.net/wiki/spaces/BaT/pages/279314433/Designs">confluence</a>.</p>
+
+      <p><a href="https://bat-manage-applications.herokuapp.com/provider/v01/index">Link to the prototype</a></p>
+
+      <p>A minimum viable service that could allow the providers to access and manage their ITT applications.</p>
+
+      <p>Only admins have access to the system / applications. The providers manage the workflow outside the system. </p>
+
+      <p>The applciations themselves are tagged to various statuses that the admins can use to track the progress on any application.</p>
+
+      <p><a href="https://docs.google.com/spreadsheets/d/1n4HVUfgKdZXySAFh3KXdCqZ-Ru71DVt7RAxOvl_NO3Y/edit#gid=0">Original manage applications roadmap</a></p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Dashboard', id: 'dashboard' },
+    { text: 'New applications', id: 'new-applications' },
+    { text: 'New application', id: 'new-application' },
+    { text: 'Change application status', id: 'change-application-status' },
+    { text: 'Interview offered', id: 'interview-offered' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Dashboard', 'dashboard', '/public/images/manage-applications/first-designs/thumbnails/dashboard.png', '/public/images/manage-applications/first-designs/dashboard.png', '') }}
+
+  {{ designHistory.screenshot('New applications', 'new-applications', '/public/images/manage-applications/first-designs/thumbnails/new-applications.png', '/public/images/manage-applications/first-designs/new-applications.png', '') }}
+
+  {{ designHistory.screenshot('New application', 'new-application', '/public/images/manage-applications/first-designs/thumbnails/new-application.png', '/public/images/manage-applications/first-designs/new-application.png', '') }}
+
+  {{ designHistory.screenshot('Change application status', 'change-application-status', '/public/images/manage-applications/first-designs/thumbnails/change-application-status.png', '/public/images/manage-applications/first-designs/change-application-status.png', '') }}
+
+  {{ designHistory.screenshot('Interview offered', 'interview-offered', '/public/images/manage-applications/first-designs/thumbnails/interview-offered.png', '/public/images/manage-applications/first-designs/interview-offered.png', '') }}
+
+{% endblock %}
