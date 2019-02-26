@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% set title = 'Onboarding workflow and wizard' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>How does the onboarding process look after UCAS transition?</p>
+
+      <h2 class="govuk-heading-l">Current process</h2>
+      <p>UCAS receives a spreadsheet of providers from allocations, they use that sheet to determine which providers are new, or are new lead schools, and they begin their onboarding process – a welcome email and an onboarding call to talk them through web-link.</p>
+
+      <h2 class="govuk-heading-l" id="process-workflow">New process</h2>
+      <p>Workflow co-designed with UCAS.</p>
+      <p>
+        <a href="https://docs.google.com/drawings/d/12slZCbsAB8m0-T9s_QGmqFZRxhwF1KfkoiN2g4Xk0mY/edit">Google diagram</a>
+      </p>
+    </div>
+  </div>
+
+  <a href="https://docs.google.com/drawings/d/12slZCbsAB8m0-T9s_QGmqFZRxhwF1KfkoiN2g4Xk0mY/edit">
+    <img src="/public/images/publish-teacher-training/onboarding-workflow.svg" alt="Onboarding workflow">
+  </a>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-m">Lead schools</h3>
+      <p>If there’s a lead school change we will treat this as an update to an existing provider rather than a new provider. It means that:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>we’ll need to onboard new users for that lead school onto DfE Sign in</li>
+        <li>that new school will have access to all the existing courses and locations</li>
+        <li>new lead schools do not need to start from scratch</li>
+        <li>the marketing name of the provider shouldn’t change</li>
+      </ul>
+
+      <p>Changes to lead schools can happen midcycle if a school doesn’t get Good or better in an Ofsted inspection.</p>
+
+      <h3 class="govuk-heading-m">Setting expectations</h3>
+      <p>Setting expecations for users means:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>alerting them to the need for a separate Apply service</li>
+        <li>priming them for contact and details from UCAS</li>
+        <li>describing need for UCAS web-link</li>
+        <li>pointing out UCAS.com account</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">Onboarding wizard</h2>
+
+      <p>We can use a wizard to confirm a provider’s:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>marketing name</li>
+        <li>contact details for candidates</li>
+        <li>UCAS provider code</li>
+        <li>first training location (eg not Main Site)</li>
+        <li>UCAS apply preferences</li>
+        <li>other users who should have access to Publish</li>
+      </ul>
+
+      <p>The following designs are an initial first draft.</p>
+
+      <p>It’s not clear whether we will have time to build an onboarding wizard, as MVP it may be appropriate to do much of this through support or support templates.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Accept terms', id: 'accept-terms' },
+    { text: 'Organisation name', id: 'organisation-name' },
+    { text: 'Provider code', id: 'provider-code' },
+    { text: 'Ways candidates can contact you', id: 'ways-candidates-can-contact-you' },
+    { text: 'Add your first location', id: 'add-your-first-location' },
+    { text: 'Preferences for UCAS Apply', id: 'preferences-for-ucas-apply' },
+    { text: 'Request access for people', id: 'request-access-for-people' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Accept terms', 'accept-terms', '/public/images/publish-teacher-training/onboarding-wizard/thumbnails/accept-terms.png', '/public/images/publish-teacher-training/onboarding-wizard/accept-terms.png', '') }}
+
+  {{ designHistory.screenshot('Organisation name', 'organisation-name', '/public/images/publish-teacher-training/onboarding-wizard/thumbnails/organisation-name.png', '/public/images/publish-teacher-training/onboarding-wizard/organisation-name.png', '') }}
+
+  {{ designHistory.screenshot('Provider code', 'provider-code', '/public/images/publish-teacher-training/onboarding-wizard/thumbnails/provider-code.png', '/public/images/publish-teacher-training/onboarding-wizard/provider-code.png', '') }}
+
+  {{ designHistory.screenshot('Ways candidates can contact you', 'ways-candidates-can-contact-you', '/public/images/publish-teacher-training/onboarding-wizard/thumbnails/ways-candidates-can-contact-you.png', '/public/images/publish-teacher-training/onboarding-wizard/ways-candidates-can-contact-you.png', '') }}
+
+  {{ designHistory.screenshot('Add your first location', 'add-your-first-location', '/public/images/publish-teacher-training/onboarding-wizard/thumbnails/add-your-first-location.png', '/public/images/publish-teacher-training/onboarding-wizard/add-your-first-location.png', '') }}
+
+  {{ designHistory.screenshot('Preferences for UCAS Apply', 'preferences-for-ucas-apply', '/public/images/publish-teacher-training/onboarding-wizard/thumbnails/preferences-for-ucas-apply.png', '/public/images/publish-teacher-training/onboarding-wizard/preferences-for-ucas-apply.png', '') }}
+
+  {{ designHistory.screenshot('Request access for people', 'request-access-for-people', '/public/images/publish-teacher-training/onboarding-wizard/thumbnails/request-access-for-people.png', '/public/images/publish-teacher-training/onboarding-wizard/request-access-for-people.png', '') }}
+
+{% endblock %}
