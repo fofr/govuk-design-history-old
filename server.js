@@ -327,6 +327,14 @@ app.use(function (req, res, next) {
     return '<div class="markdown">' + marked(t) + '</div>';
   });
 
+  nunjucksAppEnv.addFilter('fixed', function(num, length) {
+    return num < 1 ? num.toFixed(length || 1) : num.toFixed(length || 0);
+  });
+
+  nunjucksAppEnv.addGlobal('totalFromRows', function(rows) {
+    return rows.reduce((a, b) => a + b[1], 0);
+  });
+
   next()
 });
 

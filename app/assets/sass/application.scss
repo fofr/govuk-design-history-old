@@ -91,3 +91,22 @@ $button-colour: #00823b;
 .empty {
   color: govuk-colour("grey-1");
 }
+
+.progress-bar-container {
+  @include govuk-font(16);
+  position: relative;
+  height: 2em;
+}
+
+.progress-bar {
+  background: govuk-colour("yellow");
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.progress-bar-number {
+  position: absolute;
+  padding: 8px 10px;
+}

@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+{% set title = 'UCAS Apply preferences' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Providers can set preferences in NetUpdate for the way UCAS Apply behaves. NetUpdate is going away, we need to inherit and explain these preferences.</p>
+
+      <p>Providers need a way to change them too – but they don’t change them often, if at all. We might be able to handle changes through support.</p>
+
+      <p>The following numbers come from a <a href="https://docs.google.com/spreadsheets/d/11YlO-_mbXoBMdZq2rPFiu6-Api4CHHYHiza41grj94A/">Google Sheet containing raw preference data from UCAS</a>.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Format preferred for data download', id: 'format-preferred' },
+    { text: 'Outstanding decision lists (ODL)', id: 'odl' },
+    { text: 'Star J required flag', id: 'star-j' },
+    { text: 'Star X required', id: 'star-x' },
+    { text: 'New UTT application alerts', id: 'alerts' },
+    { text: 'Require copy forms', id: 'require-copy-forms' },
+    { text: 'Type of GT12 required', id: 'gt12' }
+  ] %}
+  {{ designHistory.screenshotContents(contents, 'Contents') }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" id="format-preferred">Format preferred for data download</h2>
+
+      {{ bat.barChartTable(
+        ['Value', 'Providers'],
+        [
+          ['ASCII data', 593],
+          ['Unicode data', 107],
+          ['ASCII data and unicode data', 472]
+        ]
+      )}}
+
+      <p>ASCII might be needed for old student integration systems used by universities.</p>
+
+      <p>Ideally everyone would use unicode and only unicode. Any application could contain European characters.</p>
+
+      <h2 class="govuk-heading-l" id="odl">Outstanding decision lists (ODL)</h2>
+
+      {{ bat.barChartTable(
+        ['Value', 'Providers'],
+        [
+          ['Alphabetic', 459],
+          ['Application code', 85],
+          ['Not required', 119],
+          ['Not required', 119],
+          ['Course / Alphabetic', 377],
+          ['Faculty / Course / Alphabetic', 60],
+          ['Course / Application code', 16],
+          ['Faculty / Alphabetic', 9],
+          ['Course / Learner Number', 4],
+          ['Learner Number', 4],
+          ['Faculty / Course / Application code', 6],
+          ['Faculty / Course / Learner Number', 3],
+          ['Faculty / Application code', 1]
+        ]
+      )}}
+
+      <h2 class="govuk-heading-l" id="star-j">Star J required flag</h2>
+
+      {{ bat.barChartTable(
+        ['Value', 'Providers'],
+        [
+          ['Flat File', 757],
+          ['UCAS Link', 808]
+        ]
+      )}}
+
+      <h2 class="govuk-heading-l" id="star-x">Star X required</h2>
+
+      {{ bat.barChartTable(
+        ['Value', 'Providers'],
+        [
+          ['No, not required', 532],
+          ['Yes, required', 595]
+        ]
+      )}}
+
+      <h2 class="govuk-heading-l" id="alerts">New UTT application alerts</h2>
+
+      {{ bat.barChartTable(
+        ['Value', 'Providers'],
+        [
+          ['Yes, required', 710],
+          ['No, not required', 873],
+          ['Yes - only my programmes', 99],
+          ['Yes - for accredited programmes only', 9]
+        ]
+      )}}
+
+      <h2 class="govuk-heading-l" id="require-copy-forms">Require copy forms</h2>
+
+      {{ bat.barChartTable(
+        ['Value', 'Providers'],
+        [
+          ['Yes, required', 607],
+          ['No, not required', 747]
+        ]
+      )}}
+
+      <h2 class="govuk-heading-l" id="gt12">Type of GT12 required</h2>
+
+      {{ bat.barChartTable(
+        ['Value', 'Providers'],
+        [
+          ['Coming or Not', 1206],
+          ['Coming / Enrol', 25],
+          ['Not coming', 79],
+          ['No response', 449]
+        ]
+      )}}
+    </div>
+  </div>
+{% endblock %}
