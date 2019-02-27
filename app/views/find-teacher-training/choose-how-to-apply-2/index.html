@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% set title = 'Choose how to apply – Iteration and research' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Following on from the <a href="http://localhost:3001/find-teacher-training/choose-how-to-apply">initial design</a>.</p>
+
+      <h2 class="govuk-heading-l">Design changes</h2>
+
+      <p>In this version we:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>added more context to the page with a choice</li>
+        <li>added a ‘learn more’ disclosure to the choice page</li>
+        <li>expanded the journey with further Apply pages and emails</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">User research</h2>
+
+      <p>In research users started on the Find prototype and found a course they wanted to apply to. The first time they tried to apply they saw the ‘Apply with choice’ design. After stepping through a stubbed DfE Apply journey – showing account creation, sign up emails, screenshots of the application process and a submitted screen, we returned to Find to apply to another course. The next course they found showed only the option of applying through UCAS.</p>
+
+      <p>We tested this with 14 users.</p>
+
+      <p><a href="https://lookback.io/dfe-digital/apply-tt-ua">Lookback</a></p>
+
+      <h3 class="govuk-heading-m">Key findings</h3>
+
+      <p>For people who’ve never applied to Teacher Training, when given a choice about two application services, no users were turned away by that choice. All of them would continue to apply.</p>
+
+      <p>For people who applied using DFE Apply, applying again through UCAS represents a pain point. We hypothesise that by sending applicants wishing to apply to many courses directly to UCAS we can reduce the risk of that pain point.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Prototype flow and findings', id: 'prototype-flow-and-findings' },
+    { text: 'User journey', id: 'user-journey' },
+    { text: 'Apply for this course (with choice)', id: 'apply-for-this-course-(with-choice)' },
+    { text: 'Apply for this course (without choice)', id: 'apply-for-this-course-(without-choice)' },
+    { text: 'Apply start page', id: 'apply-start-page' },
+    { text: 'Create account', id: 'create-account' },
+    { text: 'Sign up email', id: 'sign-up-email' },
+    { text: 'Application complete', id: 'application-complete' },
+    { text: 'Application submitted email', id: 'application-submitted-email' },
+    { text: 'Application rejected email', id: 'application-rejected-email' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Prototype flow and findings', 'prototype-flow-and-findings', '/public/images/find-teacher-training/choose-how-to-apply-2/thumbnails/prototype-flow-and-findings.png', '/public/images/find-teacher-training/choose-how-to-apply-2/prototype-flow-and-findings.png', '
+    <p><a href="https://docs.google.com/drawings/d/12wrGFPlEGNkG1U6Qlkx1OCHLBtGochNTBS9jMhPV7Fs/edit">Google drawing</a></p>
+  ') }}
+
+  {{ designHistory.screenshot('User journey', 'user-journey', '/public/images/find-teacher-training/choose-how-to-apply/apply-flow.svg', '/public/images/find-teacher-training/choose-how-to-apply/apply-flow.svg', '
+    <p>
+      <a href="https://docs.google.com/drawings/d/1kSIYsL1JaMADJkDT1gavtsasHTCOhZRbHMY9M4Oc9nE/edit?usp=sharing">Google drawing</a>
+    </p>
+  ') }}
+
+  {{ designHistory.screenshot('Apply for this course (with choice)', 'apply-for-this-course-(with-choice)', '/public/images/find-teacher-training/choose-how-to-apply-2/thumbnails/apply-for-this-course-(with-choice).png', '/public/images/find-teacher-training/choose-how-to-apply-2/apply-for-this-course-(with-choice).png', '') }}
+
+  {{ designHistory.screenshot('Apply for this course (without choice)', 'apply-for-this-course-(without-choice)', '/public/images/find-teacher-training/choose-how-to-apply-2/thumbnails/apply-for-this-course-(without-choice).png', '/public/images/find-teacher-training/choose-how-to-apply-2/apply-for-this-course-(without-choice).png', '') }}
+
+  {{ designHistory.screenshot('Apply start page', 'apply-start-page', '/public/images/find-teacher-training/choose-how-to-apply-2/thumbnails/apply-start-page.png', '/public/images/find-teacher-training/choose-how-to-apply-2/apply-start-page.png', '') }}
+
+  {{ designHistory.screenshot('Create account', 'create-account', '/public/images/find-teacher-training/choose-how-to-apply-2/thumbnails/create-account.png', '/public/images/find-teacher-training/choose-how-to-apply-2/create-account.png', '') }}
+
+  {{ designHistory.screenshot('Sign up email', 'sign-up-email', '/public/images/find-teacher-training/choose-how-to-apply-2/thumbnails/sign-up-email.png', '/public/images/find-teacher-training/choose-how-to-apply-2/sign-up-email.png', '') }}
+
+  {{ designHistory.screenshot('Application complete', 'application-complete', '/public/images/find-teacher-training/choose-how-to-apply-2/thumbnails/application-complete.png', '/public/images/find-teacher-training/choose-how-to-apply-2/application-complete.png', '') }}
+
+  {{ designHistory.screenshot('Application submitted email', 'application-submitted-email', '/public/images/find-teacher-training/choose-how-to-apply-2/thumbnails/application-submitted-email.png', '/public/images/find-teacher-training/choose-how-to-apply-2/application-submitted-email.png', '') }}
+
+  {{ designHistory.screenshot('Application rejected email', 'application-rejected-email', '/public/images/find-teacher-training/choose-how-to-apply-2/thumbnails/application-rejected-email.png', '/public/images/find-teacher-training/choose-how-to-apply-2/application-rejected-email.png', '') }}
+
+{% endblock %}
