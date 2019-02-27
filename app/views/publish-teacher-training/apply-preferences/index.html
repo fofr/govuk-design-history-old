@@ -59,6 +59,9 @@ unicode data.</p>
 
       <p>Ideally everyone would use unicode and only unicode. Any application could contain European characters.</p>
 
+      <h3 class="govuk-heading-m">Recommendation</h3>
+      <p>Set all new providers to ‘ASCII data and unicode data’ as UCAS recommends.</p>
+
       <h2 class="govuk-heading-l" id="odl">Outstanding decision lists (ODL)</h2>
 
       <p class="govuk-inset-text">
@@ -83,6 +86,8 @@ unicode data.</p>
         ]
       )}}
 
+      <p>What is the difference between ‘Alphabetic’ and ‘Course / Alphabetic’?</p>
+
       <h2 class="govuk-heading-l" id="star-j">Star J (*J) required flag</h2>
 
       <p class="govuk-inset-text">
@@ -94,7 +99,7 @@ Applicant Data 3). It is available after the end of the cycle.
       </p>
 
       <p>
-        <a href="https://www.hesa.ac.uk/collection/c17051/starj_specification.pdf">Star J specification</a>
+        <a href="https://www.hesa.ac.uk/collection/c16051/starj">Star J FAQ</a> and <a href="https://www.hesa.ac.uk/collection/c17051/starj_specification.pdf">Star J specification</a>
       </p>
 
       {{ bat.barChartTable(
@@ -131,6 +136,8 @@ Data, Applicant Data 2).
 application is sent to you.
       </p>
 
+      <p>Who receives the alert?</p>
+
       {{ bat.barChartTable(
         ['Value', 'Providers'],
         [
@@ -140,6 +147,11 @@ application is sent to you.
           ['Yes - for accredited programmes only', 9]
         ]
       )}}
+
+      <p>The last two options are only appropriate for accredited bodies.</p>
+
+      <h3 class="govuk-heading-m">Recommendation</h3>
+      <p>Give new providers a choice between Yes and No. Give new accredited bodies the full choice. Try to indicate who would receive these alerts and their frequency.</p>
 
       <h2 class="govuk-heading-l" id="require-copy-forms">Require copy forms</h2>
 
@@ -159,6 +171,9 @@ need to do this later.
         ]
       )}}
 
+      <h3 class="govuk-heading-m">Recommendation</h3>
+      <p>Set all new providers to “Yes, required”. This means PDFs of applications should be available if needed.</p>
+
       <h2 class="govuk-heading-l" id="gt12">Type of GT12 required</h2>
 
       <div class="govuk-inset-text">
@@ -177,6 +192,9 @@ table explains the different GT12 Confirmation letters [table excluded]</p>
           ['No response (GT12)', 449]
         ]
       )}}
+
+      <h3 class="govuk-heading-m">Recommendation</h3>
+      <p>We indicate the difference in letters to new providers and ask for their choice. We need to indicate who the emails will go to as well.</p>
     </div>
   </div>
 {% endblock %}
