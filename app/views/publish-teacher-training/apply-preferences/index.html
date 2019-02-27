@@ -37,6 +37,15 @@
     <div class="govuk-grid-column-two-thirds">
       <h2 class="govuk-heading-l" id="format-preferred">Format preferred for data download</h2>
 
+      <div class="govuk-inset-text">
+        <p>
+          Select whether or not you want to receive applicant data that includes extended character sets. These are European characters, such as á, ë, õ, not in the English alphabet.
+        </p>
+
+        <p>If you use web-link to view your applications, we recommend you select ASCll data and
+unicode data.</p>
+      </div>
+
       {{ bat.barChartTable(
         ['Value', 'Providers'],
         [
@@ -52,12 +61,15 @@
 
       <h2 class="govuk-heading-l" id="odl">Outstanding decision lists (ODL)</h2>
 
+      <p class="govuk-inset-text">
+        You can choose whether or not you want to receive an ODL sequence list. The drop-down list offers a <b>sort choice</b> of the list data. ODLs are available online in the applicant data section of web-link. You’ll find an ODL in web-link, which shows all applications awaiting a decision.
+      </p>
+
       {{ bat.barChartTable(
-        ['Value', 'Providers'],
+        ['Sort choice', 'Providers'],
         [
           ['Alphabetic', 459],
           ['Application code', 85],
-          ['Not required', 119],
           ['Not required', 119],
           ['Course / Alphabetic', 377],
           ['Faculty / Course / Alphabetic', 60],
@@ -71,7 +83,19 @@
         ]
       )}}
 
-      <h2 class="govuk-heading-l" id="star-j">Star J required flag</h2>
+      <h2 class="govuk-heading-l" id="star-j">Star J (*J) required flag</h2>
+
+      <p class="govuk-inset-text">
+        The Star J provides HESA return details for each accepted applicant
+at your training provider. It contains personal information (such as forenames, surname,
+ethnicity, and disability), as well as qualifications data, and can be downloaded from the
+applicant data section of web-link (Main Menu, Management Information, Export Data,
+Applicant Data 3). It is available after the end of the cycle.
+      </p>
+
+      <p>
+        <a href="https://www.hesa.ac.uk/collection/c17051/starj_specification.pdf">Star J specification</a>
+      </p>
 
       {{ bat.barChartTable(
         ['Value', 'Providers'],
@@ -81,7 +105,16 @@
         ]
       )}}
 
-      <h2 class="govuk-heading-l" id="star-x">Star X required</h2>
+      <h2 class="govuk-heading-l" id="star-x">Star X (*X) required</h2>
+
+      <p class="govuk-inset-text">
+        The Star X gives extra statistical information for each applicant to your
+training provider. It contains information that can be used for statistical purposes, such
+as social class and national identity. It does not contain personal information, such as
+names and addresses, which are not included in this transaction. It can be downloaded
+in the applicant data section of web-link (Main Menu, Management Information, Export
+Data, Applicant Data 2).
+      </p>
 
       {{ bat.barChartTable(
         ['Value', 'Providers'],
@@ -92,6 +125,11 @@
       )}}
 
       <h2 class="govuk-heading-l" id="alerts">New UTT application alerts</h2>
+
+      <p class="govuk-inset-text">
+        Use this to opt in to receive an email alert whenever a new
+application is sent to you.
+      </p>
 
       {{ bat.barChartTable(
         ['Value', 'Providers'],
@@ -105,6 +143,14 @@
 
       <h2 class="govuk-heading-l" id="require-copy-forms">Require copy forms</h2>
 
+      <p class="govuk-inset-text">
+        Your copy form preference should be set to Yes, required. This,
+together with the copy form setting on each training programme record, will enable
+PDFs to be created of your applications. You might not need to download the PDFs but,
+as they cannot be created retrospectively, it is better to have them available in case you
+need to do this later.
+      </p>
+
       {{ bat.barChartTable(
         ['Value', 'Providers'],
         [
@@ -115,13 +161,20 @@
 
       <h2 class="govuk-heading-l" id="gt12">Type of GT12 required</h2>
 
+      <div class="govuk-inset-text">
+        <p>You must make a selection, because it determines which type
+of Confirmation letter we send to applicants who hold a confirmed place at your training
+provider. The selection will be applied to all your training programmes. The following
+table explains the different GT12 Confirmation letters [table excluded]</p>
+      </div>
+
       {{ bat.barChartTable(
         ['Value', 'Providers'],
         [
-          ['Coming or Not', 1206],
-          ['Coming / Enrol', 25],
-          ['Not coming', 79],
-          ['No response', 449]
+          ['Coming or Not (GT12B)', 1206],
+          ['Coming / Enrol (GT12E)', 25],
+          ['Not coming (GT12N)', 79],
+          ['No response (GT12)', 449]
         ]
       )}}
     </div>
