@@ -38,7 +38,8 @@
     { text: 'Star X required', id: 'star-x' },
     { text: 'New UTT application alerts', id: 'alerts' },
     { text: 'Require copy forms', id: 'require-copy-forms' },
-    { text: 'Type of GT12 required', id: 'gt12' }
+    { text: 'Type of GT12 required', id: 'gt12' },
+    { text: 'First design', id: 'ucas-apply-preferences' }
   ] %}
   {{ designHistory.screenshotContents(contents, 'Contents') }}
 
@@ -271,6 +272,10 @@ table explains the different GT12 Confirmation letters [table excluded]</p>
 
       <h3 class="govuk-heading-m">Recommendation</h3>
       <p>We indicate the difference in letters to new providers and ask for their choice. We need to indicate who the emails will go to as well.</p>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      {{ designHistory.screenshot('UCAS Apply preferences', 'ucas-apply-preferences', '/public/images/publish-teacher-training/ucas-apply-preferences/thumbnails/ucas-apply-preferences.png', '/public/images/publish-teacher-training/ucas-apply-preferences/ucas-apply-preferences.png', '') }}
     </div>
   </div>
 {% endblock %}
