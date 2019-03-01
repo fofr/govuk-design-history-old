@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% set title = 'UCAS Apply preferences: Letters and alerts' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Following the <a href="/publish-teacher-training/apply-preferences">initial design</a>, UCAS confirmed that only the GT12 letter and the application email alert preferences were still used.</p>
+
+      <p>This design creates forms for editing those two preferences and puts a link to editing them on the organisation page.</p>
+
+      <h2 class="govuk-heading-l">GT12 Letter</h2>
+
+      <p>Only provide options for the two commonly used letters:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Applicants must confirm their place (GT12B)</li>
+        <li>Applicants don’t need to respond (GT12)</li>
+      </ul>
+
+      <p>The last two combined account for <a href="/publish-teacher-training/apply-preferences#gt12">5% of providers</a>.</p>
+
+      <p>In the UCAS supporting documentation they provider a summary of what each letter contains (the actual letter is a lot longer but the majority of that text is unchanged between the letter types). This design brings that summary alongside the choice to make the decision easier.</p>
+
+      <h3 class="govuk-heading-m">Still to design</h3>
+
+      <p>We need to capture and show the GT12 correspondent email/url field. This gets inserted into any GT12 letter template when applicants need to contact the provider to confirm something.</p>
+
+      <p>We don’t have this contact data for providers yet so we can’t see if providers more commonly use an email or a link.</p>
+
+      <h2 class="govuk-heading-l">Email alerts</h2>
+
+      <p>Bring the alert preference and the email the alerts are sent to together. When a provider says they want alerts there’s an email field to complete.</p>
+
+      <p>For this to propagate to UCAS it needs to be sent through as the email for the UTT Output corrsepondent in the API.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Organisation', id: 'organisation' },
+    { text: 'UCAS Apply preferences', id: 'ucas-apply-preferences' },
+    { text: 'Onboarding: Apply preferences preface', id: 'onboarding:-apply-preferences-preface' },
+    { text: 'Pick a letter', id: 'pick-a-letter' },
+    { text: 'Email alerts', id: 'email-alerts' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Organisation', 'organisation', '/public/images/publish-teacher-training/ucas-apply-preferences-2/thumbnails/organisation.png', '/public/images/publish-teacher-training/ucas-apply-preferences-2/organisation.png', '') }}
+
+  {{ designHistory.screenshot('UCAS Apply preferences', 'ucas-apply-preferences', '/public/images/publish-teacher-training/ucas-apply-preferences-2/thumbnails/ucas-apply-preferences.png', '/public/images/publish-teacher-training/ucas-apply-preferences-2/ucas-apply-preferences.png', '') }}
+
+  {{ designHistory.screenshot('Onboarding: Apply preferences preface', 'onboarding:-apply-preferences-preface', '/public/images/publish-teacher-training/ucas-apply-preferences-2/thumbnails/onboarding:-apply-preferences-preface.png', '/public/images/publish-teacher-training/ucas-apply-preferences-2/onboarding:-apply-preferences-preface.png', '') }}
+
+  {{ designHistory.screenshot('Pick a letter', 'pick-a-letter', '/public/images/publish-teacher-training/ucas-apply-preferences-2/thumbnails/pick-a-letter.png', '/public/images/publish-teacher-training/ucas-apply-preferences-2/pick-a-letter.png', '') }}
+
+  {{ designHistory.screenshot('Email alerts', 'email-alerts', '/public/images/publish-teacher-training/ucas-apply-preferences-2/thumbnails/email-alerts.png', '/public/images/publish-teacher-training/ucas-apply-preferences-2/email-alerts.png', '') }}
+
+{% endblock %}
