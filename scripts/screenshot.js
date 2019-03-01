@@ -15,7 +15,7 @@
 const paths = [
   { title: 'Design history index', path: '/'}
 ];
-const domain = 'https://design-history.herokuapp.com';
+const domain = 'http://localhost:3000';
 
 // Dependencies
 const webshot = require('webshot');
