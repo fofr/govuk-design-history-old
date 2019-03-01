@@ -26,7 +26,8 @@ const sharp = require('sharp');
 const directoryName = process.argv.slice(-1)[0];
 warnIfNoArguments();
 
-var title = directoryName.replace(/-/g, ' ');
+// Ignore any directories when generating a title
+var title = directoryName.split('/').pop().replace(/-/g, ' ');
 title = title.charAt(0).toUpperCase() + title.slice(1)
 const imageDirectory = `app/assets/images/${directoryName}`;
 const indexDirectory = `app/views/${directoryName}`;

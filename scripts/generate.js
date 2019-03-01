@@ -13,9 +13,10 @@ const sharp = require('sharp');
 
 // Arguments
 const directoryName = process.argv.slice(-1)[0];
-warnIfNoArguments(title);
+warnIfNoArguments();
 
-var title = directoryName.replace(/-/g, ' ');
+// Ignore any directories when generating a title
+var title = directoryName.split('/').pop().replace(/-/g, ' ');
 title = title.charAt(0).toUpperCase() + title.slice(1)
 const imageDirectory = `app/assets/images/${directoryName}`;
 const indexDirectory = `app/views/${directoryName}`;
@@ -58,7 +59,7 @@ function getExistingImages() {
   const files = fs.readdirSync(imageDirectory);
 
   files.forEach((file, index) => {
-    if (!(/^\d{2}/.test(file) && /\.(png|jpg)$/.test(file))) {
+    if (!(/\.(png|jpg)$/.test(file))) {
       console.log('Ignoring: ' + file);
       return;
     }
