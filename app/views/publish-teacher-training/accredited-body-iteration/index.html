@@ -21,11 +21,16 @@
 
   {% set contents = [
     { text: 'Who is the accredited body?', id: 'who-is-the-accredited-body' },
+    { text: 'When there are no previous accredited bodies', id: 'when-there-are-no-previous-accredited-bodies' },
     { text: 'Old design', id: 'old-design' }
   ] %}
   {{ designHistory.screenshotContents(contents) }}
 
   {{ designHistory.screenshot('Who is the accredited body?', 'who-is-the-accredited-body', '/public/images/publish-teacher-training/accredited-body-iteration/thumbnails/01-who-is-the-accredited-body.png', '/public/images/publish-teacher-training/accredited-body-iteration/01-who-is-the-accredited-body.png', '') }}
+
+  {{ designHistory.screenshot('When there are no previous accredited bodies', 'when-there-are-no-previous-accredited-bodies', '/public/images/publish-teacher-training/accredited-body-iteration/thumbnails/02-when-there-are-no-previous-accredited-bodies.png', '/public/images/publish-teacher-training/accredited-body-iteration/02-when-there-are-no-previous-accredited-bodies.png', '
+    <p>Without any previously chosen accredited bodies, this screen should default to showing only the list of all available bodies (eg What otherwise shows under the ‘A new accredited body you’re working with’).</p>
+  ') }}
 
   {{ designHistory.screenshot('Old design', 'old-design', '/public/images/publish-teacher-training/new-course-iteration-14-jan/thumbnails/08-who-is-the-accredited-body.png', '/public/images/publish-teacher-training/new-course-iteration-14-jan/08-who-is-the-accredited-body.png', '') }}
 
