@@ -26,7 +26,9 @@
     { text: 'Open course (one training location)', id: 'open-course-one-training-location' },
     { text: 'Close course validation', id: 'close-course-validation' },
     { text: 'Open course validation', id: 'open-course-validation' },
-    { text: 'Edit vacancies (multiple training locations)', id: 'edit-vacancies-multiple-training-locations' },
+    { text: 'Edit vacancies (multiple locations)', id: 'edit-vacancies-multiple-training-locations' },
+    { text: 'Edit vacancies (one location, full time or part time)', id: '05-one-location-full-time-or-part-time' },
+    { text: 'Edit vacancies (multiple locations, full time or part time)', id: '06-multiple-locations-full-time-or-part-time' },
     { text: 'Organisation', id: 'organisation' }
   ] %}
   {{ designHistory.screenshotContents(contents) }}
@@ -39,8 +41,11 @@
 
   {{ designHistory.screenshot('Open course validation', 'open-course-validation', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/thumbnails/02-open-course-validation.png', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/02-open-course-validation.png', '') }}
 
-  {{ designHistory.screenshot('Edit vacancies (multiple training locations)', 'edit-vacancies-multiple-training-locations', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/thumbnails/03-edit-vacancies-multiple-training-locations.png', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/03-edit-vacancies-multiple-training-locations.png', '') }}
+  {{ designHistory.screenshot('Edit vacancies (multiple locations)', 'edit-vacancies-multiple-training-locations', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/thumbnails/03-edit-vacancies-multiple-training-locations.png', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/03-edit-vacancies-multiple-training-locations.png', '') }}
+
+  {{ designHistory.screenshot('Edit vacancies (one location, full time or part time)', '05-one-location-full-time-or-part-time', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/thumbnails/05-one-location-full-time-or-part-time.png', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/05-one-location-full-time-or-part-time.png', '') }}
+
+  {{ designHistory.screenshot('Edit vacancies (multiple locations, full time or part time)', '06-multiple-locations-full-time-or-part-time', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/thumbnails/06-multiple-locations-full-time-or-part-time.png', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/06-multiple-locations-full-time-or-part-time.png', '') }}
 
   {{ designHistory.screenshot('Organisation', 'organisation', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/thumbnails/04-organisation.png', '/public/images/publish-teacher-training/vacancies-iteration-14-jan/04-organisation.png', '') }}
-
 {% endblock %}
