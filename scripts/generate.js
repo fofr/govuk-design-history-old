@@ -59,7 +59,7 @@ function getExistingImages() {
   const files = fs.readdirSync(imageDirectory);
 
   files.forEach((file, index) => {
-    if (!(/^\d{2}/.test(file) && /\.(png|jpg)$/.test(file))) {
+    if (!(/\.(png|jpg)$/.test(file))) {
       console.log('Ignoring: ' + file);
       return;
     }
