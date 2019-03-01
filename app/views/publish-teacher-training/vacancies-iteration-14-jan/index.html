@@ -6,6 +6,21 @@
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>An iteration on <a href="/publish-teacher-training/vacancies">an earlier design</a>.</p>
+
+      <p>In this design we:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>highlight a destructive action with a red button (eg closing a course)</li>
+        <li>add validation to closing or opening a course – some users left the page using the button</li>
+        <li>made it explicit that a course was closed because there were no vacancies</li>
+        <li>use ‘Close applications’ and ‘Re-open applications’ button text for clarity</li>
+        <li>move the Find and Apply messaging above the button to prevent it being missed</li>
+      </ul>
+    </div>
+  </div>
+
   {% set contents = [
     { text: 'Close course (one training location)', id: 'close-course-one-training-location' },
     { text: 'Open course (one training location)', id: 'open-course-one-training-location' },

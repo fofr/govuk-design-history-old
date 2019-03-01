@@ -9,6 +9,11 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      {{ govukWarningText({
+          html: 'There’s <a href="/publish-teacher-training/vacancies-iteration-14-jan">an updated design</a>',
+          iconFallbackText: 'Warning'
+      }) }}
+
       <p>We don’t know how providers use vacancies yet. This design assumes that closing a course (eg there are no vacancies at any training location) is the most common action.</p>
 
       <p>The design for editing vacancies must account for the following scenarios:</p>
@@ -23,6 +28,10 @@
       <p>Vacancies could sit within a course, alongside the enrichment fields, or separate to it. If vacancies were alongside enrichment then either; vacancies would need to be published after editing; or vacancies would behave differently to the other form. For this reason vacancies has been put elsewhere, and the design tries to make it clear that these changes will be immediate.</p>
 
       <h2 class="govuk-heading-l">User research</h2>
+
+      <p>We found that putting vacancies in the Courses table worked well – all participants were able to find the feature easily. They understood that their changes were immediate.</p>
+
+      <p>When we tried removing the message about the UCAS Apply delay it wasn’t clear to users that this would affect UCAS Apply.</p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="https://lookback.io/watch/ud8KczRqKKAexox28">Suffolk and Norfolk Primary SCITT</a></li>
