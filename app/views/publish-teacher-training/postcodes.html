@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% set title = 'Postcodes' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>We haven’t been validating postcodes in our contact addresses. This raises a few issues:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the UCAS API requires postcodes to be a certain length</li>
+        <li>our geocoding of the address will not be accurate</li>
+      </ul>
+
+      <p>There isn’t specific guidance in the design system for validating postcodes, but <a href="https://github.com/alphagov/govuk-design-system-backlog/issues/82">there’s a discussion in the backlog</a>.</p>
+
+      <p>For our case all postcodes will be in England, which avoids many of <a href="https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom#Special_cases">the special cases</a>.</p>
+
+      <p>Postcodes have an outward section, eg SW1 in SW1 1AA (maximum 4 characters), and an inward one eg 1AA in SW1 1AA (maximum 3 characters).</p>
+
+      <h2 class="govuk-heading-l">Validating postcodes</h2>
+      <p>Our validation should:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>have a maximum length of 7 characters after whitespace is removed</li>
+        <li>only allow values that contain spaces, A-Z and 0-9</li>
+      </ul>
+
+      <p>We shouldn’t use a complex regular expression (eg ordering of letters and numbers), we don’t need to use an API to check postcodes yet.</p>
+
+      <h2 class="govuk-heading-l">Storing postcodes</h2>
+      <p>UCAS restricts us to a maximum of 8 characters.</p>
+
+      <p>When storing postcodes:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>strip leading and trailing whitespace</li>
+        <li>compress any whitespace between outward and inward sections to 1 space</li>
+        <li>if there’s more than one space after compression, strip out all spaces (consider a user entering B N1 1AA or BN1 1 AA)</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">Displaying errors</h2>
+      <p>We should do <a href="https://design-system.service.gov.uk/patterns/addresses/#error-messages">what the design system recommends</a>:</p>
+
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "address-postcode",
+        name: "address-postcode",
+        value: "Somerset, UK",
+        errorMessage: {
+          text: "Enter a real postcode"
+        }
+      }) }}
+    </div>
+  </div>
+{% endblock %}
