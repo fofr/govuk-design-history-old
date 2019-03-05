@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% set title = 'Explaining transition' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>We’re communicating UCAS transition by email. Not everyone will read their email, and some of the new features will not be immediately obvious. The journey on UCAS’s side may not be ideal – we can’t rely on updated messaging or redirects.</p>
+
+      <p>We need to make it clear to all users that they must:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>stop using UCAS to manage their courses</li>
+        <li>use Publish for all course management</li>
+      </ul>
+
+      <p>We’re doing this with a page they’ll see when they first log in, much like the <a href="/publish-teacher-training/terms-agreement">‘Before you begin’ terms and conditions page</a>. After seeing it once it won’t be shown to them again.</p>
+
+      <p class="govuk-inset-text">
+        <a href="https://manage-courses-prototype.herokuapp.com/transition">Prototype</a>
+      </p>
+    </div>
+  </div>
+
+  {{ designHistory.screenshot('When an organisation is transitioned', 'when-an-organisation-is-transitioned', '/public/images/publish-teacher-training/transition-explainer/thumbnails/when-an-organisation-is-transitioned.png', '/public/images/publish-teacher-training/transition-explainer/when-an-organisation-is-transitioned.png', '
+    <p>A page transitioned organisations will see when they first log in.</p>
+  ') }}
+
+{% endblock %}
