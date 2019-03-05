@@ -42,7 +42,7 @@
       </ul>
 
       <h2 class="govuk-heading-l">Displaying errors</h2>
-      <p>We should do <a href="https://design-system.service.gov.uk/patterns/addresses/#error-messages">what the design system recommends</a>:</p>
+      <p>We need an error message that helps a user recover.</p>
 
       {{ govukInput({
         label: {
@@ -53,7 +53,33 @@
         name: "address-postcode",
         value: "Somerset, UK",
         errorMessage: {
-          text: "Enter a real postcode"
+          text: "Enter a postcode in the format ‘SW10 1AA’"
+        }
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "address-postcode",
+        name: "address-postcode",
+        value: "BN11 13SN",
+        errorMessage: {
+          text: "Postcode is too long. Enter a postcode in the format ‘SW10 1AA’"
+        }
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "address-postcode",
+        name: "address-postcode",
+        value: "BN",
+        errorMessage: {
+          text: "Postcode is too short. Enter a postcode in the format ‘SW10 1AA’"
         }
       }) }}
     </div>
