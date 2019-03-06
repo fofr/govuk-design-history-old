@@ -20,41 +20,41 @@
         <li>two cycles now available: current and next</li>
       </ul>
 
-      <h2 class="govuk-heading-l">Copying courses</h2>
+      <h2 class="govuk-heading-l">User research</h2>
+      <p>
+        <a href="https://docs.google.com/presentation/d/1JafwFWO0gDUT2wicnHhTwGJx7T0RCZuOOgzGlJcJWZU/edit#slide=id.g51d4c235e9_1_99">Playback presentation</a>. Findings are discussed alongside screenshots below.
+      </p>
 
-      <p>Previously we asked users to select the courses to copy. In research we found that most providers want to copy most, if not all, their courses. This design defaults to having every course checked.</p>
-
-      <p>If providers don’t copy any course, is that ok? They’ll need to add new ones.</p>
-
-      <h2 class="govuk-heading-l">Copying locations</h2>
-
-      <p>We haven’t tested copying locations yet but have assumed a similar need to courses – most will stay the same.</p>
-
-      <p>Any location that isn’t copied needs to be removed from every course being copied.</p>
-
-      <p>Do providers need to copy at least one location?</p>
-
-      <h3 class="govuk-heading-m">Main site</h3>
-
-      <p>While not yet shown, we might want to include a screen to rename ‘Main Site’ to something clearer.</p>
-
-      <h2 class="govuk-heading-l">On completion</h2>
-
-      <p>At the end of the wizard a new cycle is created. Users are taken to a new top-level screen. For multi-org users it sits between the Organisations page and the Organisation:</p>
-
-      <h3 class="govuk-heading-m">One cycle (eg before rollover period):</h3>
-      <ul class="govuk-list">
-        <li>Organisations</li>
-        <li>&rarr; Organisation showing courses, locations and about your or</li>
+      <p>We researched this with:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://lookback.io/watch/Dudq3X8QvtiwsNvbk">Surrey South Farnham SCITT</a></li>
+        <li><a href="https://lookback.io/watch/bKs8CaeNHE8MCdY4B">Prince Henry’s High Scool and South Worcestershire SCITT</a></li>
+        <li><a href="https://lookback.io/watch/Dg3mjn74DyCCyzxRk">Oxford University</a></li>
+        <li><a href="https://lookback.io/watch/jYqw2TnGXjM9geySx">Cabot Learning Federation SCITT</a></li>
+        <li><a href="https://lookback.io/watch/8ia5o6EEmMt3Td8DR">Edge Hill University</a></li>
+        <li><a href="https://lookback.io/watch/Kqn9JdJnrbRBoPNxG">The Northworthy Alliance</a></li>
+        <li><a href="https://lookback.io/watch/dnLAXAszhNxmFByMy">University of Exeter</a></li>
       </ul>
 
-      <h3 class="govuk-heading-m">Two cycles (eg during rollover period):</h3>
-      <ul class="govuk-list">
-        <li>Organisations</li>
-        <li>&rarr; Organisation showing two cycles</li>
-        <li>&rarr; &rarr; Cycle showing courses, locations and about your org</li>
+      <h3 class="govuk-heading-m">Repeating rollover</h3>
+      <p>2 providers wanted to go through rollover again. Reasons given were:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>any mistakes made</li>
+        <li>last minute changes</li>
+        <li>receiving unexpected allocations</li>
+        <li>a new school in their partnership</li>
+        <li>deleting courses which may not apply</li>
       </ul>
 
+      <h3 class="govuk-heading-m">Should we stick with a wizard?</h3>
+
+      <p>Providers copied all their courses and locations. They also expressed a need to repeat rollover. The route into the wizard wasn’t spotted. Using the beginning of rollover to talk about What’s new didn’t work.</p>
+
+      <p>We could copy everything, show two cycles and emphasise a new delete course feature for anything that shouldn’t be copied.</p>
+
+      <p>This is more in keeping with the way UCAS has done rollover until now. It also gives us less to build.</p>
+
+      <p>We would need to think of another way to encourage providers to review and fix their courses for the next cycle.</p>
     </div>
   </div>
 
@@ -70,17 +70,63 @@
   ] %}
   {{ designHistory.screenshotContents(contents) }}
 
-  {{ designHistory.screenshot('Organisation with rollover prompt', 'organisation-with-rollover-prompt', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/organisation-with-rollover-prompt.png', '/public/images/publish-teacher-training/rollover-wizard/organisation-with-rollover-prompt.png', '') }}
+  {{ designHistory.screenshot('Organisation with rollover prompt', 'organisation-with-rollover-prompt', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/organisation-with-rollover-prompt.png', '/public/images/publish-teacher-training/rollover-wizard/organisation-with-rollover-prompt.png', '
+    <p>This prompt and variants of it were not seen by users (6 out of 7). The route into rollover needs to be reconsidered.</p>
 
-  {{ designHistory.screenshot('Start rollover', 'start-rollover', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/start-rollover.png', '/public/images/publish-teacher-training/rollover-wizard/start-rollover.png', '') }}
+    <p>Most providers looked for rollover on the courses page.</p>
+  ') }}
 
-  {{ designHistory.screenshot('Pick courses', 'pick-courses', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/pick-courses.png', '/public/images/publish-teacher-training/rollover-wizard/pick-courses.png', '') }}
+  {{ designHistory.screenshot('Start rollover', 'start-rollover', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/start-rollover.png', '/public/images/publish-teacher-training/rollover-wizard/start-rollover.png', '
+    <p>The purpose of rollover was clear. Rollover was a term providers recognised.</p>
+    <p>While we didn’t spend time iterating the content under ‘What’s new’, this section mostly confused users.</p>
+  ') }}
 
-  {{ designHistory.screenshot('Pick locations', 'pick-locations', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/pick-locations.png', '/public/images/publish-teacher-training/rollover-wizard/pick-locations.png', '') }}
+  {{ designHistory.screenshot('Pick courses', 'pick-courses', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/pick-courses.png', '/public/images/publish-teacher-training/rollover-wizard/pick-courses.png', '
+    <h3 class="govuk-heading-m">Copying courses</h3>
+
+    <p>Originally we asked users to select the courses to copy. We found that most providers want to copy most, if not all, their courses. This design defaults to having every course checked. It has tested well.</p>
+
+    <p>If providers don’t copy any course, is that ok? They’ll need to add new ones. Everyone we tested with copied at least one course.</p>
+  ') }}
+
+  {{ designHistory.screenshot('Pick locations', 'pick-locations', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/pick-locations.png', '/public/images/publish-teacher-training/rollover-wizard/pick-locations.png', '
+    <h3 class="govuk-heading-m">Copying locations</h3>
+
+    <p>Before we tested copying locations we assumed a similar need to courses – that most will stay the same. This tested well.</p>
+
+    <p>Any location that isn’t copied needs to be removed from every course being copied.</p>
+
+    <p>Do providers need to copy at least one location? Everyone we tested with copied at least one location.</p>
+
+    <h4 class="govuk-heading-s">Main site</h4>
+
+    <p>While not yet shown, we might want to include a screen to rename ‘Main Site’ to something clearer.</p>
+
+    <p>The locations screen prompted providers to review their location names.</p>
+  ') }}
 
   {{ designHistory.screenshot('Confirm', 'confirm', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/confirm.png', '/public/images/publish-teacher-training/rollover-wizard/confirm.png', '') }}
 
-  {{ designHistory.screenshot('Organisation after rollover', 'organisation-after-rollover', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/organisation-after-rollover.png', '/public/images/publish-teacher-training/rollover-wizard/organisation-after-rollover.png', '') }}
+  {{ designHistory.screenshot('Organisation after rollover', 'organisation-after-rollover', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/organisation-after-rollover.png', '/public/images/publish-teacher-training/rollover-wizard/organisation-after-rollover.png', '
+    <h3 class="govuk-heading-m">On completion</h3>
+
+    <p>At the end of the wizard a new cycle is created. Users are taken to a new top-level screen. For multi-org users it sits between the Organisations page and the Organisation. The page showing two cycles tested well.</p>
+
+    <h4 class="govuk-heading-s">One cycle (eg before rollover period):</h4>
+    <ul class="govuk-list">
+      <li>Organisations</li>
+      <li>&rarr; Organisation showing courses, locations and about your or</li>
+    </ul>
+
+    <h4 class="govuk-heading-s">Two cycles (eg during rollover period):</h4>
+    <ul class="govuk-list">
+      <li>Organisations</li>
+      <li>&rarr; Organisation showing two cycles</li>
+      <li>&rarr; &rarr; Cycle showing courses, locations and about your org</li>
+    </ul>
+
+    <p>Providers liked this page and liked being able to edit both cycles at once.</p>
+  ') }}
 
   {{ designHistory.screenshot('Current cycle after rollover', 'current-cycle-after-rollover', '/public/images/publish-teacher-training/rollover-wizard/thumbnails/current-cycle-after-rollover.png', '/public/images/publish-teacher-training/rollover-wizard/current-cycle-after-rollover.png', '') }}
 
