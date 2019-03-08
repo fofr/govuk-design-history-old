@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% set title = 'Ucas contacts' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'UCAS Apply preferences with contacts section', id: 'ucas-apply-preferences-with-contacts-section' }, 
+    { text: 'Contacts captured during onboarding', id: 'contacts-captured-during-onboarding' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+  
+  {{ designHistory.screenshot('UCAS Apply preferences with contacts section', 'ucas-apply-preferences-with-contacts-section', '/public/images/publish-teacher-training/ucas-contacts/thumbnails/ucas-apply-preferences-with-contacts-section.png', '/public/images/publish-teacher-training/ucas-contacts/ucas-apply-preferences-with-contacts-section.png', '') }}
+
+  {{ designHistory.screenshot('Contacts captured during onboarding', 'contacts-captured-during-onboarding', '/public/images/publish-teacher-training/ucas-contacts/thumbnails/contacts-captured-during-onboarding.png', '/public/images/publish-teacher-training/ucas-contacts/contacts-captured-during-onboarding.png', '') }}
+
+{% endblock %}

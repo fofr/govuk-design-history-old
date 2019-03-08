@@ -15,6 +15,7 @@
         <li>finance</li>
         <li>web-link details (downtime, changes, etc)</li>
         <li>correspondent for UCAS monthly bulletins, etc</li>
+        <li>new application alerts</li>
         <li>recipient of GT12 letter responses from successful applicants</li>
       </ul>
 
@@ -36,6 +37,28 @@
       <p>
         <a href="https://docs.google.com/drawings/d/1VByaLgK24Kt4ZFgYmdHGlxfRtI10KX24VHApCEsSHK4/edit">Google diagram</a> showing possible workflow.
       </p>
+
+      <h2 class="govuk-heading-l">Design notes</h2>
+
+      <p>UTT Correspondent is being captured as UCAS Correspondent.</p>
+
+      <p>The UCAS correspondent will also be used as the web-link contact.</p>
+
+      <p>The application alerts contact is captured if a user asks to receive alerts.</p>
+
+      <p>The recipient of the GT12 responses is knowingly missing. It needs to be added.</p>
+
+      <p>Telephone numbers have been removed. We only need to capture emails.</p>
     </div>
   </div>
+
+  {% set contents = [
+    { text: 'UCAS Apply preferences with contacts section', id: 'ucas-apply-preferences-with-contacts-section' },
+    { text: 'Contacts captured during onboarding', id: 'contacts-captured-during-onboarding' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('UCAS Apply preferences with contacts section', 'ucas-apply-preferences-with-contacts-section', '/public/images/publish-teacher-training/ucas-contacts/thumbnails/ucas-apply-preferences-with-contacts-section.png', '/public/images/publish-teacher-training/ucas-contacts/ucas-apply-preferences-with-contacts-section.png', '') }}
+
+  {{ designHistory.screenshot('Contacts captured during onboarding', 'contacts-captured-during-onboarding', '/public/images/publish-teacher-training/ucas-contacts/thumbnails/contacts-captured-during-onboarding.png', '/public/images/publish-teacher-training/ucas-contacts/contacts-captured-during-onboarding.png', '') }}
 {% endblock %}
