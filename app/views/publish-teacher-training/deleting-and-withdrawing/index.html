@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% set title = 'Deleting and withdrawing' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Deleting a course entirely removes it, it won’t be in the courses table. Providers can only delete courses that haven’t been published in this cycle. Deletions are soft – a developer should be able to restore a course that a provider deletes by mistake.</p>
+
+      <p>Withdrawing is for courses that have already been published. Withdrawing a course removes it from Find and closes applications. Providers can’t published it again in this cycle, they might need to reuse the course in a subsequent one. A developer should be able to re-publish a course withdrawn by mistake.</p>
+
+      <h2 class="govuk-heading-l">Why both?</h2>
+
+      <p>We hypothesise that the two actions meet different needs.</p>
+
+      <p>Deleting is for cleaning up your list of courses, usually around the time of rollover. The impact is relatively minor.</p>
+
+      <p>Withdrawing is for taking down a course that shouldn’t be applied to. It should remain in the courses table so that it’s clear what has been published this cycle and what people might have applied to. The course might run again in the future. Or it can be deleted in the next cycle.</p>
+
+      <p>We need to test these assumptions with users.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Course that can be deleted', id: 'course-that-can-be-deleted' },
+    { text: 'Delete this course', id: 'delete-this-course' },
+    { text: 'Course that can be withdrawn', id: 'course-that-can-be-withdrawn' },
+    { text: 'Withdraw this course', id: 'withdraw-this-course' },
+    { text: 'A withdrawn course', id: 'a-withdrawn-course' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Course that can be deleted', 'course-that-can-be-deleted', '/public/images/publish-teacher-training/deleting-and-withdrawing/thumbnails/course-that-can-be-deleted.png', '/public/images/publish-teacher-training/deleting-and-withdrawing/course-that-can-be-deleted.png', '
+    <p>Delete link has been added to the bottom of the status column.</p>
+  ') }}
+
+  {{ designHistory.screenshot('Delete this course', 'delete-this-course', '/public/images/publish-teacher-training/deleting-and-withdrawing/thumbnails/delete-this-course.png', '/public/images/publish-teacher-training/deleting-and-withdrawing/delete-this-course.png', '
+    <p>Avoid deleting a course by accident by:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>adding an interaction to prevent people using the button simply to leave the page</li>
+      <li>asking for the current course code to confirm it’s the right course being deleted</li>
+    </ul>
+  ') }}
+
+  {{ designHistory.screenshot('Course that can be withdrawn', 'course-that-can-be-withdrawn', '/public/images/publish-teacher-training/deleting-and-withdrawing/thumbnails/course-that-can-be-withdrawn.png', '/public/images/publish-teacher-training/deleting-and-withdrawing/course-that-can-be-withdrawn.png', '
+    <p>Withdraw section added to the bottom of the status column.</p>
+  ') }}
+
+  {{ designHistory.screenshot('Withdraw this course', 'withdraw-this-course', '/public/images/publish-teacher-training/deleting-and-withdrawing/thumbnails/withdraw-this-course.png', '/public/images/publish-teacher-training/deleting-and-withdrawing/withdraw-this-course.png', '
+    <p>Because wihdrawing takes a course down, we ask for a reason why. Some providers suspended courses in UCAS to close applications when they were full. We explicitly call out this behaviour and ask them to use the vacancies feature instead.</p>
+
+    <p>Avoid withdrawing a course by accident by:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>adding an interaction to prevent people using the button simply to leave the page</li>
+      <li>asking for the current course code to confirm it’s the right course being withdrawn</li>
+    </ul>
+  ') }}
+
+  {{ designHistory.screenshot('A withdrawn course', 'a-withdrawn-course', '/public/images/publish-teacher-training/deleting-and-withdrawing/thumbnails/a-withdrawn-course.png', '/public/images/publish-teacher-training/deleting-and-withdrawing/a-withdrawn-course.png', '') }}
+{% endblock %}
