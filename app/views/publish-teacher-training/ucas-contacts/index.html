@@ -1,19 +1,89 @@
 {% extends "layout.html" %}
-{% set title = 'Ucas contacts' %}
+{% set title = 'UCAS contacts' %}
 {% block pageTitle %}{{ title }}{% endblock %}
 {% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>UCAS keeps contact details for the following purposes:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>fraud</li>
+        <li>finance</li>
+        <li>web-link details (downtime, changes, etc)</li>
+        <li>correspondent for UCAS monthly bulletins, etc</li>
+        <li>new application alerts</li>
+        <li>recipient of GT12 letter responses from successful applicants</li>
+      </ul>
+
+      <p>From what we know, UCAS haven’t collected permission to share these contacts with us. This means that because of GDPR they can’t give us any contact details containing personally identifiable information.</p>
+
+      <p>The interface for seeing and editing these contact details is going away in UCAS. DfE is becoming responsible for them.</p>
+
+      <p>We need to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>capture these details for new providers</li>
+        <li>allow existing providers to set new contacts</li>
+        <li>indicate to providers that they can request existing information from UCAS</li>
+        <li>request permission to share details with UCAS</li>
+        <li>share details with UCAS via the API</li>
+      </ul>
+
+      <p>We don’t know if UCAS is willing to request permission from providers to share existing contacts with DfE.</p>
+
+      <p>We confirmed with UCAS that:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>providers can only have one contact for each type</li>
+        <li>the majority of the time the same person is the named contact for all contacts</li>
+        <li>UTT correspondent and fraud correspondent require name and telephone numbers</li>
+      </ul>
+
+      <p>
+        <a href="https://docs.google.com/drawings/d/1VByaLgK24Kt4ZFgYmdHGlxfRtI10KX24VHApCEsSHK4/edit">Google diagram</a> showing possible workflow.
+      </p>
+
+      <h2 class="govuk-heading-l">Design notes</h2>
+
+      <p>We wanted to capture UTT Correspondent as UCAS Correspondent for clarity, but UCAS pointed out they have a separate contact used elsewhere in their systems called UCAS Correspondent.</p>
+
+      <p>The application alerts contact is captured when users asks to receive alerts.</p>
+
+      <p>The GT12 reply to contact is captured when users edit their letter template.</p>
+    </div>
+  </div>
+
   {% set contents = [
-    { text: 'UCAS Apply preferences with contacts section', id: 'ucas-apply-preferences-with-contacts-section' }, 
-    { text: 'Contacts captured during onboarding', id: 'contacts-captured-during-onboarding' }
+    { text: 'UCAS Apply settings', id: 'ucas-apply-settings' },
+    { text: 'UTT Correspondent', id: 'utt-correspondent' },
+    { text: 'web-link correspondent', id: 'web-link-correspondent' },
+    { text: 'Finance contact', id: 'finance-contact' },
+    { text: 'Fraud contact', id: 'fraud-contact' },
+    { text: 'Pick a letter for successful applicants', id: 'pick-a-letter-for-successful-applicants' },
+    { text: 'Email alerts for new applications', id: 'email-alerts-for-new-applications' },
+    { text: 'Old design: UCAS Apply preferences with contacts section', id: 'ucas-apply-preferences-with-contacts-section' },
+    { text: 'Old design: Contacts captured during onboarding', id: 'contacts-captured-during-onboarding' }
   ] %}
   {{ designHistory.screenshotContents(contents) }}
-  
-  {{ designHistory.screenshot('UCAS Apply preferences with contacts section', 'ucas-apply-preferences-with-contacts-section', '/public/images/publish-teacher-training/ucas-contacts/thumbnails/ucas-apply-preferences-with-contacts-section.png', '/public/images/publish-teacher-training/ucas-contacts/ucas-apply-preferences-with-contacts-section.png', '') }}
 
-  {{ designHistory.screenshot('Contacts captured during onboarding', 'contacts-captured-during-onboarding', '/public/images/publish-teacher-training/ucas-contacts/thumbnails/contacts-captured-during-onboarding.png', '/public/images/publish-teacher-training/ucas-contacts/contacts-captured-during-onboarding.png', '') }}
+  {{ designHistory.screenshot('UCAS Apply settings', 'ucas-apply-settings', '/public/images/publish-teacher-training/ucas-contacts/thumbnails/ucas-apply-settings.png', '/public/images/publish-teacher-training/ucas-contacts/ucas-apply-settings.png', '') }}
+
+  {{ designHistory.screenshot('UTT Correspondent', 'utt-correspondent', '/public/images/publish-teacher-training/ucas-contacts/thumbnails/utt-correspondent.png', '/public/images/publish-teacher-training/ucas-contacts/utt-correspondent.png', '') }}
+
+  {{ designHistory.screenshot('web-link correspondent', 'web-link-correspondent', '/public/images/publish-teacher-training/ucas-contacts/thumbnails/web-link-correspondent.png', '/public/images/publish-teacher-training/ucas-contacts/web-link-correspondent.png', '') }}
+
+  {{ designHistory.screenshot('Finance contact', 'finance-contact', '/public/images/publish-teacher-training/ucas-contacts/thumbnails/finance-contact.png', '/public/images/publish-teacher-training/ucas-contacts/finance-contact.png', '') }}
+
+  {{ designHistory.screenshot('Fraud contact', 'fraud-contact', '/public/images/publish-teacher-training/ucas-contacts/thumbnails/fraud-contact.png', '/public/images/publish-teacher-training/ucas-contacts/fraud-contact.png', '') }}
+
+  {{ designHistory.screenshot('Pick a letter for successful applicants', 'pick-a-letter-for-successful-applicants', '/public/images/publish-teacher-training/ucas-contacts/thumbnails/pick-a-letter-for-successful-applicants.png', '/public/images/publish-teacher-training/ucas-contacts/pick-a-letter-for-successful-applicants.png', '') }}
+
+  {{ designHistory.screenshot('Email alerts for new applications', 'email-alerts-for-new-applications', '/public/images/publish-teacher-training/ucas-contacts/thumbnails/email-alerts-for-new-applications.png', '/public/images/publish-teacher-training/ucas-contacts/email-alerts-for-new-applications.png', '') }}
+
+  {{ designHistory.screenshot('Old design: UCAS Apply preferences with contacts section', 'ucas-apply-preferences-with-contacts-section', '/public/images/publish-teacher-training/ucas-contacts/thumbnails/ucas-apply-preferences-with-contacts-section.png', '/public/images/publish-teacher-training/ucas-contacts/ucas-apply-preferences-with-contacts-section.png', '') }}
+
+  {{ designHistory.screenshot('Old design: Contacts captured during onboarding', 'contacts-captured-during-onboarding', '/public/images/publish-teacher-training/ucas-contacts/thumbnails/contacts-captured-during-onboarding.png', '/public/images/publish-teacher-training/ucas-contacts/contacts-captured-during-onboarding.png', '') }}
 
 {% endblock %}
