@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set title = 'UCAS contacts' %}
+{% set title = 'UCAS settings and contacts' %}
 {% block pageTitle %}{{ title }}{% endblock %}
 {% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
@@ -8,6 +8,10 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <p>An <a href="/publish-teacher-training/ucas-apply-preferences-2">update to the UCAS settings design</a> to include UCAS contacts.</p>
+
+      <h2 class="govuk-heading-l">Contacts</h2>
+
       <p>UCAS keeps contact details for the following purposes:</p>
 
       <ul class="govuk-list govuk-list--bullet">
@@ -45,7 +49,7 @@
         <a href="https://docs.google.com/drawings/d/1VByaLgK24Kt4ZFgYmdHGlxfRtI10KX24VHApCEsSHK4/edit">Google diagram</a> showing possible workflow.
       </p>
 
-      <h2 class="govuk-heading-l">Design notes</h2>
+      <h3 class="govuk-heading-m">Design notes</h3>
 
       <p>We wanted to capture UTT Correspondent as UCAS Correspondent for clarity, but UCAS pointed out they have a separate contact used elsewhere in their systems called UCAS Correspondent.</p>
 

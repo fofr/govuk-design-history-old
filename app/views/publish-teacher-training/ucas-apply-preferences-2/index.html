@@ -8,6 +8,11 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      {{ govukWarningText({
+        html: '<a href="/publish-teacher-training/ucas-contacts">This design has been updated to include contacts</a>',
+        iconFallbackText: 'Warning'
+      }) }}
+
       <p>Following the <a href="/publish-teacher-training/apply-preferences">initial design</a>, UCAS confirmed that only the GT12 letter and the application email alert preferences were still used.</p>
 
       <p>This design creates forms for editing those two preferences and puts a link to editing them on the organisation page.</p>
