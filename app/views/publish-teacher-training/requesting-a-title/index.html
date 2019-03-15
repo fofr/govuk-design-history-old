@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% set title = 'Requesting a title' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'Confirming a course with requested title', id: 'confirming-a-course-with-requested-title' },
+    { text: 'Course created with title request', id: 'course-created-with-title-request' },
+    { text: 'Courses table showing requested title', id: 'courses-table-showing-requested-title' },
+    { text: 'A course with a pending title request', id: 'a-course-with-a-pending-title-request' },
+    { text: 'Email: Title approved', id: 'approved' },
+    { text: 'Email: Title not approved', id: 'not-approved' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Confirming a course with requested title', 'confirming-a-course-with-requested-title', '/public/images/publish-teacher-training/requesting-a-title/thumbnails/confirming-a-course-with-requested-title.png', '/public/images/publish-teacher-training/requesting-a-title/confirming-a-course-with-requested-title.png', '
+    <p>This shows a ‘requested title’, which is also shown in the preview.</p>
+    <p>We probably also need to include the current title somewhere.</p>
+  ') }}
+
+  {{ designHistory.screenshot('Course created with title request', 'course-created-with-title-request', '/public/images/publish-teacher-training/requesting-a-title/thumbnails/course-created-with-title-request.png', '/public/images/publish-teacher-training/requesting-a-title/course-created-with-title-request.png', '
+    <p>In research we’ve seen providers ask about timescales. How long will a request take?</p>
+  ') }}
+
+  {{ designHistory.screenshot('Courses table showing requested title', 'courses-table-showing-requested-title', '/public/images/publish-teacher-training/requesting-a-title/thumbnails/courses-table-showing-requested-title.png', '/public/images/publish-teacher-training/requesting-a-title/courses-table-showing-requested-title.png', '') }}
+
+  {{ designHistory.screenshot('A course with a pending title request', 'a-course-with-a-pending-title-request', '/public/images/publish-teacher-training/requesting-a-title/thumbnails/a-course-with-a-pending-title-request.png', '/public/images/publish-teacher-training/requesting-a-title/a-course-with-a-pending-title-request.png', '') }}
+
+  <h2 class="govuk-heading-l" id="approved">Email: Title approved</h2>
+
+  <p><a href="https://docs.google.com/document/d/1d826D4c74V0MJ6UtuEOPDtmPn94nuoZWh58UsCGRlDI/edit">Google doc</a></p>
+
+  {% set content %}
+Dear colleague,
+
+Your request to change the title of course [insert code] has been approved. The course is now listed in Find postgraduate teacher training as [insert new name]. [OR:] The course will be listed in Find postgraduate teacher training as [insert new name] as soon as you publish it.
+
+Regards,
+Becoming a Teacher team
+  {% endset %}
+
+  {{ bat.email('Your course title has been approved', content) }}
+
+  <h2 class="govuk-heading-l govuk-!-margin-top-9" id="not-approved">Email: Title not approved</h2>
+
+  <p><a href="https://docs.google.com/document/d/1d826D4c74V0MJ6UtuEOPDtmPn94nuoZWh58UsCGRlDI/edit">Google doc</a></p>
+
+  {% set content %}
+Dear colleague,
+
+Your request to change the title of course [insert code] has not been approved, as your suggested title does not meet our guidelines. [IF published:] The course will continue to be listed in Find postgraduate teacher training as [insert name].
+
+You can still change the course title in Publish teacher training courses, but please follow the guidelines to ensure that your request is approved.
+
+Regards,
+Becoming a Teacher team
+  {% endset %}
+
+  {{ bat.email('Your course title has not been approved ', content) }}
+{% endblock %}
