@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% set title = 'Tabs on course pages' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>An iteration on <a href="/publish-teacher-training/course-tabs#old-course-design">the previous design</a> where course details and enrichments were shown together.</p>
+
+      <p>When updating course details, if the course has been published, the changes will be immediate. Showing this information alongside content that needs to be re-published if it changes creates a conflict.</p>
+
+      <p>By splitting the page into tabs we:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>replace the often missed ‘Edit course information’ link with many change links</li>
+        <li>more clearly indicate what can and can’t be changed after publishing</li>
+        <li>create a space to try and explain this</li>
+        <li>separate fields that need publishing and those that publish immediately</li>
+        <li>reduce the length of the page</li>
+      </ul>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'An unpublished course', id: 'course-with-tabs-(description)' },
+    { text: 'An unpublished course – Edit course details', id: 'edit-course-details' },
+    { text: 'After editing – check your answers (not yet published)', id: 'after-editing-–-check-your-answers-(not-yet-published)' },
+    { text: 'A published course', id: 'a-published-course' },
+    { text: 'A published course – Edit course details', id: 'edit-course-details-(published)' },
+    { text: 'After editing – check your answers (published)', id: 'after-editing-–-check-your-answers-(published)' },
+    { text: 'Old course design', id: 'old-course-design' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {% set contents = [
+    { text: 'After editing – check your answers (published)', id: 'after-editing-–-check-your-answers-(published)' },
+    { text: 'After editing – check your answers (not yet published)', id: 'after-editing-–-check-your-answers-(not-yet-published)' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('An unpublished course', 'course-with-tabs-(description)', '/public/images/publish-teacher-training/course-tabs/thumbnails/course-with-tabs-(description).png', '/public/images/publish-teacher-training/course-tabs/course-with-tabs-(description).png', '') }}
+
+  {{ designHistory.screenshot('An unpublished course – Edit course details', 'edit-course-details', '/public/images/publish-teacher-training/course-tabs/thumbnails/edit-course-details.png', '/public/images/publish-teacher-training/course-tabs/edit-course-details.png', '') }}
+
+  {{ designHistory.screenshot('After editing – check your answers (not yet published)', 'after-editing-–-check-your-answers-(not-yet-published)', '/public/images/publish-teacher-training/course-tabs/thumbnails/after-editing-–-check-your-answers-(not-yet-published).png', '/public/images/publish-teacher-training/course-tabs/after-editing-–-check-your-answers-(not-yet-published).png', '') }}
+
+  {{ designHistory.screenshot('A published course', 'a-published-course', '/public/images/publish-teacher-training/course-tabs/thumbnails/a-published-course.png', '/public/images/publish-teacher-training/course-tabs/a-published-course.png', '') }}
+
+  {{ designHistory.screenshot('A published course – Edit course details', 'edit-course-details-(published)', '/public/images/publish-teacher-training/course-tabs/thumbnails/edit-course-details-(published).png', '/public/images/publish-teacher-training/course-tabs/edit-course-details-(published).png', '') }}
+
+  {{ designHistory.screenshot('After editing – check your answers (published)', 'after-editing-–-check-your-answers-(published)', '/public/images/publish-teacher-training/course-tabs/thumbnails/after-editing-–-check-your-answers-(published).png', '/public/images/publish-teacher-training/course-tabs/after-editing-–-check-your-answers-(published).png', '') }}
+
+  {{ designHistory.screenshot('Old course design', 'old-course-design', '/public/images/publish-teacher-training/deleting-and-withdrawing/thumbnails/course-that-can-be-deleted.png', '/public/images/publish-teacher-training/deleting-and-withdrawing/course-that-can-be-deleted.png', '
+    <p>Delete link has been added to the bottom of the status column.</p>
+  ') }}
+
+{% endblock %}
