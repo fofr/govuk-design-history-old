@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% set title = 'New course wizard – As a Google Form' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>We don’t expect to build the new course wizard in time for transition.</p>
+
+      <p>As an MVP, and so that providers can still add courses when they need to, we’ve mirrored the wizard as a Google Form. We can ask the same questions and capture what we need, trigger a support request and then manually create what is asked for. Before rollover we expect new course volume to be small.</p>
+
+      <p>Parts of this journey we know will be harder:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>adding multiple locations</li>
+        <li>adding an accredited body</li>
+        <li>requesting a title (we can’t generate an ideal title to show them)</li>
+      </ul>
+
+      <p>Users expect a swift response from support, and to have their course available in Publish as soon as possible.</p>
+
+      <p>There are four Google Forms:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>school direct – current cycle</li>
+        <li>school direct – next cycle</li>
+        <li>university or SCITT – current cycle</li>
+        <li>university or SCITT – next cycle</li>
+      </ul>
+
+      <p>They follow the <a href="https://docs.google.com/drawings/d/1DAhz464j1XDyQPoOH0adIwAceUwuGU1rqsWkVn8ZQ8I/edit">original new course wizard workflow</a>.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Request a new course', id: 'request-a-new-course' },
+    { text: 'Add a new course to publish teacher training courses', id: '01-add-a-new-course-to-publish-teacher-training-courses' },
+    { text: 'What type of course', id: '02-what-type-of-course' },
+    { text: 'Primary subject', id: '03-primary-subject' },
+    { text: 'Secondary subject', id: '04-secondary-subject' },
+    { text: 'Modern languages', id: '05-modern-languages' },
+    { text: 'Outcomes', id: '06-outcomes' },
+    { text: 'Finances', id: '07-finances' },
+    { text: 'Full time or part time', id: '08-full-time-or-part-time' },
+    { text: 'Locations', id: '09-locations' },
+    { text: 'Accredited body', id: '10-accredited-body' },
+    { text: 'Minimum GCSE requirements', id: '11-minimum-gcse-requirements' },
+    { text: 'Application open date', id: '12-application-open-date' },
+    { text: 'Start date', id: '12-start-date' },
+    { text: 'Title', id: '13-title' },
+    { text: 'Submitted', id: '14-submitted' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Request a new course', 'request-a-new-course', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/request-a-new-course.png', '/public/images/publish-teacher-training/new-course-google-form/request-a-new-course.png', '') }}
+
+  {{ designHistory.screenshot('Add a new course to publish teacher training courses', '01-add-a-new-course-to-publish-teacher-training-courses', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/01-add-a-new-course-to-publish-teacher-training-courses.png', '/public/images/publish-teacher-training/new-course-google-form/01-add-a-new-course-to-publish-teacher-training-courses.png', '') }}
+
+  {{ designHistory.screenshot('What type of course', '02-what-type-of-course', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/02-what-type-of-course.png', '/public/images/publish-teacher-training/new-course-google-form/02-what-type-of-course.png', '') }}
+
+  {{ designHistory.screenshot('Primary subject', '03-primary-subject', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/03-primary-subject.png', '/public/images/publish-teacher-training/new-course-google-form/03-primary-subject.png', '') }}
+
+  {{ designHistory.screenshot('Secondary subject', '04-secondary-subject', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/04-secondary-subject.png', '/public/images/publish-teacher-training/new-course-google-form/04-secondary-subject.png', '') }}
+
+  {{ designHistory.screenshot('Modern languages', '05-modern-languages', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/05-modern-languages.png', '/public/images/publish-teacher-training/new-course-google-form/05-modern-languages.png', '') }}
+
+  {{ designHistory.screenshot('Outcomes', '06-outcomes', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/06-outcomes.png', '/public/images/publish-teacher-training/new-course-google-form/06-outcomes.png', '') }}
+
+  {{ designHistory.screenshot('Finances', '07-finances', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/07-finances.png', '/public/images/publish-teacher-training/new-course-google-form/07-finances.png', '') }}
+
+  {{ designHistory.screenshot('Full time or part time', '08-full-time-or-part-time', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/08-full-time-or-part-time.png', '/public/images/publish-teacher-training/new-course-google-form/08-full-time-or-part-time.png', '') }}
+
+  {{ designHistory.screenshot('Locations', '09-locations', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/09-locations.png', '/public/images/publish-teacher-training/new-course-google-form/09-locations.png', '') }}
+
+  {{ designHistory.screenshot('Accredited body', '10-accredited-body', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/10-accredited-body.png', '/public/images/publish-teacher-training/new-course-google-form/10-accredited-body.png', '') }}
+
+  {{ designHistory.screenshot('Minimum GCSE requirements', '11-minimum-gcse-requirements', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/11-minimum-gcse-requirements.png', '/public/images/publish-teacher-training/new-course-google-form/11-minimum-gcse-requirements.png', '') }}
+
+  {{ designHistory.screenshot('Application open date', '12-application-open-date', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/12-application-open-date.png', '/public/images/publish-teacher-training/new-course-google-form/12-application-open-date.png', '') }}
+
+  {{ designHistory.screenshot('Start date', '12-start-date', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/12-start-date.png', '/public/images/publish-teacher-training/new-course-google-form/12-start-date.png', '') }}
+
+  {{ designHistory.screenshot('Title', '13-title', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/13-title.png', '/public/images/publish-teacher-training/new-course-google-form/13-title.png', '') }}
+
+  {{ designHistory.screenshot('Submitted', '14-submitted', '/public/images/publish-teacher-training/new-course-google-form/thumbnails/14-submitted.png', '/public/images/publish-teacher-training/new-course-google-form/14-submitted.png', '') }}
+
+{% endblock %}
