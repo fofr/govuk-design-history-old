@@ -16,11 +16,13 @@
         <li>Remove subject choice, instead defaulting to legal minimums. Page only asks for preference</li>
         <li>Make it clearer that this affects UCAS Apply</li>
         <li>Simplify preference choice using a table</li>
+        <li>Remove table and switch to two questions</li>
       </ul>
     </div>
   </div>
 
   {% set contents = [
+    { text: 'Two questions', id: 'two-questions' },
     { text: 'Options in a table', id: 'options-in-a-table' },
     { text: 'Explicitly reference UCAS', id: 'explicitly-reference-ucas' },
     { text: 'Pick an option, remove subject choice', id: 'pick-an-option' },
@@ -28,6 +30,8 @@
     { text: 'Original design', id: 'minimum-course-requirements' }
   ] %}
   {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Two questions', 'two-questions', '/public/images/publish-teacher-training/minimum-requirements-iterations/thumbnails/two-questions.png', '/public/images/publish-teacher-training/minimum-requirements-iterations/two-questions.png', '') }}
 
   {{ designHistory.screenshot('Options in a table', 'options-in-a-table', '/public/images/publish-teacher-training/minimum-requirements-iterations/thumbnails/01-options-in-a-table.png', '/public/images/publish-teacher-training/minimum-requirements-iterations/01-options-in-a-table.png', '') }}
 
