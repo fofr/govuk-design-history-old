@@ -34,12 +34,6 @@
   ] %}
   {{ designHistory.screenshotContents(contents) }}
 
-  {% set contents = [
-    { text: 'After editing – check your answers (published)', id: 'after-editing-–-check-your-answers-(published)' },
-    { text: 'After editing – check your answers (not yet published)', id: 'after-editing-–-check-your-answers-(not-yet-published)' }
-  ] %}
-  {{ designHistory.screenshotContents(contents) }}
-
   {{ designHistory.screenshot('An unpublished course', 'course-with-tabs-(description)', '/public/images/publish-teacher-training/course-tabs/thumbnails/course-with-tabs-(description).png', '/public/images/publish-teacher-training/course-tabs/course-with-tabs-(description).png', '') }}
 
   {{ designHistory.screenshot('An unpublished course – Edit course details', 'edit-course-details', '/public/images/publish-teacher-training/course-tabs/thumbnails/edit-course-details.png', '/public/images/publish-teacher-training/course-tabs/edit-course-details.png', '') }}
