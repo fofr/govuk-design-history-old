@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% set title = 'New location  – As a Google Form' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Like <a href="/publish-teacher-training/new-course-google-form">new courses</a>, we don’t expect to build the new location features in time for transition.</p>
+
+      <p>As an MVP, and so that providers can still add locations when they need to, we’ve mirrored the page as a Google Form. We can ask the same questions and capture what we need, trigger a support request and then manually create what is asked for.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Locations with link to Google form', id: 'locations' },
+    { text: 'Who is adding?', id: '01-who-is-adding' },
+    { text: 'Location information', id: '02-location-information' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Locations', 'locations', '/public/images/publish-teacher-training/new-location-google-form/thumbnails/locations.png', '/public/images/publish-teacher-training/new-location-google-form/locations.png', '') }}
+
+  {{ designHistory.screenshot('Who is adding?', '01-who-is-adding', '/public/images/publish-teacher-training/new-location-google-form/thumbnails/01-who-is-adding.png', '/public/images/publish-teacher-training/new-location-google-form/01-who-is-adding.png', '') }}
+
+  {{ designHistory.screenshot('Location information', '02-location-information', '/public/images/publish-teacher-training/new-location-google-form/thumbnails/02-location-information.png', '/public/images/publish-teacher-training/new-location-google-form/02-location-information.png', '') }}
+
+{% endblock %}
