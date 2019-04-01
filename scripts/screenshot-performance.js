@@ -4,7 +4,7 @@
   Set paths to an array of named paths (see example)
 
   Run:
-  node scripts/screenshot.js name-of-directory
+  node scripts/screenshot-performance.js name-of-directory
 
   Example paths:
   paths = [
@@ -24,12 +24,10 @@ const fs = require('fs');
 const sharp = require('sharp');
 
 // Arguments
-const directoryName = process.argv.slice(-1)[0];
-warnIfNoArguments();
+const directoryName = `performance/${process.argv.slice(-1)[0]}`;
 
 // Ignore any directories when generating a title
-var title = directoryName.split('/').pop().replace(/-/g, ' ');
-title = title.charAt(0).toUpperCase() + title.slice(1)
+var title = `Find performance – [month] 2019`;
 const imageDirectory = `app/assets/images/${directoryName}`;
 const indexDirectory = `app/views/${directoryName}`;
 const thumbnailDirectory = `${imageDirectory}/thumbnails`;
@@ -40,15 +38,6 @@ function start() {
   decoratePaths();
   generatePage();
   takeScreenshots();
-}
-
-function warnIfNoArguments(title) {
-  // TODO: Use a better check for an argument
-  if (directoryName.startsWith('/Users')) {
-    console.log('No arguments set');
-    console.log('Please set a directory name: `node scripts/screenshot.js "name-of-directory"`');
-    return;
-  }
 }
 
 function makeDirectories() {
@@ -114,6 +103,11 @@ function generatePage() {
 
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    </div>
+  </div>
 `;
 
   const templateEnd = `
@@ -125,12 +119,14 @@ function generatePage() {
 
   const endContents = `
   ] %}
-  {{ designHistory.screenshotContents(contents) }}
+  {{ designHistory.screenshotContents(contents, 'Contents') }}
   `;
 
   paths.forEach(function(item, index) {
     template += `
-  {{ designHistory.screenshot('${item.title}', '${item.id}', '${item.thumbnailSrc}', '${item.src}', '') }}
+  {% set screenshotContent %}
+  {% endset %}
+  {{ designHistory.screenshot('${item.title}', '${item.id}', '${item.thumbnailSrc}', '${item.src}', markdown(serviceoverviewContent)) }}
 `;
 
     contents += `${index > 0 ? ', ': ''}
