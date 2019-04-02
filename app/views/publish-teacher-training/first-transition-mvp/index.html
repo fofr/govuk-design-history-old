@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% set title = 'An MVP for the first cohort transition from UCAS' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+      <p>A projected cut of the service and how it will look around the time we transition the first and second cohorts from UCAS.</p>
+
+      <h2 class="govuk-heading-l">What’s been descoped?</h2>
+
+      <p>In this MVP version we’ve descoped:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>adding courses (use a Google form instead)</li>
+        <li>editing courses (request through support)</li>
+        <li>adding training locations (use a Google form instead)</li>
+        <li>editing training locations (request through support)</li>
+        <li>UCAS Apply settings</li>
+        <li>withdrawing and deleting (request through support)</li>
+        <li>migrating publish statuses and dropping the UCAS status column</li>
+      </ul>
+
+      <p>The course tabs shown below are also illustrative and may not be ready.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Transition screen', id: 'transition-screen' },
+    { text: 'Organisation page with locations', id: 'organisation-page-with-locations' },
+    { text: 'Locations – read only with Google form for adding', id: 'locations-–-read-only-with-google-form-for-adding' },
+    { text: 'Courses with UCAS status column for now', id: 'courses-with-ucas-status-column-for-now' },
+    { text: 'Course – description tab', id: 'course-–-description-tab' },
+    { text: 'Course – basic detail tab', id: 'course-–-basic-detail-tab' },
+    { text: 'Withdrawing a course via support', id: 'withdrawing-a-course-via-support' },
+    { text: 'Deleting a course via support', id: 'deleting-a-course-via-support' },
+    { text: 'Edit vacancies for a course with one location', id: 'edit-vacancies-for-a-course-with-one-location' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Transition screen', 'transition-screen', '/public/images/publish-teacher-training/first-transition-mvp/thumbnails/transition-screen.png', '/public/images/publish-teacher-training/first-transition-mvp/transition-screen.png', '') }}
+
+  {{ designHistory.screenshot('Organisation page with locations', 'organisation-page-with-locations', '/public/images/publish-teacher-training/first-transition-mvp/thumbnails/organisation-page-with-locations.png', '/public/images/publish-teacher-training/first-transition-mvp/organisation-page-with-locations.png', '') }}
+
+  {{ designHistory.screenshot('Locations – read only with Google form for adding', 'locations-–-read-only-with-google-form-for-adding', '/public/images/publish-teacher-training/first-transition-mvp/thumbnails/locations-–-read-only-with-google-form-for-adding.png', '/public/images/publish-teacher-training/first-transition-mvp/locations-–-read-only-with-google-form-for-adding.png', '') }}
+
+  {{ designHistory.screenshot('Courses with UCAS status column for now', 'courses-with-ucas-status-column-for-now', '/public/images/publish-teacher-training/first-transition-mvp/thumbnails/courses-with-ucas-status-column-for-now.png', '/public/images/publish-teacher-training/first-transition-mvp/courses-with-ucas-status-column-for-now.png', '') }}
+
+  {{ designHistory.screenshot('Course – description tab', 'course-–-description-tab', '/public/images/publish-teacher-training/first-transition-mvp/thumbnails/course-–-description-tab.png', '/public/images/publish-teacher-training/first-transition-mvp/course-–-description-tab.png', '') }}
+
+  {{ designHistory.screenshot('Course – basic detail tab', 'course-–-basic-detail-tab', '/public/images/publish-teacher-training/first-transition-mvp/thumbnails/course-–-basic-detail-tab.png', '/public/images/publish-teacher-training/first-transition-mvp/course-–-basic-detail-tab.png', '') }}
+
+  {{ designHistory.screenshot('Withdrawing a course via support', 'withdrawing-a-course-via-support', '/public/images/publish-teacher-training/first-transition-mvp/thumbnails/withdrawing-a-course-via-support.png', '/public/images/publish-teacher-training/first-transition-mvp/withdrawing-a-course-via-support.png', '') }}
+
+  {{ designHistory.screenshot('Deleting a course via support', 'deleting-a-course-via-support', '/public/images/publish-teacher-training/first-transition-mvp/thumbnails/deleting-a-course-via-support.png', '/public/images/publish-teacher-training/first-transition-mvp/deleting-a-course-via-support.png', '') }}
+
+  {{ designHistory.screenshot('Edit vacancies for a course with one location', 'edit-vacancies-for-a-course-with-one-location', '/public/images/publish-teacher-training/first-transition-mvp/thumbnails/edit-vacancies-for-a-course-with-one-location.png', '/public/images/publish-teacher-training/first-transition-mvp/edit-vacancies-for-a-course-with-one-location.png', '') }}
+
+{% endblock %}
