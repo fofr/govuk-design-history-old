@@ -7,7 +7,7 @@ module.exports = {
   serviceName: 'Design history',
 
   // Default port that prototype runs on
-  port: '3000',
+  port: '3020',
 
   // Enable or disable password protection on production
   useAuth: 'false',
