@@ -8,14 +8,13 @@
 
   {% set contents = [
     { text: 'Email', id: 'email'},
+    { text: 'Video', id: 'video'},
     { text: 'Guidance page with video', id: 'guidance-for-publish-teacher-training-courses' }
   ] %}
   {{ designHistory.screenshotContents(contents, 'Contents') }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <p>Sent on Friday 5 April.</p>
-
       {% set content %}
       Dear colleague,
 
@@ -38,10 +37,12 @@
       {% endset %}
 
       <div id="email" class="govuk-!-margin-bottom-9">
+        <h2 class="govuk-heading-l">Email</h2>
+        <p>Sent on Friday 5 April.</p>
         {{ bat.email('Watch our video about the new Publish teacher training courses', content) }}
       </div>
 
-      <h2 class="govuk-heading-l">The video</h2>
+      <h2 class="govuk-heading-l" id="video">Video</h2>
       <iframe class="govuk-!-margin-bottom-9" width="560" height="315" src="https://www.youtube-nocookie.com/embed/nxmtXGy1cCY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
