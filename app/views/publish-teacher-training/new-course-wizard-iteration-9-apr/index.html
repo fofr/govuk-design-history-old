@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% set title = 'New course wizard – Iteration 9 April' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Bring the wizard in line with changes made to the Google Form:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>split UCAS application requirements over two pages</li>
+        <li>remove mention of ‘publishig’ from application open screen</li>
+        <li>ask about apprenticeships for Universities and SCITTs</li>
+      </ul>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Is this a teaching apprenticeship?', id: 'is-this-a-teaching-apprenticeship' },
+    { text: 'When will applications open?', id: 'when-will-applications-open' }, 
+    { text: 'Candidates with pending GCSEs', id: 'candidates-with-pending-gcses' },
+    { text: 'Tests for candidates without GCSE requirements', id: 'tests-for-candidates-without-gcse-requirements' },
+    { text: 'Check your answers before confirming', id: 'check-your-answers-before-confirming' },
+    { text: 'Course details', id: 'course-details' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Is this a teaching apprenticeship?', 'is-this-a-teaching-apprenticeship', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/thumbnails/is-this-a-teaching-apprenticeship.png', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/is-this-a-teaching-apprenticeship.png', '') }}
+
+  {{ designHistory.screenshot('When will applications open?', 'when-will-applications-open', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/thumbnails/when-will-applications-open.png', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/when-will-applications-open.png', '') }}
+
+  {{ designHistory.screenshot('Candidates with pending GCSEs', 'candidates-with-pending-gcses', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/thumbnails/candidates-with-pending-gcses.png', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/candidates-with-pending-gcses.png', '') }}
+
+  {{ designHistory.screenshot('Tests for candidates without GCSE requirements', 'tests-for-candidates-without-gcse-requirements', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/thumbnails/tests-for-candidates-without-gcse-requirements.png', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/tests-for-candidates-without-gcse-requirements.png', '') }}
+
+  {{ designHistory.screenshot('Check your answers before confirming', 'check-your-answers-before-confirming', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/thumbnails/check-your-answers-before-confirming.png', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/check-your-answers-before-confirming.png', '') }}
+
+  {{ designHistory.screenshot('Course details', 'course-details', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/thumbnails/course-details.png', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/course-details.png', '') }}
+
+{% endblock %}
