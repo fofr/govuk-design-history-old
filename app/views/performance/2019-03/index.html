@@ -14,9 +14,20 @@
 
       <p>Following recent product developments, and a push to find out more about the new service, we’ve started to put a framework around how we measure user success by outlining our objectives and key results (OKRs).</p>
 
-      <p>At a high level, we’re looking at 3 objectives: we want people to use our service, we want people engaging with the service in the way we’ve intended and we want people to feel like they’re ready to go on and apply once they’ve used our service.</p>
+      <p>At a high level, we’re looking at 3 objectives:</p>
 
-      <p>For the first iteration of this report, we’ll use the following structure to outline how we’re measuring against these objectives and what sort of performance we’re seeing. The Service overview will focus on service usage and general user behaviour, our Success measures will cover two-parts: the percentage of users who have experienced a successful journey and those that convert from Find to UCAS registration.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>we want people to use our service</li>
+        <li>we want people engaging with the service in the way we’ve intended</li>
+        <li>we want people to feel like they’re ready to go on and apply once they’ve used our service.</li>
+      </ul>
+
+      <p>For the first iteration of this report, we’ll use the following structure to outline how we’re measuring against these objectives and what sort of performance we’re seeing. The Service overview will focus on service usage and general user behaviour, our success measures will cover two-parts:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the percentage of users who have experienced a successful journey</li>
+        <li>those that convert from Find to UCAS registration.</li>
+      </ul>
 
       <p>You can <a href="https://datastudio.google.com/open/1M4DgevUBtTVwS09bEpWbkhPxxFqNOBjt">see the live report in our dashboard</a>.</p>
     </div>
@@ -24,7 +35,8 @@
 
   {% set contents = [
     { text: 'Service overview', id: 'service-overview' },
-    { text: 'Success measures', id: 'success-measures' }
+    { text: 'Success measures', id: 'success-measures' },
+    { text: 'Conclusion',       id: 'conclusion' }
   ] %}
 
   {{ designHistory.screenshotContents(contents, 'Contents') }}
