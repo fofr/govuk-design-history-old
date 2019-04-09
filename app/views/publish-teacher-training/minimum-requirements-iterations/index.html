@@ -17,11 +17,14 @@
         <li>Make it clearer that this affects UCAS Apply</li>
         <li>Simplify preference choice using a table</li>
         <li>Remove table and switch to two questions</li>
+        <li>Split questions over two pages</li>
       </ul>
     </div>
   </div>
 
   {% set contents = [
+    { text: 'Question 1', id: 'candidates-with-pending-gcses' },
+    { text: 'Question 2', id: 'tests-for-candidates-without-gcse-requirements' },
     { text: 'Two questions', id: 'two-questions' },
     { text: 'Options in a table', id: 'options-in-a-table' },
     { text: 'Explicitly reference UCAS', id: 'explicitly-reference-ucas' },
@@ -30,6 +33,10 @@
     { text: 'Original design', id: 'minimum-course-requirements' }
   ] %}
   {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Question 1: Candidates with pending GCSEs', 'candidates-with-pending-gcses', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/thumbnails/candidates-with-pending-gcses.png', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/candidates-with-pending-gcses.png', '') }}
+
+  {{ designHistory.screenshot('Question 2: Tests for candidates without GCSE requirements', 'tests-for-candidates-without-gcse-requirements', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/thumbnails/tests-for-candidates-without-gcse-requirements.png', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/tests-for-candidates-without-gcse-requirements.png', '') }}
 
   {{ designHistory.screenshot('Two questions', 'two-questions', '/public/images/publish-teacher-training/minimum-requirements-iterations/thumbnails/two-questions.png', '/public/images/publish-teacher-training/minimum-requirements-iterations/two-questions.png', '') }}
 
