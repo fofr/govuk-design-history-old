@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% set title = 'Type of location MVP' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-7">
+    <div class="govuk-grid-column-two-thirds">
+      <p>A quick way to indicate if a location is an area or an address.</p>
+
+      <p>Some providers use the UCAS training locations to indicate a region or area, eg United Learning Sussex.</p>
+
+      <p>When we validate locations we require building and street name, town or city, and postcode. For regions or areas this validation isn’t appropriate. However we still need enough information to show courses on a map.</p>
+
+      <p>In the design below, if a user selects An area, then we would validate differently.</p>
+
+      <p>A <a href="/publish-teacher-training/new-training-location-region">more complete workflow was previously designed and tested</a>.</p>
+    </div>
+  </div>
+
+  {{ designHistory.screenshot('Type of location', 'type-of-location', '/public/images/publish-teacher-training/mvp-type-of-location/thumbnails/type-of-location.png', '/public/images/publish-teacher-training/mvp-type-of-location/type-of-location.png', '') }}
+
+{% endblock %}
