@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% set title = 'Problems with a course' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Exploration into highlighting problems with a course before publishing.</p>
+
+      <p>We need to increase the quality of all courses on Find. For new courses providers will use the wizard and complete all required information. For existing courses we need a way of highlighting what’s wrong or what’s missing.</p>
+
+      <p>For the worst issues we could add validations when users try to publish the course. This would force users to fix their courses, but when a user is publishing they expect most of the work to be done – to find that they need to edit many courses at this late stage will be frustrating.</p>
+
+      <p>The alternative here is to flag those same validations earlier – somewhere on the course page.</p>
+
+      <p>Specifically we want to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>fix the worst course titles</li>
+        <li>confirm that imported outcomes are correct</li>
+        <li>enter an age range for all their courses</li>
+        <li>remind providers to publish their About your organisation section</li>
+        <li>avoid duplicate About this course sections</li>
+      </ul>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'We’ve found problems with this course', id: 'we’ve-found-problems-with-this-course' },
+    { text: 'Problems with this course', id: 'problems-with-this-course' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('We’ve found problems with this course', 'we’ve-found-problems-with-this-course', '/public/images/publish-teacher-training/problems-with-course/thumbnails/we’ve-found-problems-with-this-course.png', '/public/images/publish-teacher-training/problems-with-course/we’ve-found-problems-with-this-course.png', '') }}
+
+  {{ designHistory.screenshot('Problems with this course', 'problems-with-this-course', '/public/images/publish-teacher-training/problems-with-course/thumbnails/problems-with-this-course.png', '/public/images/publish-teacher-training/problems-with-course/problems-with-this-course.png', '') }}
+
+{% endblock %}
