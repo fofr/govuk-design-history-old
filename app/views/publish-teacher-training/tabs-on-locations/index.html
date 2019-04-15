@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% set title = 'Tabs on locations' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>As part of work looking into how a location might be deleted or removed, it became clear that it was difficult to see which courses a location was assigned to.</p>
+
+      <p>This design adds tabs, <a href="/publish-teacher-training/course-tabs">like on courses</a>, for editing, courses using the location and the location’s history. It also adds a courses count to the main locations table, which deep link to the courses tab.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Courses at each location', id: 'courses-at-each-location' },
+    { text: 'Edit location', id: 'edit-location' },
+    { text: 'Courses using this location', id: 'courses-using-this-location' },
+    { text: 'Location history', id: 'location-history' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Courses at each location', 'courses-at-each-location', '/public/images/publish-teacher-training/tabs-on-locations/thumbnails/courses-at-each-location.png', '/public/images/publish-teacher-training/tabs-on-locations/courses-at-each-location.png', '') }}
+
+  {{ designHistory.screenshot('Edit location', 'edit-location', '/public/images/publish-teacher-training/tabs-on-locations/thumbnails/edit-location.png', '/public/images/publish-teacher-training/tabs-on-locations/edit-location.png', '') }}
+
+  {{ designHistory.screenshot('Courses using this location', 'courses-using-this-location', '/public/images/publish-teacher-training/tabs-on-locations/thumbnails/courses-using-this-location.png', '/public/images/publish-teacher-training/tabs-on-locations/courses-using-this-location.png', '') }}
+
+  {{ designHistory.screenshot('Location history', 'location-history', '/public/images/publish-teacher-training/tabs-on-locations/thumbnails/location-history.png', '/public/images/publish-teacher-training/tabs-on-locations/location-history.png', '') }}
+
+{% endblock %}
