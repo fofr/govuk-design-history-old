@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+{% set title = 'Logic mapping UCAS eligibility questions to API codes' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+      <p>UCAS sets a status (1, 2, 3, 9 or n/a) for Maths, English and Science for each course. <a href="/publish-teacher-training/specific-requirements">This denotes who can apply</a>.</p>
+
+      <p>In our design we instead ask two questions:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>will you receive applications from canididates with pending GCSEs?</li>
+        <li>will you receive applications from candidates who need to take an English, Maths or Science equivalency test?</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">What subjects are required?</h2>
+      <p>Maths and English are required for Primary and Secondary courses. Additionally science is needed for Primary.</p>
+
+      <p>We don’t ask the questions for Further education courses because there is no legal requirement.</p>
+
+      <p>When a subject isn’t required use the UCAS code 9. When it is required, use the one derived from answers to the questions.</p>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" style="width: 25%">Level</th>
+            <th class="govuk-table__header" style="width: 25%">English</th>
+            <th class="govuk-table__header" style="width: 25%">Maths</th>
+            <th class="govuk-table__header" style="width: 25%">Science</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Primary</th>
+            <td class="govuk-table__cell">Required</td>
+            <td class="govuk-table__cell">Required</td>
+            <td class="govuk-table__cell">Required</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Secondary</th>
+            <td class="govuk-table__cell">Required</td>
+            <td class="govuk-table__cell">Required</td>
+            <td class="govuk-table__cell">Not required (9)</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Further education</th>
+            <td class="govuk-table__cell">Not required (9)</td>
+            <td class="govuk-table__cell">Not required (9)</td>
+            <td class="govuk-table__cell">Not required (9)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-8">Which code should be used?</h2>
+
+      <p>A user can select Yes to equivalency tests but can restrict this by subject (see screenshot).</p>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" style="width: 37.5%">Pending GCSEs</th>
+            <th class="govuk-table__header" style="width: 37.5%">Equivalency</th>
+            <th class="govuk-table__header" style="width: 25%">Code</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">Yes (subject checked)</td>
+            <td class="govuk-table__cell">3</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">Yes (subject not checked)</td>
+            <td class="govuk-table__cell">2</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell">2</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell">1</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">Invalid*</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>* It’s possible to make an invalid choice – UCAS doesn’t allow you to receive applications from candidates needing to take an equivalency test if you’ve blocked applications from candidates with pending GCSEs. In this case we need to warn the user with a validation message.</p>
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  {% set contents = [
+    { text: 'Question 1', id: 'candidates-with-pending-gcses' },
+    { text: 'Question 2', id: 'tests-for-candidates-without-gcse-requirements' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Question 1: Candidates with pending GCSEs', 'candidates-with-pending-gcses', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/thumbnails/candidates-with-pending-gcses.png', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/candidates-with-pending-gcses.png', '') }}
+
+  {{ designHistory.screenshot('Question 2: Tests for candidates without GCSE requirements', 'tests-for-candidates-without-gcse-requirements', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/thumbnails/tests-for-candidates-without-gcse-requirements.png', '/public/images/publish-teacher-training/new-course-wizard-iteration-9-apr/tests-for-candidates-without-gcse-requirements.png', '') }}
+{% endblock %}
