@@ -22,6 +22,30 @@ $button-colour: #00823b;
 
 // Markdown styles
 .markdown {
+  table {
+    @extend .govuk-table;
+
+    tr {
+      @extend .govuk-table__row !optional;
+    }
+
+    tbody {
+      @extend .govuk-table__body !optional;
+    }
+
+    thead {
+      @extend .govuk-table__head !optional;
+    }
+
+    th {
+      @extend .govuk-table__header;
+    }
+
+    td {
+      @extend .govuk-table__cell;
+    }
+  }
+
   ul {
     @extend .govuk-list;
     @extend .govuk-list--bullet;

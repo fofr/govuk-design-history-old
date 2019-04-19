@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+{% set title = 'In what order should we build the Edit screens?' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+      <p>Edits to one field can affect another. Changes should always lead to a Confirm your changes screen, and only after confirming will they be persisted. If a course is already published the changes will go live straight away. We need this mechanism first.</p>
+
+      <p>Then we should focus on fields providers edit in-cycle:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Locations</li>
+        <li>Full or part time</li>
+        <li>UCAS pending GCSEs and eligibility</li>
+      </ul>
+
+      <p>We might also want to make the following editable to improve data, and for languages to improve how findable some courses are:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Outcome</li>
+        <li>Age range</li>
+        <li>Languages</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">Summary</h2>
+    </div>
+  </div>
+
+  {% set table %}
+| Screen | Notes | Priority | Complexity | Always editable |
+|-|-|-|-|-|
+| [Level and SEND](#level-and-send) | Level has a significant effect, rarely changed | Low | High | No |
+| [Subject](#subject) | Also affects languages and title | High | High | No |
+| [Languages](#languages) | Only used by secondary languages courses but can be set badly. Might effect title. | Low | Medium | Maybe |
+| [Age range](#age-range) | Missing for all courses, we need to capture this | High | Low | Maybe |
+| [Outcome](#outcome) | Inferred from UCAS, this has often been wrong | High | Low | Maybe |
+| [Fee or salary](#fee-or-salary) | Changes the enrichment fields shown (eg fee fields vs salary fields) | Low | High | No |
+| [Apprenticeship](#apprenticeship) | This will also affect fee and salary enrichment fields (apprenticeships are salaried). Some existing apprenticeships might not use the right route. | Low | High | No |
+| [Full time or part&nbsp;time](#full-time-or-part-time) | Changes can affect locations (eg some locations may not offer part time)  | Medium | Medium | Yes |
+| [Locations](#locations) | Schools are added and removed in cycle. For courses which are both full or part time, each location must indicate which type of vacancies it offers (full, part, both). | High | Medium | Yes |
+| [Accredited body](#accredited-body) | Only affects school direct providers | Low | Low | No |
+| [Applications open](#applications-open) | Most relevant when creating a course. Shows different values depending on current cycle vs next cycle | Low | Medium | No |
+| [UCAS GCSEs&nbsp;pending](#ucas-gcses-pending) | Change in cycle in response to application numbers | Medium | [High](/publish-teacher-training/minimum-course-requirements-logic) | Yes |
+| [UCAS Equivalency&nbsp;tests](#ucas-equivalency-tests) | Change in cycle in response to application numbers | Medium | [High](/publish-teacher-training/minimum-course-requirements-logic) | Yes |
+| [Start date](#course-start-date) | Rarely edited | Low | Low | No |
+| [Title](#title) | Changes to titles need to be approved | Medium | High | No |
+| [Confirm changes](#confirm-your-change) | All edits must be summarised before confirming | High | High | -- |
+  {% endset %}
+
+  {{ markdown(table) | safe }}
+
+  {#
+    {% set contents = [
+      { text: 'Level and SEND', id: 'level-and-send' },
+      { text: 'Subject', id: 'subject' },
+      { text: 'Languages', id: 'languages' },
+      { text: 'Age range', id: 'age-range' },
+      { text: 'Outcome', id: 'outcome' },
+      { text: 'Fee or salary', id: 'fee-or-salary' },
+      { text: 'Apprenticeship', id: 'apprenticeship' },
+      { text: 'Full time or part time', id: 'full-time-or-part-time' },
+      { text: 'Locations', id: 'locations' },
+      { text: 'Accredited body', id: 'accredited-body' },
+      { text: 'Applications open', id: 'applications-open' },
+      { text: 'UCAS GCSEs pending', id: 'ucas-gcses-pending' },
+      { text: 'UCAS Equivalency tests', id: 'ucas-equivalency-tests' },
+      { text: 'Course start date', id: 'course-start-date' },
+      { text: 'Title', id: 'title' },
+      { text: 'Confirm your changes', id: 'confirm-your-changes' }
+    ] %}
+    {{ designHistory.screenshotContents(contents) }}
+  #}
+
+  <hr class="govuk-section-break govuk-section-break--l">
+
+  {{ designHistory.screenshot('Level and SEND', 'level-and-send', '/public/images/publish-teacher-training/edit-priorities/thumbnails/level-and-send.png', '/public/images/publish-teacher-training/edit-priorities/level-and-send.png', '') }}
+
+  {{ designHistory.screenshot('Subject', 'subject', '/public/images/publish-teacher-training/edit-priorities/thumbnails/subject.png', '/public/images/publish-teacher-training/edit-priorities/subject.png', '') }}
+
+  {{ designHistory.screenshot('Languages', 'languages', '/public/images/publish-teacher-training/edit-priorities/thumbnails/lanuages.png', '/public/images/publish-teacher-training/edit-priorities/lanuages.png', '') }}
+
+  {{ designHistory.screenshot('Age range', 'age-range', '/public/images/publish-teacher-training/edit-priorities/thumbnails/age-range.png', '/public/images/publish-teacher-training/edit-priorities/age-range.png', '') }}
+
+  {{ designHistory.screenshot('Outcome', 'outcome', '/public/images/publish-teacher-training/edit-priorities/thumbnails/outcome.png', '/public/images/publish-teacher-training/edit-priorities/outcome.png', '') }}
+
+  {{ designHistory.screenshot('Fee or salary', 'fee-or-salary', '/public/images/publish-teacher-training/edit-priorities/thumbnails/fee-or-salary.png', '/public/images/publish-teacher-training/edit-priorities/fee-or-salary.png', '') }}
+
+  {{ designHistory.screenshot('Apprenticeship', 'apprenticeship', '/public/images/publish-teacher-training/edit-priorities/thumbnails/apprenticeship.png', '/public/images/publish-teacher-training/edit-priorities/apprenticeship.png', '') }}
+
+  {{ designHistory.screenshot('Full time or part time', 'full-time-or-part-time', '/public/images/publish-teacher-training/edit-priorities/thumbnails/full-time-or-part-time.png', '/public/images/publish-teacher-training/edit-priorities/full-time-or-part-time.png', '') }}
+
+  {{ designHistory.screenshot('Locations', 'locations', '/public/images/publish-teacher-training/edit-priorities/thumbnails/locations.png', '/public/images/publish-teacher-training/edit-priorities/locations.png', '') }}
+
+  {{ designHistory.screenshot('Accredited body', 'accredited-body', '/public/images/publish-teacher-training/edit-priorities/thumbnails/accredited-body.png', '/public/images/publish-teacher-training/edit-priorities/accredited-body.png', '') }}
+
+  {{ designHistory.screenshot('Applications open', 'applications-open', '/public/images/publish-teacher-training/edit-priorities/thumbnails/applications-open.png', '/public/images/publish-teacher-training/edit-priorities/applications-open.png', '') }}
+
+  {{ designHistory.screenshot('UCAS GCSEs pending', 'ucas-gcses-pending', '/public/images/publish-teacher-training/edit-priorities/thumbnails/ucas-gcses-pending.png', '/public/images/publish-teacher-training/edit-priorities/ucas-gcses-pending.png', '') }}
+
+  {{ designHistory.screenshot('UCAS Equivalency tests', 'ucas-equivalency-tests', '/public/images/publish-teacher-training/edit-priorities/thumbnails/ucas-equivalency-tests.png', '/public/images/publish-teacher-training/edit-priorities/ucas-equivalency-tests.png', '') }}
+
+  {{ designHistory.screenshot('Course start date', 'course-start-date', '/public/images/publish-teacher-training/edit-priorities/thumbnails/course-start-date.png', '/public/images/publish-teacher-training/edit-priorities/course-start-date.png', '') }}
+
+  {{ designHistory.screenshot('Title', 'title', '/public/images/publish-teacher-training/edit-priorities/thumbnails/title.png', '/public/images/publish-teacher-training/edit-priorities/title.png', '') }}
+
+  {{ designHistory.screenshot('Confirm your changes', 'confirm-your-changes', '/public/images/publish-teacher-training/edit-priorities/thumbnails/confirm-your-changes.png', '/public/images/publish-teacher-training/edit-priorities/confirm-your-changes.png', '') }}
+
+{% endblock %}
