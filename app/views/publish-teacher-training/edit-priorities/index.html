@@ -9,7 +9,7 @@
       <h1 class="govuk-heading-xl">{{ title }}</h1>
 
       <p>
-        <a href="https://docs.google.com/drawings/d/1OrJYSTmRSJD2GEAWFnr2lXLNo7A9J9GDsPMQUm0Pi0M/edit">Edit screen workflows in a Google Drawing</a>
+        <a href="https://docs.google.com/drawings/d/1OrJYSTmRSJD2GEAWFnr2lXLNo7A9J9GDsPMQUm0Pi0M/edit">Edit screen workflows in a Google Drawing</a> and the <a href="https://docs.google.com/drawings/d/1DAhz464j1XDyQPoOH0adIwAceUwuGU1rqsWkVn8ZQ8I/edit">new course flow</a> for context.
       </p>
 
       <p>Edits to one field can affect another. Changes should always lead to a Confirm your changes screen, and only after confirming will they be persisted. If a course is already published the changes will go live straight away. We need this mechanism first.</p>
@@ -27,6 +27,8 @@
         <li>Age range</li>
         <li>Languages</li>
       </ul>
+
+      <p>Further education screens are probably out of scope for MVP.</p>
 
       <h2 class="govuk-heading-l">Summary</h2>
     </div>
@@ -79,35 +81,128 @@
 
   <hr class="govuk-section-break govuk-section-break--l">
 
-  {{ designHistory.screenshot('Level and SEND', 'level-and-send', '/public/images/publish-teacher-training/edit-priorities/thumbnails/level-and-send.png', '/public/images/publish-teacher-training/edit-priorities/level-and-send.png', '') }}
+  {{ designHistory.screenshot('Level and SEND', 'level-and-send', '/public/images/publish-teacher-training/edit-priorities/thumbnails/level-and-send.png', '/public/images/publish-teacher-training/edit-priorities/level-and-send.png', '
+    <p>Changing the level at the minimum means:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>a new subject</li>
+      <li>a new title</li>
+      <li>a new age range</li>
+    </ul>
 
-  {{ designHistory.screenshot('Subject', 'subject', '/public/images/publish-teacher-training/edit-priorities/thumbnails/subject.png', '/public/images/publish-teacher-training/edit-priorities/subject.png', '') }}
+    <p>If a user is changing the course level then the course is substantially changing, in the prototype we put users through the entire new course flow again. It is unlikely a user will ever do this.</p>
 
-  {{ designHistory.screenshot('Languages', 'languages', '/public/images/publish-teacher-training/edit-priorities/thumbnails/lanuages.png', '/public/images/publish-teacher-training/edit-priorities/lanuages.png', '') }}
+    <p>We might instead choose to make Level fixed, and move the SEND option onto a page of its own (when editing).</p>
 
-  {{ designHistory.screenshot('Age range', 'age-range', '/public/images/publish-teacher-training/edit-priorities/thumbnails/age-range.png', '/public/images/publish-teacher-training/edit-priorities/age-range.png', '') }}
+    <p>Changes to SEND status will affect the course title.</p>
+  ') }}
 
-  {{ designHistory.screenshot('Outcome', 'outcome', '/public/images/publish-teacher-training/edit-priorities/thumbnails/outcome.png', '/public/images/publish-teacher-training/edit-priorities/outcome.png', '') }}
+  {{ designHistory.screenshot('Subject', 'subject', '/public/images/publish-teacher-training/edit-priorities/thumbnails/subject.png', '/public/images/publish-teacher-training/edit-priorities/subject.png', '
+    <p>The subject list presented varies depending on level.</p>
 
-  {{ designHistory.screenshot('Fee or salary', 'fee-or-salary', '/public/images/publish-teacher-training/edit-priorities/thumbnails/fee-or-salary.png', '/public/images/publish-teacher-training/edit-priorities/fee-or-salary.png', '') }}
+    <p>For primary there is one list, other than Primary, every subject begins ‘Primary with …’. Users can select only one subject.</p>
 
-  {{ designHistory.screenshot('Apprenticeship', 'apprenticeship', '/public/images/publish-teacher-training/edit-priorities/thumbnails/apprenticeship.png', '/public/images/publish-teacher-training/edit-priorities/apprenticeship.png', '') }}
+    <p>For secondary users can add a second subject, eg Physics with Mathematics or English with Drama. The first subject should be the most important one, the one getting the bursary.</p>
 
-  {{ designHistory.screenshot('Full time or part time', 'full-time-or-part-time', '/public/images/publish-teacher-training/edit-priorities/thumbnails/full-time-or-part-time.png', '/public/images/publish-teacher-training/edit-priorities/full-time-or-part-time.png', '') }}
+    <p>Changing a course to Modern languages means the users should also see the Languages course.</p>
 
-  {{ designHistory.screenshot('Locations', 'locations', '/public/images/publish-teacher-training/edit-priorities/thumbnails/locations.png', '/public/images/publish-teacher-training/edit-priorities/locations.png', '') }}
+    <p>Changing a course away from Modern languages must remove any languages associated with the course.</p>
+  ') }}
 
-  {{ designHistory.screenshot('Accredited body', 'accredited-body', '/public/images/publish-teacher-training/edit-priorities/thumbnails/accredited-body.png', '/public/images/publish-teacher-training/edit-priorities/accredited-body.png', '') }}
+  {{ designHistory.screenshot('Languages', 'languages', '/public/images/publish-teacher-training/edit-priorities/thumbnails/lanuages.png', '/public/images/publish-teacher-training/edit-priorities/lanuages.png', '
+    <p>The list of languages shown are the ones we list on Find. We might choose to make this list longer by including:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Bengali</li>
+      <li>Greek</li>
+      <li>Hebrew</li>
+      <li>Arabic</li>
+      <li>Gaelic</li>
+    </ul>
 
-  {{ designHistory.screenshot('Applications open', 'applications-open', '/public/images/publish-teacher-training/edit-priorities/thumbnails/applications-open.png', '/public/images/publish-teacher-training/edit-priorities/applications-open.png', '') }}
+    <p>If a provider needs a new language to be added to this list, we should add it.</p>
 
-  {{ designHistory.screenshot('UCAS GCSEs pending', 'ucas-gcses-pending', '/public/images/publish-teacher-training/edit-priorities/thumbnails/ucas-gcses-pending.png', '/public/images/publish-teacher-training/edit-priorities/ucas-gcses-pending.png', '') }}
+    <p><a href="/publish-teacher-training/languages-iteration">Why we simplified the languages design</a></p>
+  ') }}
+
+  {{ designHistory.screenshot('Age range', 'age-range', '/public/images/publish-teacher-training/edit-priorities/thumbnails/age-range.png', '/public/images/publish-teacher-training/edit-priorities/age-range.png', '
+    <p>We show different age ranges for secondary and primary courses. They are based on the ITT guidance.</p>
+    <p><a href="/publish-teacher-training/age-ranges">More information about Age ranges</a></p>
+  ') }}
+
+  {{ designHistory.screenshot('Outcome', 'outcome', '/public/images/publish-teacher-training/edit-priorities/thumbnails/outcome.png', '/public/images/publish-teacher-training/edit-priorities/outcome.png', '
+    <p>For MVP the options will be limited to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>PGCE with QTS</li>
+      <li>QTS</li>
+      <li>PGDE with QTS</li>
+    </ul>
+
+    <p>QTS with optional PGCE must come later.</p>
+  ') }}
+
+  {{ designHistory.screenshot('Fee or salary', 'fee-or-salary', '/public/images/publish-teacher-training/edit-priorities/thumbnails/fee-or-salary.png', '/public/images/publish-teacher-training/edit-priorities/fee-or-salary.png', '
+    <p>Only shown to school direct providers.</p>
+    <p>Changing from fee paying to salaried, or visa versa, will change which enrichment fields can be completed.</p>
+    <p><a href="/publish-teacher-training/salary-and-fees">More about fees and salary enrichment fields</a></p>
+  ') }}
+
+  {{ designHistory.screenshot('Apprenticeship', 'apprenticeship', '/public/images/publish-teacher-training/edit-priorities/thumbnails/apprenticeship.png', '/public/images/publish-teacher-training/edit-priorities/apprenticeship.png', '
+    <p>This screen is shown to providers who don’t have the option to chose a School Direct Salaried route (eg Universities and SCITTs).</p>
+    <p>An apprenticeship pays a salary. Switching between Yes and No has the same effect as changing from fee paying to salary.</p>
+
+    <p>There is some contention around this page, and whether we should be asking the same fee question as above, minus the middle option. Or if we should indicate the effect on fees in the options. For users adding apprenticeships, yes/no is the easiest way to interpret the question – our hypothesis is that they will know that apprenticeships pay a salary and will not need this explaining. Those who aren’t adding an apprenticeship, which is the majority, must be able to get through this page swiftly.</p>
+  ') }}
+
+  {{ designHistory.screenshot('Full time or part time', 'full-time-or-part-time', '/public/images/publish-teacher-training/edit-priorities/thumbnails/full-time-or-part-time.png', '/public/images/publish-teacher-training/edit-priorities/full-time-or-part-time.png', '
+    <p><a href="/publish-teacher-training/new-course-locations">More about full time and part time and the effect on locations</a></p>
+  ') }}
+
+  {{ designHistory.screenshot('Locations', 'locations', '/public/images/publish-teacher-training/edit-priorities/thumbnails/locations.png', '/public/images/publish-teacher-training/edit-priorities/locations.png', '
+    <p>Only shown to providers with more than 1 location.</p>
+
+    <p>Changing locations mid-cycle is an important need for providers with many locations. Alliances can partner with new schools during the cycle, and some schools may find they can no longer offer a course – perhaps due to staffing changes.</p>
+
+    <p>Providers expect to be able to change locations, they can do this in UCAS.</p>
+  ') }}
+
+  {{ designHistory.screenshot('Accredited body', 'accredited-body', '/public/images/publish-teacher-training/edit-priorities/thumbnails/accredited-body.png', '/public/images/publish-teacher-training/edit-priorities/accredited-body.png', '
+    <p>Only shown to organisations who need another organisation to be the accredited body for their courses (eg school directs)</p>
+    <p>We show a list of all accredited bodies a provider has worked with plus an ‘other’ option. The other option shows an autocomplete of all possible accredited bodies.</p>
+    <p><a href="/publish-teacher-training/accredited-body-iteration">More about this design</a></p>
+  ') }}
+
+  {{ designHistory.screenshot('Applications open', 'applications-open', '/public/images/publish-teacher-training/edit-priorities/thumbnails/applications-open.png', '/public/images/publish-teacher-training/edit-priorities/applications-open.png', '
+    <p>Most providers will use the first option. It’s unlikely this screen will be used much when editing.</p>
+  ') }}
+
+  {{ designHistory.screenshot('UCAS GCSEs pending', 'ucas-gcses-pending', '/public/images/publish-teacher-training/edit-priorities/thumbnails/ucas-gcses-pending.png', '/public/images/publish-teacher-training/edit-priorities/ucas-gcses-pending.png', '
+    <p>This and the equivalency tests below have been through <a href="/publish-teacher-training/minimum-requirements-iterations">numerous iterations</a>.</p>
+
+    <p><a href="/publish-teacher-training/minimum-course-requirements-logic">More about how these questions map to UCAS codes (1, 2, 3 and 9)</a></p>
+  ') }}
 
   {{ designHistory.screenshot('UCAS Equivalency tests', 'ucas-equivalency-tests', '/public/images/publish-teacher-training/edit-priorities/thumbnails/ucas-equivalency-tests.png', '/public/images/publish-teacher-training/edit-priorities/ucas-equivalency-tests.png', '') }}
 
-  {{ designHistory.screenshot('Course start date', 'course-start-date', '/public/images/publish-teacher-training/edit-priorities/thumbnails/course-start-date.png', '/public/images/publish-teacher-training/edit-priorities/course-start-date.png', '') }}
+  {{ designHistory.screenshot('Course start date', 'course-start-date', '/public/images/publish-teacher-training/edit-priorities/thumbnails/course-start-date.png', '/public/images/publish-teacher-training/edit-priorities/course-start-date.png', '
+    <p>The simplest edit screen, the dates and numbers will be different depending on cycle.</p>
+    <p>Options are September through to August.</p>
+  ') }}
 
-  {{ designHistory.screenshot('Title', 'title', '/public/images/publish-teacher-training/edit-priorities/thumbnails/title.png', '/public/images/publish-teacher-training/edit-priorities/title.png', '') }}
+  {{ designHistory.screenshot('Title', 'title', '/public/images/publish-teacher-training/edit-priorities/thumbnails/title.png', '/public/images/publish-teacher-training/edit-priorities/title.png', '
+    <p>We want to generate titles based on:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>subject and languages</li>
+      <li>SEND</li>
+      <li>age range</li>
+    </ul>
+
+    <p><a href="https://github.com/DFE-Digital/manage-courses-prototype/blob/22352d6a09eb0fe9f1c80f6ebeacde1ec5b25ad2/app/utils/index.js#L15-L48">How the prototype does it</a></p>
+
+    <p>When users come to edit a title, we need to steer them towards the recommended/generated one.</p>
+
+    <p>Providers can request a different title.</p>
+
+    <p><a href="/publish-teacher-training/requesting-a-title">More about requesting a title</a></p>
+  ') }}
 
   {{ designHistory.screenshot('Confirm your changes', 'confirm-your-changes', '/public/images/publish-teacher-training/edit-priorities/thumbnails/confirm-your-changes.png', '/public/images/publish-teacher-training/edit-priorities/confirm-your-changes.png', '') }}
 
