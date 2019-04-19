@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% set title = 'Onboarding wizard as a Google form' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>An update on the <a href="/publish-teacher-training/onboarding-wizard">original onboarding wizard</a>. This form is an accompaniment to an initial onboarding call, meaning we don’t have to ask and transcribe answers to these questions.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Who is adding this organisation?', id: '01-who-is-adding-this-organisation' },
+    { text: 'Organisation name', id: '02-organisation-name' },
+    { text: 'Access to ucas', id: '03-access-to-ucas' },
+    { text: 'First location', id: '04-first-location' },
+    { text: 'Confirmation', id: '05-confirmation' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Who is adding this organisation?', '01-who-is-adding-this-organisation', '/public/images/publish-teacher-training/onboarding-wizard-as-google-form/thumbnails/01-who-is-adding-this-organisation.png', '/public/images/publish-teacher-training/onboarding-wizard-as-google-form/01-who-is-adding-this-organisation.png', '') }}
+
+  {{ designHistory.screenshot('Organisation name', '02-organisation-name', '/public/images/publish-teacher-training/onboarding-wizard-as-google-form/thumbnails/02-organisation-name.png', '/public/images/publish-teacher-training/onboarding-wizard-as-google-form/02-organisation-name.png', '') }}
+
+  {{ designHistory.screenshot('Access to ucas', '03-access-to-ucas', '/public/images/publish-teacher-training/onboarding-wizard-as-google-form/thumbnails/03-access-to-ucas.png', '/public/images/publish-teacher-training/onboarding-wizard-as-google-form/03-access-to-ucas.png', '') }}
+
+  {{ designHistory.screenshot('First location', '04-first-location', '/public/images/publish-teacher-training/onboarding-wizard-as-google-form/thumbnails/04-first-location.png', '/public/images/publish-teacher-training/onboarding-wizard-as-google-form/04-first-location.png', '') }}
+
+  {{ designHistory.screenshot('Confirmation', '05-confirmation', '/public/images/publish-teacher-training/onboarding-wizard-as-google-form/thumbnails/05-confirmation.png', '/public/images/publish-teacher-training/onboarding-wizard-as-google-form/05-confirmation.png', '') }}
+
+{% endblock %}
