@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+{% set title = 'Publishing during rollover' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>During rollover there are two cycles: the current cycle, and another that’s being prepared for the next cycle. Courses in the next cycle can’t go live until the cycle begins, which is usually in October.</p>
+
+      <h2 class="govuk-heading-l">Setting publish context</h2>
+
+      <p>There will still be a Publish button, but instead of putting a course onto Find, it’ll not go live until October. We need to tell users this.</p>
+
+      <p>On publishing <a href="#course-just-published">we will reiterate this</a>.</p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-7">
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-m">Current cycle</h3>
+      <div class="govuk-inset-text">
+        <p>Publish your changes.</p>
+        <a href="#" class="govuk-button">Publish</a>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-m">During rollover</h3>
+      <div class="govuk-inset-text">
+        <p>Publish this course and it will appear on Find when the cycle opens in October.</p>
+        <a href="#" class="govuk-button">Publish in October</a>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-m">Unpublished changes</h3>
+      <div class="govuk-inset-text">
+        <p>Publish your changes and they will appear on Find when the cycle opens in October.</p>
+        <a href="#" class="govuk-button">Publish in October</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">Will it be on Find?</h2>
+
+      <p>We need to change the column title on the courses table and the corresponding section on the course page. None of the courses are on Find until October, Is it on Find? doesn’t make sense.</p>
+
+      <p>The question becomes: Will it be on Find?</p>
+
+      {% set table %}
+| State | Cycle | Find title | Course value |
+|-|-|-|-|
+|<span class="govuk-tag phase-tag-small phase-tag-table phase-tag-published">Published</span>| Current | Is it on Find? | [Yes – view online](#) |
+|<span class="govuk-tag phase-tag-small phase-tag-table phase-tag-published">Published</span>| Next | Will it be on Find? | Yes – in October |
+|<span class="govuk-tag phase-tag-small phase-tag-table phase-tag-draft">Draft</span>| Current | Is it on Find? | No – still in draft |
+|<span class="govuk-tag phase-tag-small phase-tag-table phase-tag-draft">Draft</span>| Next | Will it be on Find? | No – still in draft  |
+      {% endset %}
+      {{ markdown(table) | safe }}
+
+      <p>Only the text for a Published course needs to change in the Find? column.</p>
+
+      <h2 class="govuk-heading-l">Applications in courses table</h2>
+
+      <p>This should <a href="/publish-teacher-training/publish-states">behave as originally designed</a> – if the open date is in the future, a message shows:</p>
+
+      <p class="govuk-inset-text">Opening on [10 October]</p>
+
+      <p>This hasn’t been built on Live yet, instead the column currently says Closed until applications have opened.</p>
+
+      <h2 class="govuk-heading-l">Logic for showing rollover version</h2>
+
+      <p>If the following are true:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the user is viewing the next cycle</li>
+        <li>the next cycle hasn’t opened yet</li>
+      </ul>
+
+      <p>Once a cycle has opened all changes should revert.</p>
+
+      <h2 class="govuk-heading-l">Missing from this design</h2>
+
+      <p>We probably need a way for providers to preview their course after it’s been published, as View on website won’t be a thing.</p>
+
+      <p>The preview links could persist on the course page and not be dependent on the course’s state.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Courses for next cycle', id: 'courses-for-next-cycle' },
+    { text: 'Draft course with publish messaging', id: 'draft-course-with-publish-messaging' },
+    { text: 'Course just published', id: 'course-just-published' },
+    { text: 'Published course', id: 'published-course' },
+    { text: 'Course with unpublished changes', id: 'course-with-unpublished-changes' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Courses for next cycle', 'courses-for-next-cycle', '/public/images/publish-teacher-training/publishing-during-rollover/thumbnails/courses-for-next-cycle.png', '/public/images/publish-teacher-training/publishing-during-rollover/courses-for-next-cycle.png', '') }}
+
+  {{ designHistory.screenshot('Draft course with publish messaging', 'draft-course-with-publish-messaging', '/public/images/publish-teacher-training/publishing-during-rollover/thumbnails/draft-course-with-publish-messaging.png', '/public/images/publish-teacher-training/publishing-during-rollover/draft-course-with-publish-messaging.png', '') }}
+
+  {{ designHistory.screenshot('Course just published', 'course-just-published', '/public/images/publish-teacher-training/publishing-during-rollover/thumbnails/course-just-published.png', '/public/images/publish-teacher-training/publishing-during-rollover/course-just-published.png', '') }}
+
+  {{ designHistory.screenshot('Published course', 'published-course', '/public/images/publish-teacher-training/publishing-during-rollover/thumbnails/published-course.png', '/public/images/publish-teacher-training/publishing-during-rollover/published-course.png', '') }}
+
+  {{ designHistory.screenshot('Course with unpublished changes', 'course-with-unpublished-changes', '/public/images/publish-teacher-training/publishing-during-rollover/thumbnails/course-with-unpublished-changes.png', '/public/images/publish-teacher-training/publishing-during-rollover/course-with-unpublished-changes.png', '') }}
+
+{% endblock %}
