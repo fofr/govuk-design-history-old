@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+{% set title = 'Prototyping with paper-based application forms' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Before building a fully DfE operated apply service, we wanted to test certain elements of an end-to-end minimum viable product. We began with a series of hypotheses, two of which related to the design of the application form and the information given to providers. These hypotheses were:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>A simplified service does not impede provider decision-making</li>
+        <li>We can meet safeguarding requirements without full references</li>
+      </ul>
+      <p>In order to test these, we decided to create seperate candidate and provider facing application forms using Google Docs, which could be completed online or printed out. </p>
+      <p>This format allowed us to focus on the questions we wanted to ask and guidance we needed to provide, without getting distracted by any concerns around interactivity and user journeys. It also made it easier for members of the team to collaborate on the design.</p>
+
+      <h3 class="govuk-heading-m">Testing our hypotheses</h3>
+      <p>After several rounds of testing with providers we concluded that, while we were able to simplify and change certain aspects of the application form, we should maintain the requirement for references. While not necessary for meeting safeguarding requirements (except possibly the case where a candidate is applying for a school-based course), for a number of providers, references remain an important part of the application process.</p>
+
+      <h3 class="govuk-heading-m">Towards a concierged service pilot</h3>
+      <p>Having testing these hypotheses, we’re continuing to iterate these paper-based forms prior to the start of a ‘concierged’ service pilot, including more testing with candidates. We plan to use these forms to gather information from the initial batch of candidates we take through this hand-held process, and to present applicant information to our chosen provider.</p>
+
+      <h2 class="govuk-heading-l">Candidate-facing application form</h2>
+      <p>Originally created with the intent to collect data from friends/colleagues which we could use to populate a separate provider-facing form, we later realised we could use previously submitted (although somewhat massaged and anonymised) applicant data instead. However, we continued to iterate on this version of the form, and used it to inform the design of the provider-facing version.</p>
+
+      <h3 class="govuk-heading-m">First iteration</h3>
+      <p><a href="https://docs.google.com/document/d/1C29p45w2wrYhCrToykpag5JxKXX2jv9iuUH5_9LTBgo">View first iteration of the candidate-facing form</a></p>
+
+      <h4 class="govuk-heading-s">Questions</h4>
+      <p>Previous analysis looked at the questions asked on the existing UCAS application service, and decided which were still relevant or necessary. Based on this data, we made the following changes:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Added a free text question asking whether a candidate planned to stay at their contact address during training, to head off questions providers may have about candidates whose address is a long distance from the training location.</li>
+        <li>Added a free text question asking candidates from outside the EEA to explain their visa status.</li>
+        <li>Asked applicants to explicitly consent to a DBS check, and alongside that, asked them to provide details of any spent/unpect criminal convictions. Again, this was added to allow candidates to head off any issues or concerns a criminal record check may reveal.</li>
+        <li>Split the personal statement into three sections:
+          <ul>
+            <li>Why do you want to become a teacher?</li>
+            <li>Why do you want to teach this subject or age group?</li>
+            <li>Have you gained school experience?</li>
+          </ul>
+        </li>
+        <li>Added a question to allow applicants to provide any other additional information, including special needs or disabilities.</li>
+      </ul>
+
+      <h4 class="govuk-heading-s">Visual design</h4>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>11 pages long.</li>
+      </ul>
+
+      <h3 class="govuk-heading-m">Second iteration</h3>
+      <p>This iteration was focused on helping providers better assess candidates with more complex backgrounds, adding questions that addressed issues such as residency status, international qualifications and equivalencies.</p>
+      <p><a href="https://docs.google.com/document/d/1ikDTRO1k8Hik_X3MncYLN0H6T16JWHKKXNo_FCLzfjo">View second iteration of the candidate-facing form</a></p>
+
+      <h4 class="govuk-heading-s">Questions</h4>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Having split up the personal statement into specific questions, we realised these mapped quite well to different sections of the form. So these questions were moved to their respective sections, essentially providing a free-text area for candidates to provide additional relevant detail, specific to each set of questions.</li>
+        <li>With the personal statement now featuring a single, shorter and more targeted question (“Why do you want to become a teacher?”), we renamed this section <em>Motivation</em> as the previous label no longer reflected its purpose.</li>
+        <li>For international GCSE equivalent qualifications, we asked candidates to provide additional information about the country of award, awarding body and if they have a NARIC statement of comparability.</li>
+        <li>Added a space for applicants to explain how they intend to meet the eligibility criteria if they don’t have the required GCSE(s).</li>
+        <li>Asked candidates to provide the dates which they took their literacy and numeracy professional skills tests.</li>
+        <li>Asked candidates about transferable skills gained during employment, rather than provide a drawn out job description.</li>
+      </ul>
+
+      <h4 class="govuk-heading-s">Visual design</h4>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Gave greater consistency to areas of guidance, adding a grey background to such content.</li>
+        <li>15 pages long.</li>
+      </ul>
+
+      <h3 class="govuk-heading-m">Third iteration</h3>
+      <p>This iteration was focused on improving the guidance (based on insights gained during provider testing and after meeting with TTAs) and preparing the form for use in the concierge service pilot. This form was then shown to candidates at a Get Into Teaching event in Guilford.</p>
+      <p><a href="https://docs.google.com/document/d/1E0NBHKby3K6WbH1QjH18wD_wY-CnKkJeSBghSe9bgz0">View third iteration of the candidate-facing form</a></p>
+
+      <h4 class="govuk-heading-s">Questions</h4>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Added a new section to gather details of two referees.</li>
+        <li>Removed question regarding declaring criminal convictions.</li>
+        <li>Removed question asking if candidate had booked a professional skills test. They only need to provide information about this test should they have already taken it.</li>
+        <li>Made question regarding subject knowledge applicable to secondary candidates only.</li>
+        <li>Asked candidates to confirm that they:
+          <ul>
+            <li>have provided information given is true, complete and accurate. </li>
+            <li>understand that providers will conduct a Disclosure and Barring Service check. </li>
+            <li>agree to the terms and conditions of the service.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4 class="govuk-heading-s">Content design</h4>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Updated introduction page with specific instructions and information regarding the concierge service.</li>
+        <li>Added draft guidance on how to complete the motivation statement.</li>
+        <li>Added draft guidance regarding references.</li>
+      </ul>
+
+      <h4 class="govuk-heading-s">Visual design</h4>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Increased the border for text fields.</li>
+        <li>Varied with of text fields to better indicate length of answer required.</li>
+        <li>Made Yes/No boolean answers prefilled fields to delete as appropriate.</li>
+        <li>Added dotted border around fieldsets which can be duplicated.</li>
+        <li>21 pages long.</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">Provider-facing application form</h2>
+      <h3 class="govuk-heading-m">First iteration</h3>
+      <p><a href="https://docs.google.com/document/d/1gnJ_MbrxWqJxWoLnrdcr2B6GmeXJuIO38wOJ_mvI5FI">View first iteration of the provider-facing form</a></p>
+      <p>Used a similar design to that of the candidate-facing application form, but removed candidate guidance, featured pre-filled form fields and presented some answers in a more tabular format.</p>
+      <p>This form was then shared with 5 different providers, who were able to provide feedback on the information provided.</p>
+
+      <h3 class="govuk-heading-m">Second iteration</h3>
+      <p><a href="https://docs.google.com/document/d/18B7vTpUXwz-FjSQlyBa01R6pLNjlyDOBrggxIql7G_c">View second iteration of the provider-facing form</a></p>
+      <p>In addition to reflecting the questions added, removed and updated on the corresponding candidate-facing form, we:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>increased the information density; smaller fonts, tabulated data, clearer headings and fewer pages (down from 5 pages to 3).</li>
+        <li>added information box if a candidate has international qualifications.</li>
+      </ul>
+      <p>This form was then shared with 12 different providers, who were able to provide feedback on the information provided.</p>
+    </div>
+  </div>
+{% endblock %}
