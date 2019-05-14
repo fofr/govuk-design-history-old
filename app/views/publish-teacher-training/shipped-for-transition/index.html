@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% set title = 'What we shipped for UCAS transition' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Based on our <a href="/publish-teacher-training/first-transition-mvp">transition MVP designs</a>, when we transitioned all providers away from UCAS we’d shipped the following features:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a locations page</li>
+        <li>a location page with location editing</li>
+        <li>a Google form for adding new locations</li>
+        <li>a courses page with vacancies link</li>
+        <li>a Google form for adding new courses</li>
+        <li>an edit vacancies page (without <a href="/publish-teacher-training/first-transition-mvp#edit-vacancies-for-a-course-with-one-location">refinements for courses with a single training location</a>)</li>
+        <li>a course page with tabs</li>
+        <li>a basic details course tab</li>
+      </ul>
+
+      <p>We didn’t ship pages for:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>deleting a course</li>
+        <li>withdrawing a course</li>
+        <li>editing any basic course details</li>
+        <li><a href="/publish-teacher-training/first-transition-mvp">anything we’d already descoped</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-l">Fallout</h2>
+
+      <p>The biggest support requests have been for:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>changing locations for a course (or change the courses running at a location)</li>
+        <li><a href="https://becomingateacher.zendesk.com/agent/search/1?q=coursedataproblem">changing the UCAS eligibility settings to allow certain applicants to apply</a></li>
+        <li>setting courses to running</li>
+        <li>setting locations to running for a course that is running</li>
+        <li><a href="https://becomingateacher.zendesk.com/agent/search/1?q=newlocationcreated">adding locations</a></li>
+        <li><a href="https://becomingateacher.zendesk.com/agent/search/1?q=newcoursecreated">adding courses</a></li>
+        <li><a href="https://becomingateacher.zendesk.com/agent/search/1?q=deletions">deleting locations</a></li>
+        <li><a href="https://becomingateacher.zendesk.com/agent/search/1?q=courseoutcomes">edit course outcome</a></li>
+        <li><a href="https://becomingateacher.zendesk.com/agent/search/1?q=accessrequest">new access requests</a></li>
+      </ul>
+
+      <p>Some providers have been using the add course form to try and edit existing courses.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Transition information', id: '01-transition-information' },
+    { text: 'Organisation', id: '02-organisation' },
+    { text: 'Locations', id: '03-locations' },
+    { text: 'Edit location', id: '04-edit-location' },
+    { text: 'Courses', id: '05-courses' },
+    { text: 'Draft course', id: '06-draft-course' },
+    { text: 'Published course', id: '07-published-course' },
+    { text: 'Basic details tab', id: '08-basic-details-tab' },
+    { text: 'Not running course', id: '09-not-running-course' },
+    { text: 'Editing vacancies', id: '10-editing-vacancies' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Transition information', '01-transition-information', '/public/images/publish-teacher-training/shipped-for-transition/thumbnails/01-transition-information.png', '/public/images/publish-teacher-training/shipped-for-transition/01-transition-information.png', '') }}
+
+  {{ designHistory.screenshot('Organisation', '02-organisation', '/public/images/publish-teacher-training/shipped-for-transition/thumbnails/02-organisation.png', '/public/images/publish-teacher-training/shipped-for-transition/02-organisation.png', '') }}
+
+  {{ designHistory.screenshot('Locations', '03-locations', '/public/images/publish-teacher-training/shipped-for-transition/thumbnails/03-locations.png', '/public/images/publish-teacher-training/shipped-for-transition/03-locations.png', '') }}
+
+  {{ designHistory.screenshot('Edit location', '04-edit-location', '/public/images/publish-teacher-training/shipped-for-transition/thumbnails/04-edit-location.png', '/public/images/publish-teacher-training/shipped-for-transition/04-edit-location.png', '') }}
+
+  {{ designHistory.screenshot('Courses', '05-courses', '/public/images/publish-teacher-training/shipped-for-transition/thumbnails/05-courses.png', '/public/images/publish-teacher-training/shipped-for-transition/05-courses.png', '') }}
+
+  {{ designHistory.screenshot('Draft course', '06-draft-course', '/public/images/publish-teacher-training/shipped-for-transition/thumbnails/06-draft-course.png', '/public/images/publish-teacher-training/shipped-for-transition/06-draft-course.png', '') }}
+
+  {{ designHistory.screenshot('Published course', '07-published-course', '/public/images/publish-teacher-training/shipped-for-transition/thumbnails/07-published-course.png', '/public/images/publish-teacher-training/shipped-for-transition/07-published-course.png', '') }}
+
+  {{ designHistory.screenshot('Basic details tab', '08-basic-details-tab', '/public/images/publish-teacher-training/shipped-for-transition/thumbnails/08-basic-details-tab.png', '/public/images/publish-teacher-training/shipped-for-transition/08-basic-details-tab.png', '') }}
+
+  {{ designHistory.screenshot('Not running course', '09-not-running-course', '/public/images/publish-teacher-training/shipped-for-transition/thumbnails/09-not-running-course.png', '/public/images/publish-teacher-training/shipped-for-transition/09-not-running-course.png', '') }}
+
+  {{ designHistory.screenshot('Editing vacancies', '10-editing-vacancies', '/public/images/publish-teacher-training/shipped-for-transition/thumbnails/10-editing-vacancies.png', '/public/images/publish-teacher-training/shipped-for-transition/10-editing-vacancies.png', '') }}
+
+{% endblock %}
