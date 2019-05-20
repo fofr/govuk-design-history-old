@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% set title = 'Support for missing features' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Because of the UCAS transition timescales <a href="/publish-teacher-training/shipped-for-transition">we’ve shipped without required features</a>.</p>
+
+      <h2 class="govuk-heading-l">Make it easier to contact support</h2>
+      <p>Because features are missing more people need to contact us.</p>
+
+      <p>We’ve found that users sometimes struggle to use our support links.</p>
+
+      <p>If they don’t have a mail client configured, or if it’s configured for the wrong email, users will struggle to contact us. We’ve alleviated this by editing the copy to show the full support email address, but this design adds a form which will be easier to use.</p>
+
+      <h2 class="govuk-heading-l">Make features discoverable</h2>
+      <p>Where a new feature was designed to be discoverable, people are looking for it – often in the right place – but we haven’t built it yet.</p>
+
+      <p>In the place where a feature should be there’s no action and no confirmation that they would have found it. This leads users to continue searching, some try another feature for the wrong purpose – ie the only one they can find.</p>
+
+      <p>In the design below we add a call to action where the feature would be – ‘Request change’ rather than ‘Change’. This would take users to a focused support page and automatically fill in some of the known context for them.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Get support and guidance', id: 'get-support-and-guidance' },
+    { text: 'Request a change', id: 'request-a-change' },
+    { text: 'Request a change to this course', id: 'request-a-change-to-this-course' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Get support and guidance', 'get-support-and-guidance', '/public/images/publish-teacher-training/support-for-missing-features/thumbnails/get-support-and-guidance.png', '/public/images/publish-teacher-training/support-for-missing-features/get-support-and-guidance.png', '') }}
+
+  {{ designHistory.screenshot('Request a change', 'request-a-change', '/public/images/publish-teacher-training/support-for-missing-features/thumbnails/request-a-change.png', '/public/images/publish-teacher-training/support-for-missing-features/request-a-change.png', '') }}
+
+  {{ designHistory.screenshot('Request a change to this course', 'request-a-change-to-this-course', '/public/images/publish-teacher-training/support-for-missing-features/thumbnails/request-a-change-to-this-course.png', '/public/images/publish-teacher-training/support-for-missing-features/request-a-change-to-this-course.png', '') }}
+
+{% endblock %}
