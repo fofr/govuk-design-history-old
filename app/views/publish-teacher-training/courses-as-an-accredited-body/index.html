@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% set title = 'Courses as an accredited body' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>There is a need for accredited bodies to see the courses they are associated with. UCAS web-link used to give them a read-only view of all courses – running or not, as well as a CSV export of the data.</p>
+
+      <p>A provider can currently see all published courses they’re the accredited body for on Find (<a href="https://find-postgraduate-teacher-training.education.gov.uk/results?page=3&l=3&query=The%20University%20of%20Warwick&qualifications=QtsOnly,PgdePgceWithQts,Other&fulltime=False&parttime=False&hasvacancies=True&senCourses=False">Example</a>). We could link to this view as a quick fix.</p>
+
+      <h2 class="govuk-heading-l">Design notes</h2>
+
+      <p>In the design below a new section has been added: Courses as an accredited body. This links to page listing all providers who’ve selected them, and a further link to see a table of courses. Text for these courses can be seen on Find if they’ve been published. There is no link to a read-only Publish version – if research shows we need one we could link to the course preview.</p>
+
+      <p>A link to download a CSV of the data has been included.</p>
+
+      <p>A previous design (not shown), tried to put all provider courses on one page, but for some providers this can be upwards of 700 courses. Separating out the courses by training provider limits the number of courses shown and should make specific courses easier to find.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Organisation page with new section', id: 'organisation-page-with-new-section' },
+    { text: 'Courses as an accredited body', id: 'courses-as-an-accredited-body' },
+    { text: 'Courses from a training provider', id: 'courses-from-a-training-provider' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Organisation page with new section', 'organisation-page-with-new-section', '/public/images/publish-teacher-training/courses-as-an-accredited-body/thumbnails/organisation-page-with-new-section.png', '/public/images/publish-teacher-training/courses-as-an-accredited-body/organisation-page-with-new-section.png', '') }}
+
+  {{ designHistory.screenshot('Courses as an accredited body', 'courses-as-an-accredited-body', '/public/images/publish-teacher-training/courses-as-an-accredited-body/thumbnails/courses-as-an-accredited-body.png', '/public/images/publish-teacher-training/courses-as-an-accredited-body/courses-as-an-accredited-body.png', '') }}
+
+  {{ designHistory.screenshot('Courses from a training provider', 'courses-from-a-training-provider', '/public/images/publish-teacher-training/courses-as-an-accredited-body/thumbnails/courses-from-a-training-provider.png', '/public/images/publish-teacher-training/courses-as-an-accredited-body/courses-from-a-training-provider.png', '') }}
+
+{% endblock %}
