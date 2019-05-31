@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% set title = 'Highlighting the multiple organisations feature' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Providers can already <a href="/publish-teacher-training/multiple-organisations">manage multiple organisations from a single account</a>. But only providers who have this set up will know about this feature. There are users who don’t know they can do this who are using multiple logins to manage organisations.</p>
+
+      <p>We discovered this while researching with accredited bodies: <a href="https://lookback.io/watch/xG4kWc75pZTTj5pgb?t=3m37.92s">Research video</a></p>
+
+      <h2 class="govuk-heading-l">Suggested changes</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>All users see the organisations page, rather than just multiple organisation users</li>
+        <li>At the bottom of the list we call out how to get access to more organisations</li>
+      </ul>
+
+      <p>This should also simplify the logic for the current systems.</p>
+    </div>
+  </div>
+
+  {{ designHistory.screenshot('Organisations', 'organisations', '/public/images/publish-teacher-training/access-to-multiple-organisations/thumbnails/organisations.png', '/public/images/publish-teacher-training/access-to-multiple-organisations/organisations.png', '') }}
+
+{% endblock %}
