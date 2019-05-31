@@ -6,7 +6,14 @@
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
 
-  <div class="govuk-grid-row">
+  {% set contents = [
+    { text: 'Organisation page with new section', id: 'organisation-page-with-new-section' },
+    { text: 'Courses as an accredited body', id: 'courses-as-an-accredited-body' },
+    { text: 'Courses from a training provider', id: 'courses-from-a-training-provider' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
     <div class="govuk-grid-column-two-thirds">
       <p>There is a need for accredited bodies to see the courses they are associated with. UCAS web-link used to give them a read-only view of all courses – running or not, as well as a CSV export of the data.</p>
 
@@ -19,20 +26,59 @@
       <p>A link to download a CSV of the data has been included.</p>
 
       <p>A previous design (not shown), tried to put all provider courses on one page, but for some providers this can be upwards of 700 courses. Separating out the courses by training provider limits the number of courses shown and should make specific courses easier to find.</p>
+
+      <h2 class="govuk-heading-l">User research</h2>
+
+      <p>We tested this design with accredited bodies:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://lookback.io/watch/JyBeeZj4fWbTdo7oJ">University of Greenwich</a> – 16 of their own courses and a further 11 they’re the accredited body for</li>
+        <li><a href="https://lookback.io/watch/SnRd92det9Eeehb3w">Liverpool Hope University</a> – 25 of their own courses and a further 88 they’re the accredited body for</li>
+        <li><a href="https://lookback.io/watch/xG4kWc75pZTTj5pgb">East of England Teacher Training (SCITT)</a></li>
+      </ul>
+
+      <h3 class="govuk-heading-m">Marketing name vs School name</h3>
+
+      <p><a href="https://lookback.io/watch/SnRd92det9Eeehb3w?t=33m40.72s">“We get confused between the alliance name and the school name”</a></p>
+
+      <p>School direct providers are known by two names:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>an alliance name – a marketing name that represents a group of schools</li>
+        <li>the name of the lead school in the alliance</li>
+      </ul>
+
+      <p>On Find (and UCAS Apply) we prefer the alliance name. This minimises candidate confusion. If the lead school name was used candidates might expect to train at that school. The type of that lead school can also be confusing – consider a primary lead school offering secondary courses via a partner. By using the alliance name we avoid organisation name changes when the lead school changes.</p>
+
+      <p>On the Courses as an accredited body page we use the marketing name. One provider didn’t recognise the alliance names – they only know the lead schools. The design should be iterated to show both, this should also help users to improve their knowledge of which lead school belongs to which alliance.</p>
+
+      <h3 class="govuk-heading-m">Current workarounds</h3>
+
+      <p>Without the Courses as an accredited body feature, one provider uses Find to search for each school direct  and their courses. They’re checking to see if the basic course details and written information is true. This takes a long time and is compounded by the marketing vs alliance name problem.</p>
+
+      <p>School directs often ask questions of their accredited bodies, without easy access to the School direct’s courses it can be difficult to answer them.</p>
+
+      <h3 class="govuk-heading-m">Changes to courses</h3>
+
+      <p>Accredited bodies expressed a need to be notified when they are associated with a new course or if a course has been updated. When a school direct provider makes a change to one of their courses, the accredited body will only know if that providers tells them.</p>
+
+      <p>The practice recommended by UCAS of discontinuing a course and creating a new one to fix errors causes problems for accredited bodies – changes to course codes may not be communicated back to them, meaning their internal systems are wrong.</p>
+
+      <p><a href="https://lookback.io/watch/SnRd92det9Eeehb3w?t=14m40s">A discussion about alerts</a></p>
     </div>
   </div>
 
-  {% set contents = [
-    { text: 'Organisation page with new section', id: 'organisation-page-with-new-section' },
-    { text: 'Courses as an accredited body', id: 'courses-as-an-accredited-body' },
-    { text: 'Courses from a training provider', id: 'courses-from-a-training-provider' }
-  ] %}
-  {{ designHistory.screenshotContents(contents) }}
+  {{ designHistory.screenshot('Organisation page with new section', 'organisation-page-with-new-section', '/public/images/publish-teacher-training/courses-as-an-accredited-body/thumbnails/organisation-page-with-new-section.png', '/public/images/publish-teacher-training/courses-as-an-accredited-body/organisation-page-with-new-section.png', '
+    <p>2 of 3 providers found the new page easily. 1 provider expected to find them under Locations as they associated schools with locations.</p>
+  ') }}
 
-  {{ designHistory.screenshot('Organisation page with new section', 'organisation-page-with-new-section', '/public/images/publish-teacher-training/courses-as-an-accredited-body/thumbnails/organisation-page-with-new-section.png', '/public/images/publish-teacher-training/courses-as-an-accredited-body/organisation-page-with-new-section.png', '') }}
+  {{ designHistory.screenshot('Courses as an accredited body', 'courses-as-an-accredited-body', '/public/images/publish-teacher-training/courses-as-an-accredited-body/thumbnails/courses-as-an-accredited-body.png', '/public/images/publish-teacher-training/courses-as-an-accredited-body/courses-as-an-accredited-body.png', '
+    <p>1 provider needed to see the lead school name to know who was who</p>
+    <p>The course counts were useful</p>
+    <p>1 provider is the accredited body for 11 courses, they expressed a preference for a view with all the courses showing, perhaps an accordion. This wouldn’t work for providers with 100-800 courses.</p>
+  ') }}
 
-  {{ designHistory.screenshot('Courses as an accredited body', 'courses-as-an-accredited-body', '/public/images/publish-teacher-training/courses-as-an-accredited-body/thumbnails/courses-as-an-accredited-body.png', '/public/images/publish-teacher-training/courses-as-an-accredited-body/courses-as-an-accredited-body.png', '') }}
-
-  {{ designHistory.screenshot('Courses from a training provider', 'courses-from-a-training-provider', '/public/images/publish-teacher-training/courses-as-an-accredited-body/thumbnails/courses-from-a-training-provider.png', '/public/images/publish-teacher-training/courses-as-an-accredited-body/courses-from-a-training-provider.png', '') }}
+  {{ designHistory.screenshot('Courses from a training provider', 'courses-from-a-training-provider', '/public/images/publish-teacher-training/courses-as-an-accredited-body/thumbnails/courses-from-a-training-provider.png', '/public/images/publish-teacher-training/courses-as-an-accredited-body/courses-from-a-training-provider.png', '
+    <p>Read only access is a good default and allows accredited bodies to check the title, course code and outcome easily. Both universities said they only needed read-only access, and that they’d be happy to email schools if they need to make changes.</p>
+    <p>If a provider already has full access to an organisation – eg if they manage courses on behalf of a school, we could link to each course.</p>
+  ') }}
 
 {% endblock %}
