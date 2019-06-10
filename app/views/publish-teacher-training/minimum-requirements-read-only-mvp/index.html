@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% set title = 'UCAS Minimum Requirements – A read only MVP' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">UCAS GCSE requirements<br />A read only MVP</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>To implement the <a href="/publish-teacher-training/minimum-course-requirements-logic">full design</a> we need to fix the data and coerce the model into our representation. The stories are large and sequential.</p>
+      <p>Not showing the values of these settings to providers creates a risk – a provider can’t see an incorrect setting, they won’t know to fix it, meaning some people might not be able to apply. We needed to show the provider’s choices straight away.</p>
+      <p>To ship the read-only version of this feature earlier we updated the design. It will now show the <a href="/publish-teacher-training/specific-requirements">UCAS codes (1, 2, 3 and 9)</a> and the meanings of those codes.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Code 1 – Must have', id: '01-must-have' },
+    { text: 'Code 2 – Taking', id: '02-taking' },
+    { text: 'Code 3 – Equivalence test', id: '03-equivalence-test' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Code 1 – Must have', '01-must-have', '/public/images/publish-teacher-training/minimum-requirements-read-only-mvp/thumbnails/01-must-have.png', '/public/images/publish-teacher-training/minimum-requirements-read-only-mvp/01-must-have.png', '') }}
+
+  {{ designHistory.screenshot('Code 2 – Taking', '02-taking', '/public/images/publish-teacher-training/minimum-requirements-read-only-mvp/thumbnails/02-taking.png', '/public/images/publish-teacher-training/minimum-requirements-read-only-mvp/02-taking.png', '') }}
+
+  {{ designHistory.screenshot('Code 3 – Equivalence test', '03-equivalence-test', '/public/images/publish-teacher-training/minimum-requirements-read-only-mvp/thumbnails/03-equivalence-test.png', '/public/images/publish-teacher-training/minimum-requirements-read-only-mvp/03-equivalence-test.png', '') }}
+
+{% endblock %}
