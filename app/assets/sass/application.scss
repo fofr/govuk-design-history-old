@@ -1,8 +1,8 @@
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
 
-// Not in design system:
-$button-colour: #00823b;
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
 
 // Import GOV.UK Frontend and any extension styles if extensions have been configured
 @import "lib/extensions/extensions";
@@ -69,7 +69,6 @@ $button-colour: #00823b;
 }
 
 // Email styles
-
 .bat-email {
   border: 5px solid $govuk-border-colour;
   padding: govuk-spacing(6);
@@ -84,24 +83,19 @@ $button-colour: #00823b;
 
 // Publish documentation styles
 // /publish-teacher-training/publish-states
-
 .phase-tag-small {
-  padding: 4px 8px 1px;
+  padding: govuk-spacing(1) govuk-spacing(2);
 }
 
 .phase-tag-no-content {
   background: govuk-colour("white");
-  color: govuk-colour("grey-1");
-  border: 2px solid lighten(govuk-colour("grey-1"), 10%);
-  margin-top: -1px;
-  margin-bottom: -1px;
+  color: govuk-colour("dark-grey");
+  border: 2px solid lighten(govuk-colour("dark-grey"), 10%);
 }
 
 .phase-tag-not-running {
-  background: govuk-colour("grey-3");
+  background: govuk-colour("light-grey");
   color: govuk-colour("black");
-  margin-top: -1px;
-  margin-bottom: -1px;
 }
 
 .phase-tag-draft {
@@ -109,13 +103,15 @@ $button-colour: #00823b;
 }
 
 .phase-tag-published {
-  background: $button-colour;
+  background: govuk-colour("green");
 }
 
+// Empty
 .empty {
-  color: govuk-colour("grey-1");
+  color: govuk-colour("dark-grey");
 }
 
+// Progress bar
 .progress-bar-container {
   @include govuk-font(16);
   position: relative;
