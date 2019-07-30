@@ -10,9 +10,11 @@
 {% endmacro %}
 
 {% macro breadcrumbs(items = [ { href: "/", text: "Design history" } ]) %}
-  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+  {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
   <div class="design-history-dont-print">
-    {{ govukBreadcrumbs({ items: items }) }}
+    {{ govukBreadcrumbs({
+      items: items
+    }) }}
   </div>
 {% endmacro %}
 
@@ -35,6 +37,9 @@
 {% endmacro %}
 
 {% macro backLink(href = "/", text = "Back") %}
-  {% from "back-link/macro.njk" import govukBackLink %}
-  {{ govukBackLink({ text: text, href: href }) }}
+  {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+  {{ govukBackLink({
+    text: text,
+    href: href
+  }) }}
 {% endmacro %}
