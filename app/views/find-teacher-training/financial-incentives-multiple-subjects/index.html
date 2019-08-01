@@ -4,11 +4,7 @@
 {% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
 {% block content %}
-  <h1 class="govuk-heading-xl">{{ title }}</h1>
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      {% set content %}
+{% set content %}
 ## What is the problem?
 There are a number of courses offered by providers that combine two discrete subjects into a single course. For example:
 * English and Media (38PP) - University of Sussex
@@ -63,8 +59,11 @@ As a short term solution, the team updated the financial incentives information 
 * Courses with more than one subject tag in the database
 
 This problem has now been resolved for the 17 courses identified.
-      {% endset %}
+{% endset %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
       {{ markdown(content) | safe }}
     </div>
   </div>

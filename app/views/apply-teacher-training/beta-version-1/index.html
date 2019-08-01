@@ -3,8 +3,16 @@
 {% block pageTitle %}{{ title }}{% endblock %}
 {% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
-{% set prose %}
-Prototype v1: [apply-beta-prototype-v1.herokuapp.com](https://apply-beta-prototype-v1.herokuapp.com)
+{% block content %}
+{% set content %}
+{% set prototypeHtml %}
+<h4 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="https://apply-beta-prototype-v1.herokuapp.com">Prototype v1</a></h4>
+<p class="govuk-body-s">Website. Please ask for access permissions</p>
+{% endset %}
+
+{{ govukInsetText({
+  html: prototypeHtml
+}) }}
 
 In June the Apply team started development of the candidate-facing aspects of the service. To ensure that what we are delivering is usable and understandable, we created an interactive prototype that we could use to test with users and validate our design decisions.
 
@@ -107,7 +115,14 @@ For missing GCSEs:
 
 ## Research findings
 
-[Findings and recommendations from usability testing](https://docs.google.com/presentation/d/11n2OsN9LswmHab64FG0sIsQ-BijdS-GM)
+{% set findingsHtml %}
+<h4 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="https://docs.google.com/presentation/d/11n2OsN9LswmHab64FG0sIsQ-BijdS-GM">Findings and recommendations from usability testing</a></h4>
+<p class="govuk-body-s">Presentation. Please ask for access permissions</p>
+{% endset %}
+
+{{ govukInsetText({
+  html: findingsHtml
+}) }}
 
 While the prototype tested well, there were a few areas that stood out as needing improvement:
 
@@ -119,14 +134,12 @@ While the prototype tested well, there were a few areas that stood out as needin
 
 * Some users express confusion around section headers, with some not certain what to expect for ‘Subject knowledge’ and ‘Your teaching vocation’ sections.
 
-This first round of usability testing also demonstrated the need for confirmation emails to be included within the journeys we test with.
+This first round of usability testing also demonstrated the need for confirmation emails to be included as part of the journeys we test.
 {% endset %}
-
-{% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ markdown(prose) | safe }}
+      {{ markdown(content) | safe }}
     </div>
   </div>
 {% endblock %}

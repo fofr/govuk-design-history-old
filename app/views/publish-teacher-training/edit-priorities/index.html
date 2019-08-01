@@ -34,7 +34,7 @@
     </div>
   </div>
 
-  {% set table %}
+{% set table %}
 | Screen | Notes | Priority | Complexity | Always editable |
 |-|-|-|-|-|
 | [Level and SEND](#level-and-send) | Level has a significant effect, rarely changed | Low | High | No |
@@ -53,7 +53,7 @@
 | [Start date](#course-start-date) | Rarely edited | Low | Low | No |
 | [Title](#title) | Changes to titles need to be approved | Medium | High | No |
 | [Confirm changes](#confirm-your-change) | All edits must be summarised before confirming | High | High | -- |
-  {% endset %}
+{% endset %}
 
   {{ markdown(table) | safe }}
 

@@ -46,7 +46,7 @@ $govuk-assets-path: '/govuk/assets/';
     }
   }
 
-  ul {
+  > ul {
     @extend .govuk-list;
     @extend .govuk-list--bullet;
   }

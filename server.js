@@ -317,15 +317,15 @@ app.use(function (req, res, next) {
     return items
   })
 
-  nunjucksAppEnv.addGlobal('markdown', function (text) {
-    if (text === undefined) {
+  nunjucksAppEnv.addGlobal('markdown', function (str) {
+    if (str === undefined) {
       return ''
     }
 
     // Ignore leading indentation
-    const t = text.replace(/^\s+/gm, '\n')
+    // const t = text.replace(/^\s+/gm, '\n')
 
-    return '<div class="markdown">' + marked(t) + '</div>'
+    return '<div class="markdown">' + marked(str) + '</div>'
   })
 
   nunjucksAppEnv.addFilter('fixed', function (num, length) {
