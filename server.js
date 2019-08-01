@@ -279,11 +279,11 @@ if (useDocumentation) {
 }
 
 app.use(function (req, res, next) {
-  nunjucksAppEnv.addGlobal('breadcrumbItems', function(text) {
-    var items = [ { text: 'Becoming a teacher design history', href: '/' } ];
+  nunjucksAppEnv.addGlobal('breadcrumbItems', function (text) {
+    var items = [ { text: 'Becoming a teacher design history', href: '/' } ]
 
     if (req.path.match(/(teacher-training|manage-applications)\/?$/)) {
-      return items;
+      return items
     }
 
     if (req.path.includes('publish-teacher')) {
@@ -314,30 +314,30 @@ app.use(function (req, res, next) {
       })
     }
 
-    return items;
-  });
+    return items
+  })
 
-  nunjucksAppEnv.addGlobal('markdown', function(text) {
+  nunjucksAppEnv.addGlobal('markdown', function (text) {
     if (text === undefined) {
       return ''
     }
 
     // Ignore leading indentation
-    t = text.replace(/^\s+/gm, "\n")
+    const t = text.replace(/^\s+/gm, '\n')
 
-    return '<div class="markdown">' + marked(t) + '</div>';
-  });
+    return '<div class="markdown">' + marked(t) + '</div>'
+  })
 
-  nunjucksAppEnv.addFilter('fixed', function(num, length) {
-    return num < 1 ? num.toFixed(length || 1) : num.toFixed(length || 0);
-  });
+  nunjucksAppEnv.addFilter('fixed', function (num, length) {
+    return num < 1 ? num.toFixed(length || 1) : num.toFixed(length || 0)
+  })
 
-  nunjucksAppEnv.addGlobal('totalFromRows', function(rows) {
-    return rows.reduce((a, b) => a + b[1], 0);
-  });
+  nunjucksAppEnv.addGlobal('totalFromRows', function (rows) {
+    return rows.reduce((a, b) => a + b[1], 0)
+  })
 
   next()
-});
+})
 
 if (useV6) {
   // Clone app locals to v6 app locals
