@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set title = 'Create account' %}
+{% set title = 'Create an account' %}
 {% block pageTitle %}{{ title }}{% endblock %}
 {% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
@@ -7,14 +7,14 @@
   <h1 class="govuk-heading-xl">{{ title }}</h1>
 
   {% set contents = [
-    { text: 'Start page', id: 'start-page' }, 
-    { text: 'Create an account', id: 'create-an-account' }, 
-    { text: 'Reset password', id: 'reset-password' }, 
-    { text: 'Sign in', id: 'sign-in' }, 
+    { text: 'Start page', id: 'start-page' },
+    { text: 'Create an account', id: 'create-an-account' },
+    { text: 'Reset password', id: 'reset-password' },
+    { text: 'Sign in', id: 'sign-in' },
     { text: 'Dashboard', id: 'dashboard' }
   ] %}
   {{ designHistory.screenshotContents(contents) }}
-  
+
   {{ designHistory.screenshot('Start page', 'start-page', '/public/images/apply-teacher-training/create-account/thumbnails/start-page.png', '/public/images/apply-teacher-training/create-account/start-page.png', '') }}
 
   {{ designHistory.screenshot('Create an account', 'create-an-account', '/public/images/apply-teacher-training/create-account/thumbnails/create-an-account.png', '/public/images/apply-teacher-training/create-account/create-an-account.png', '') }}

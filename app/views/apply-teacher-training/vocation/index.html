@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set title = 'Vocation' %}
+{% set title = 'Why you want to be a teacher' %}
 {% block pageTitle %}{{ title }}{% endblock %}
 {% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
 
@@ -10,7 +10,7 @@
     { text: 'Why you want to be a teacher', id: 'why-you-want-to-be-a-teacher' }
   ] %}
   {{ designHistory.screenshotContents(contents) }}
-  
+
   {{ designHistory.screenshot('Why you want to be a teacher', 'why-you-want-to-be-a-teacher', '/public/images/apply-teacher-training/vocation/thumbnails/why-you-want-to-be-a-teacher.png', '/public/images/apply-teacher-training/vocation/why-you-want-to-be-a-teacher.png', '') }}
 
 {% endblock %}
