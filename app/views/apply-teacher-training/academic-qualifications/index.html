@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% set title = 'Academic qualifications' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'Academic qualifications', id: 'academic-qualifications' }, 
+    { text: 'Your degree', id: 'your-degree' }, 
+    { text: 'Add degree', id: 'add-degree' }, 
+    { text: 'Add non-UK degree', id: 'add-non-uk-degree' }, 
+    { text: 'Maths GCSE or equivalent', id: 'maths-gcse-or-equivalent' }, 
+    { text: 'Add maths GCSE or equivalent', id: 'add-maths-gcse-or-equivalent' }, 
+    { text: 'English GCSE or equivalent', id: 'english-gcse-or-equivalent' }, 
+    { text: 'Add English GCSE equivalent', id: 'add-english-gcse-equivalent' }, 
+    { text: 'Add other qualification', id: 'add-other-qualification' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+  
+  {{ designHistory.screenshot('Academic qualifications', 'academic-qualifications', '/public/images/apply-teacher-training/academic-qualifications/thumbnails/academic-qualifications.png', '/public/images/apply-teacher-training/academic-qualifications/academic-qualifications.png', '') }}
+
+  {{ designHistory.screenshot('Your degree', 'your-degree', '/public/images/apply-teacher-training/academic-qualifications/thumbnails/your-degree.png', '/public/images/apply-teacher-training/academic-qualifications/your-degree.png', '') }}
+
+  {{ designHistory.screenshot('Add degree', 'add-degree', '/public/images/apply-teacher-training/academic-qualifications/thumbnails/add-degree.png', '/public/images/apply-teacher-training/academic-qualifications/add-degree.png', '') }}
+
+  {{ designHistory.screenshot('Add non-UK degree', 'add-non-uk-degree', '/public/images/apply-teacher-training/academic-qualifications/thumbnails/add-non-uk-degree.png', '/public/images/apply-teacher-training/academic-qualifications/add-non-uk-degree.png', '') }}
+
+  {{ designHistory.screenshot('Maths GCSE or equivalent', 'maths-gcse-or-equivalent', '/public/images/apply-teacher-training/academic-qualifications/thumbnails/maths-gcse-or-equivalent.png', '/public/images/apply-teacher-training/academic-qualifications/maths-gcse-or-equivalent.png', '') }}
+
+  {{ designHistory.screenshot('Add maths GCSE or equivalent', 'add-maths-gcse-or-equivalent', '/public/images/apply-teacher-training/academic-qualifications/thumbnails/add-maths-gcse-or-equivalent.png', '/public/images/apply-teacher-training/academic-qualifications/add-maths-gcse-or-equivalent.png', '') }}
+
+  {{ designHistory.screenshot('English GCSE or equivalent', 'english-gcse-or-equivalent', '/public/images/apply-teacher-training/academic-qualifications/thumbnails/english-gcse-or-equivalent.png', '/public/images/apply-teacher-training/academic-qualifications/english-gcse-or-equivalent.png', '') }}
+
+  {{ designHistory.screenshot('Add English GCSE equivalent', 'add-english-gcse-equivalent', '/public/images/apply-teacher-training/academic-qualifications/thumbnails/add-english-gcse-equivalent.png', '/public/images/apply-teacher-training/academic-qualifications/add-english-gcse-equivalent.png', '') }}
+
+  {{ designHistory.screenshot('Add other qualification', 'add-other-qualification', '/public/images/apply-teacher-training/academic-qualifications/thumbnails/add-other-qualification.png', '/public/images/apply-teacher-training/academic-qualifications/add-other-qualification.png', '') }}
+
+{% endblock %}
