@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% set title = 'Subject knowledge' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'Subject knowledge', id: 'subject-knowledge' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+  
+  {{ designHistory.screenshot('Subject knowledge', 'subject-knowledge', '/public/images/apply-teacher-training/subject-knowledge/thumbnails/subject-knowledge.png', '/public/images/apply-teacher-training/subject-knowledge/subject-knowledge.png', '') }}
+
+{% endblock %}
