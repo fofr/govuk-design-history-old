@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% set title = 'Allocations' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% set html %}
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="https://docs.google.com/document/d/1926pN2UTaknKAC4bYUGyCSiPe5lBXJZ33ld7LXmftYw/edit">Original context</a></h4>
+        <p class="govuk-body-s">Document. Please ask for access permissions</p>
+        <p>The ask is for us to look at how we can bring in the request allocations process into Find in the simplest and quickest way possible. </p>
+        <p><a href="https://trello.com/c/CNOPjJNc/1861-allocations-in-find-design-research">Trello ticket</a></p>
+      {% endset %}
+
+      {{ govukInsetText({
+        html: html
+      }) }}
+
+      <p>Show the allocation policy for a course on the basic details tab.</p>
+
+      <p>For the 2020 to 2021 cycle only PE fee-funded courses require allocated places.</p>
+
+      <p>We don’t have data on whether a request for allocations has been made or not, so for PE we need to caveat the link to request allocations.</p>
+
+      <p>The link to request allocations will point to a Google form, responses will be shared with the allocations team.</p>
+
+      <p>The link text, ‘request allocations’ might need to refer to ‘permission to recruit’. We’ve opted for allocations for now because this gives the impression of asking for a number of places, versus permission which is either true or false.</p>
+
+      <h2 class="govuk-heading-m">Guidance on GOV.UK</h2>
+      <p>
+        <a href="https://www.gov.uk/government/publications/requesting-initial-teacher-training-places-2020-to-2021">Requesting initial teacher training places: 2020 to 2021</a>
+      </p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Allocations for a course', id: 'allocations-for-a-course' },
+    { text: 'Allocations for a fee-funded PE course', id: 'allocations-for-a-fee-funded-pe-course' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Allocations for a course', 'allocations-for-a-course', '/public/images/publish-teacher-training/allocations/thumbnails/allocations-for-a-course.png', '/public/images/publish-teacher-training/allocations/allocations-for-a-course.png', '') }}
+
+  {{ designHistory.screenshot('Allocations for a fee-funded PE course', 'allocations-for-a-fee-funded-pe-course', '/public/images/publish-teacher-training/allocations/thumbnails/allocations-for-a-fee-funded-pe-course.png', '/public/images/publish-teacher-training/allocations/allocations-for-a-fee-funded-pe-course.png', '') }}
+
+{% endblock %}
