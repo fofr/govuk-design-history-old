@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% set title = 'Magic link login' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>An alternative to the <a href="/apply-teacher-training/apply-june-2019/create-account">account and password design</a>.</p>
+
+      <p>Users had trouble with accounts:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>they didn’t know which GOV.UK account to use</li>
+        <li>some didn’t know why they were making an account</li>
+      </ul>
+
+      <p>Only ask for an email address, and explain why we need it.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Start page', id: 'start-page' },
+    { text: 'Before you begin', id: 'before-you-begin' },
+    { text: 'Check your email', id: 'check-your-email' },
+    { text: 'Please confirm your email address', id: 'please-confirm-your-email-address' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Start page', 'start-page', '/public/images/apply-teacher-training/magic-link-login/thumbnails/start-page.png', '/public/images/apply-teacher-training/magic-link-login/start-page.png', '') }}
+
+  {{ designHistory.screenshot('Before you begin', 'before-you-begin', '/public/images/apply-teacher-training/magic-link-login/thumbnails/before-you-begin.png', '/public/images/apply-teacher-training/magic-link-login/before-you-begin.png', '') }}
+
+  {{ designHistory.screenshot('Check your email', 'check-your-email', '/public/images/apply-teacher-training/magic-link-login/thumbnails/check-your-email.png', '/public/images/apply-teacher-training/magic-link-login/check-your-email.png', '') }}
+
+  {{ designHistory.screenshot('Please confirm your email address', 'please-confirm-your-email-address', '/public/images/apply-teacher-training/magic-link-login/thumbnails/please-confirm-your-email-address.png', '/public/images/apply-teacher-training/magic-link-login/please-confirm-your-email-address.png', '') }}
+
+{% endblock %}
