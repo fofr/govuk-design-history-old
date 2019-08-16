@@ -282,6 +282,7 @@ app.use(function (req, res, next) {
   nunjucksAppEnv.addGlobal('breadcrumbItems', function (text) {
     var items = [ { text: 'Becoming a teacher design history', href: '/' } ]
 
+    // If path ends with one of these, don't add any further breadcrumbs
     if (req.path.match(/(teacher-training|manage-applications)\/?$/)) {
       return items
     }
@@ -311,6 +312,13 @@ app.use(function (req, res, next) {
       items.push({
         text: 'Manage teacher training applications',
         href: '/manage-applications'
+      })
+    }
+
+    if (req.path.includes('apply-june-2019/')) {
+      items.push({
+        text: 'July 2019 prototype',
+        href: '/apply-teacher-training/apply-june-2019'
       })
     }
 

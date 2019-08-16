@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% set title = 'References' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'Add first referee', id: 'add-first-referee' },
+    { text: 'Add second referee', id: 'add-second-referee' },
+    { text: 'References', id: 'references' },
+    { text: 'Review references', id: 'review-references' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Add first referee', 'add-first-referee', '/public/images/apply-teacher-training/apply-june-2019/references/thumbnails/add-first-referee.png', '/public/images/apply-teacher-training/apply-june-2019/references/add-first-referee.png', '') }}
+
+  {{ designHistory.screenshot('Add second referee', 'add-second-referee', '/public/images/apply-teacher-training/apply-june-2019/references/thumbnails/add-second-referee.png', '/public/images/apply-teacher-training/apply-june-2019/references/add-second-referee.png', '') }}
+
+  {{ designHistory.screenshot('References', 'references', '/public/images/apply-teacher-training/apply-june-2019/references/thumbnails/references.png', '/public/images/apply-teacher-training/apply-june-2019/references/references.png', '') }}
+
+  {{ designHistory.screenshot('Review references', 'review-references', '/public/images/apply-teacher-training/apply-june-2019/references/thumbnails/review-references.png', '/public/images/apply-teacher-training/apply-june-2019/references/review-references.png', '') }}
+
+{% endblock %}

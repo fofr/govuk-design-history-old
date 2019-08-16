@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% set title = 'June 2019 prototype (Version 1)' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">
+    {{ title }}
+  </h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p><a href="/apply-teacher-training/beta-version-1">Write-up of prototype and research</a></p>
+
+      {% set prototypeHtml %}
+      <h4 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="https://apply-beta-prototype-v1.herokuapp.com">Prototype v1</a></h4>
+      <p class="govuk-body-s">Website. Please ask for access permissions</p>
+      {% endset %}
+
+      {{ govukInsetText({
+        html: prototypeHtml
+      }) }}
+
+      <h2 class="govuk-heading-l">Screenshots by section</h2>
+
+      {{ bat.item(
+        '/apply-teacher-training/apply-june-2019/review-and-submit-application',
+        'Review and submit application',
+        'See what you’ve entered, interview preferences and submission'
+      )}}
+
+      {{ bat.item(
+        '/apply-teacher-training/apply-june-2019/vocation',
+        'Why you want to be a teacher',
+        'Also known as vocation'
+      )}}
+
+      {{ bat.item(
+        '/apply-teacher-training/apply-june-2019/references',
+        'References',
+        'Adding first and second referees'
+      )}}
+
+      {{ bat.item(
+        '/apply-teacher-training/apply-june-2019/school-experience',
+        'School experience',
+        'Adding school experience roles'
+      )}}
+
+      {{ bat.item(
+        '/apply-teacher-training/apply-june-2019/work-history',
+        'Work history',
+        'Adding work history and explaining gaps'
+      )}}
+
+      {{ bat.item(
+        '/apply-teacher-training/apply-june-2019/language-skills',
+        'Language skills',
+        'Is English your main language?'
+      )}}
+
+      {{ bat.item(
+        '/apply-teacher-training/apply-june-2019/subject-knowledge',
+        'Subject knowledge',
+        'Evidence of knowledge and interest in a subject'
+      )}}
+
+      {{ bat.item(
+        '/apply-teacher-training/apply-june-2019/academic-qualifications',
+        'Academic qualifications',
+        'Adding your degree, statutory requirements and other qualifications'
+      )}}
+
+      {{ bat.item(
+        '/apply-teacher-training/apply-june-2019/contact-details',
+        'Contact details',
+        'Adding emails, phone number and address'
+      )}}
+
+      {{ bat.item(
+        '/apply-teacher-training/apply-june-2019/personal-details',
+        'Personal details',
+        'Adding name, nationality and visas'
+      )}}
+
+      {{ bat.item(
+        '/apply-teacher-training/apply-june-2019/create-account',
+        'Create an account',
+        'Sign up, sign in, recover password and dashboard'
+      )}}
+    </div>
+  </div>
+{% endblock %}

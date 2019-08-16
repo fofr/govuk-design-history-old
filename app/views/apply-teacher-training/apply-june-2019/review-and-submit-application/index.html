@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% set title = 'Review and submit application' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'Review application', id: 'review-application' },
+    { text: 'Interview preferences', id: 'interview-preferences' },
+    { text: 'Anything else and submission', id: 'anything-else-and-submission' },
+    { text: 'Application submitted', id: 'application-submitted' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Review application', 'review-application', '/public/images/apply-teacher-training/apply-june-2019/review-and-submit-application/thumbnails/review-application.png', '/public/images/apply-teacher-training/apply-june-2019/review-and-submit-application/review-application.png', '') }}
+
+  {{ designHistory.screenshot('Interview preferences', 'interview-preferences', '/public/images/apply-teacher-training/apply-june-2019/review-and-submit-application/thumbnails/interview-preferences.png', '/public/images/apply-teacher-training/apply-june-2019/review-and-submit-application/interview-preferences.png', '') }}
+
+  {{ designHistory.screenshot('Anything else and submission', 'anything-else-and-submission', '/public/images/apply-teacher-training/apply-june-2019/review-and-submit-application/thumbnails/anything-else-and-submission.png', '/public/images/apply-teacher-training/apply-june-2019/review-and-submit-application/anything-else-and-submission.png', '') }}
+
+  {{ designHistory.screenshot('Application submitted', 'application-submitted', '/public/images/apply-teacher-training/apply-june-2019/review-and-submit-application/thumbnails/application-submitted.png', '/public/images/apply-teacher-training/apply-june-2019/review-and-submit-application/application-submitted.png', '') }}
+
+{% endblock %}
