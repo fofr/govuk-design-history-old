@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% set title = 'Work history – iteration 10 August' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'Work history', id: 'work-history' },
+    { text: 'Job', id: 'job' },
+    { text: 'Out of the workplace', id: 'out-of-the-workplace' },
+    { text: 'Review work history', id: 'review-work-history' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Work history', 'work-history', '/public/images/apply-teacher-training/work-history-10-aug-iteration/thumbnails/work-history.png', '/public/images/apply-teacher-training/work-history-10-aug-iteration/work-history.png', '') }}
+
+  {{ designHistory.screenshot('Job', 'job', '/public/images/apply-teacher-training/work-history-10-aug-iteration/thumbnails/job.png', '/public/images/apply-teacher-training/work-history-10-aug-iteration/job.png', '') }}
+
+  {{ designHistory.screenshot('Out of the workplace', 'out-of-the-workplace', '/public/images/apply-teacher-training/work-history-10-aug-iteration/thumbnails/out-of-the-workplace.png', '/public/images/apply-teacher-training/work-history-10-aug-iteration/out-of-the-workplace.png', '') }}
+
+  {{ designHistory.screenshot('Review work history', 'review-work-history', '/public/images/apply-teacher-training/work-history-10-aug-iteration/thumbnails/review-work-history.png', '/public/images/apply-teacher-training/work-history-10-aug-iteration/review-work-history.png', '') }}
+
+{% endblock %}
