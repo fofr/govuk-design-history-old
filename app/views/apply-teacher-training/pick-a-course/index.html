@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% set title = 'Picking courses to apply to' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'Your application', id: 'your-application' },
+    { text: 'Have you chosen a course to apply to?', id: 'have-you-chosen-a-course-to-apply-to' },
+    { text: 'Which training provider?', id: 'which-training-provider' },
+    { text: 'Which course?', id: 'which-course' },
+    { text: 'Find a course (when the course isn’t known)', id: 'find-a-course---when-course-not-known' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Your application', 'your-application', '/public/images/apply-teacher-training/pick-a-course/thumbnails/your-application.png', '/public/images/apply-teacher-training/pick-a-course/your-application.png', '') }}
+
+  {{ designHistory.screenshot('Have you chosen a course to apply to?', 'have-you-chosen-a-course-to-apply-to', '/public/images/apply-teacher-training/pick-a-course/thumbnails/have-you-chosen-a-course-to-apply-to.png', '/public/images/apply-teacher-training/pick-a-course/have-you-chosen-a-course-to-apply-to.png', '') }}
+
+  {{ designHistory.screenshot('Which training provider?', 'which-training-provider', '/public/images/apply-teacher-training/pick-a-course/thumbnails/which-training-provider.png', '/public/images/apply-teacher-training/pick-a-course/which-training-provider.png', '') }}
+
+  {{ designHistory.screenshot('Which course?', 'which-course', '/public/images/apply-teacher-training/pick-a-course/thumbnails/which-course.png', '/public/images/apply-teacher-training/pick-a-course/which-course.png', '') }}
+
+  {{ designHistory.screenshot('Find a course (when the course isn’t known)', 'find-a-course---when-course-not-known', '/public/images/apply-teacher-training/pick-a-course/thumbnails/find-a-course---when-course-not-known.png', '/public/images/apply-teacher-training/pick-a-course/find-a-course---when-course-not-known.png', '') }}
+
+{% endblock %}
