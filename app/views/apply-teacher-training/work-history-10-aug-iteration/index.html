@@ -6,6 +6,12 @@
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Following on from the <a href="/apply-teacher-training/apply-june-2019/work-history">original design</a>, rather than using multiple details elements and two submit button we’ve shaped the guidance as a question and used routing based on their answer to send users to the right place.</p>
+    </div>
+  </div>
+
   {% set contents = [
     { text: 'Work history', id: 'work-history' },
     { text: 'Job', id: 'job' },
