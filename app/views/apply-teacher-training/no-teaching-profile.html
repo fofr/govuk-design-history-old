@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% set title = 'Removing the teaching profile' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>
+        <a href="https://apply-beta-prototype-v1.herokuapp.com/">In the July 2019 prototype</a> (<a href="/apply-teacher-training/apply-june-2019/personal-details">screenshots</a>) we tested a version of the application where course choice was separated from your teaching profile. Your teaching profile was a shareable or reusable profile that would be pulled into each application.
+      </p>
+
+      <p>
+        In the next design iteration we brought course choice and each section together beneath the Application heading.
+      </p>
+
+      <h2 class="govuk-heading-l">Why did we remove the teaching profile?</h2>
+
+      <p>The profile is a useful concept that can be used to make repeat applications easier. But users needed to understand the purpose of a teaching profile to complete their first application. The benefits of the profile are only realised after the first application.</p>
+
+      <p>Arguably, and this is a reckon, a user arriving at Apply for the first time will be looking to make an application, not to create a profile.</p>
+
+      <p>Tailoring and reuse via a profile presented some complexities:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>which parts of a profile can be tailored?</li>
+        <li>if I need to tailor something for a provider, where do I go to do that?</li>
+        <li>if I have tailored some parts, then edit my profile, how do those changes cascade?</li>
+        <li>if I change my profile after submitting an application, does that affect my submitted application? (No, but we might need to communicate that)</li>
+      </ul>
+
+      <p>If new applications can use a previous application as a starting point, candidates get the benefit of reuse without needing to understand profiles and the whole application becomes tailorable.</p>
+
+      <h2 class="govuk-heading-l">An alternative to a teaching profile</h2>
+
+      <p>We removed the profile and moved course choice into each application, allowing a maximum of 3 courses per application.</p>
+
+      <p>This means everything you need to submit your first application is kept together and the path to application submission is linear.</p>
+
+      <p>Once an application is submitted a new application can be started, where new course choices are made and your initial application can be edited. Initially only one draft application will be allowed – we need to see how this tests. It might stop users from shortlisting using Apply.</p>
+
+      <p>This alternative creates a simpler application process that is also easier to build as an MVP for the upcoming pilots.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Application with courses', id: 'application-with-courses' },
+    { text: 'Old dashboard', id: 'dashboard' },
+    { text: 'Old personal teaching profile', id: 'personal-teaching-profile' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Application with courses', 'application-with-courses', '/public/images/apply-teacher-training/pick-a-course/thumbnails/your-application.png', '/public/images/apply-teacher-training/pick-a-course/your-application.png', '') }}
+
+  {{ designHistory.screenshot('Old dashboard', 'dashboard', '/public/images/apply-teacher-training/apply-june-2019/personal-details/thumbnails/dashboard.png', '/public/images/apply-teacher-training/apply-june-2019/personal-details/dashboard.png', '') }}
+
+  {{ designHistory.screenshot('Old personal teaching profile', 'personal-teaching-profile', '/public/images/apply-teacher-training/apply-june-2019/personal-details/thumbnails/personal-teaching-profile.png', '/public/images/apply-teacher-training/apply-june-2019/personal-details/personal-teaching-profile.png', '') }}
+
+
+{% endblock %}
