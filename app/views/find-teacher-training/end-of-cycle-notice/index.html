@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% set title = 'An end of cycle notice' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-4">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Towards the end of the recruitment cycle, the current cycle’s courses will mostly be closed to new applications or have only a few vacancies. There will be only a short window to apply.</p>
+
+      <p>Through our survey users who are searching for 2020 courses have complained about the lack of courses in there area.</p>
+
+      <p>We need to indicate that we are only searching the current year’s courses, and give the date when next year’s will be available.</p>
+
+      <p>Ideally we’d do this on the GOV.UK start page, but GDS is too busy to update it for us.</p>
+
+      <p>
+        <a href="https://trello.com/c/FccNwFJ4/2056-add-page-to-find-for-next-years-courses">Trello ticket</a>
+      </p>
+
+      <h2 class="govuk-heading-l">Design notes</h2>
+
+      <p>This is the first page users will see.</p>
+
+      <p>The green button takes users to the Find by location page.</p>
+    </div>
+  </div>
+
+  {{ designHistory.screenshot('Courses starting in different years', 'courses-starting-in-different-years', '/public/images/find-teacher-training/end-of-cycle-notice/thumbnails/courses-starting-in-different-years.png', '/public/images/find-teacher-training/end-of-cycle-notice/courses-starting-in-different-years.png', '') }}
+
+{% endblock %}
