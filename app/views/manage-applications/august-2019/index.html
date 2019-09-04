@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% set title = 'August 2019 iteration' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>An update on the <a href="/manage-applications/better-statuses">2018 prototype</a>, bringing the design inline with the <a href="https://design-system.service.gov.uk/">GOV.UK Design System</a>.</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Use panels more in keeping with GOV.UK</li>
+        <li>Use colours from the design system colour palette</li>
+        <li>Use the <a href="https://design-system.service.gov.uk/components/tag/">tag component</a> for statuses</li>
+        <li>Make search work</li>
+        <li>Use agreed list of rejection reasons (user friendly versions of the list UCAS uses)</li>
+        <li>Add a reject by default column, replaced with "recruited" or "rejected" depending on view</li>
+        <li>Add sortable table columns</li>
+      </ul>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Applications', id: 'applications' },
+    { text: 'New applications', id: 'new-applications' },
+    { text: 'Applications in review', id: 'applications-in-review' },
+    { text: 'Recruited', id: 'recruited' },
+    { text: 'Rejected', id: 'rejected' },
+    { text: 'Search results', id: 'search-results' },
+    { text: 'Application', id: 'application' },
+    { text: 'Change application status', id: 'change-application-status' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Applications', 'applications', '/public/images/manage-applications/august-2019/thumbnails/applications.png', '/public/images/manage-applications/august-2019/applications.png', '') }}
+
+  {{ designHistory.screenshot('New applications', 'new-applications', '/public/images/manage-applications/august-2019/thumbnails/new-applications.png', '/public/images/manage-applications/august-2019/new-applications.png', '') }}
+
+  {{ designHistory.screenshot('Applications in review', 'applications-in-review', '/public/images/manage-applications/august-2019/thumbnails/applications-in-review.png', '/public/images/manage-applications/august-2019/applications-in-review.png', '') }}
+
+  {{ designHistory.screenshot('Recruited', 'recruited', '/public/images/manage-applications/august-2019/thumbnails/recruited.png', '/public/images/manage-applications/august-2019/recruited.png', '') }}
+
+  {{ designHistory.screenshot('Rejected', 'rejected', '/public/images/manage-applications/august-2019/thumbnails/rejected.png', '/public/images/manage-applications/august-2019/rejected.png', '') }}
+
+  {{ designHistory.screenshot('Search results', 'search-results', '/public/images/manage-applications/august-2019/thumbnails/search-results.png', '/public/images/manage-applications/august-2019/search-results.png', '') }}
+
+  {{ designHistory.screenshot('Application', 'application', '/public/images/manage-applications/august-2019/thumbnails/application.png', '/public/images/manage-applications/august-2019/application.png', '') }}
+
+  {{ designHistory.screenshot('Change application status', 'change-application-status', '/public/images/manage-applications/august-2019/thumbnails/change-application-status.png', '/public/images/manage-applications/august-2019/change-application-status.png', '') }}
+
+{% endblock %}
