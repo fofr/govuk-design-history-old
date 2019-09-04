@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% set title = 'Cover letters' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Subject knowledge as a single field presents problems if you’re applying to multiple subjects across different courses, for example Physics as well as Mathematics. You couldn’t tailor one field to both subjects, this also applies if someone applies to both primary and secondary courses, although this is less likely.</p>
+
+      <p>Interview preferences may also vary by provider. Consider one provider who is nearby and one that is far away, it might be easier to attend a closer interview.</p>
+
+      <p>Base cover letters on the name of the provider. If there’s multiple courses for one provider, it should be one letter – they’d see both applications anyway.</p>
+
+      <p><a href="https://trello.com/c/spYyD6s6/828-prototype-replace-subject-knowledge-and-interview-question-with-cover-letter-simple-application-tailoring">Trello ticket</a></p>
+
+      <h2 class="govuk-heading-l">Design notes</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Remove subject knowledge</li>
+        <li>Rename as cover letter</li>
+      </ul>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Your application', id: 'your-application' },
+    { text: 'Cover letter', id: 'cover-letter' },
+    { text: 'Completed cover letter', id: 'completed-cover-letter' },
+    { text: 'Application before courses added', id: 'application-before-courses-added' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Your application', 'your-application', '/public/images/apply-teacher-training/cover-letters/thumbnails/your-application.png', '/public/images/apply-teacher-training/cover-letters/your-application.png', '') }}
+
+  {{ designHistory.screenshot('Cover letter', 'cover-letter', '/public/images/apply-teacher-training/cover-letters/thumbnails/cover-letter.png', '/public/images/apply-teacher-training/cover-letters/cover-letter.png', '') }}
+
+  {{ designHistory.screenshot('Completed cover letter', 'completed-cover-letter', '/public/images/apply-teacher-training/cover-letters/thumbnails/completed-cover-letter.png', '/public/images/apply-teacher-training/cover-letters/completed-cover-letter.png', '') }}
+
+  {{ designHistory.screenshot('Application before courses added', 'application-before-courses-added', '/public/images/apply-teacher-training/cover-letters/thumbnails/application-before-courses-added.png', '/public/images/apply-teacher-training/cover-letters/application-before-courses-added.png', '') }}
+
+{% endblock %}
