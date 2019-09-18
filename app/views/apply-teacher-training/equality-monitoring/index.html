@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+{% set title = 'Equality monitoring' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Our first pass at asking for personal information for the purposes of monitoring equality.</p>
+      <p>We need to collect this information so that providers can report it back to <a href="https://www.hesa.ac.uk/collection/c19053">HESA</a>. It is only sent to a provider when the application process is complete.</p>
+
+      <p>The information we collect must be compatible with HESA’s requirements.</p>
+
+      <h2 class="govuk-heading-l">What are we asking for?</h2>
+      <p>In this design we are asking for:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>sex (<a href="https://www.hesa.ac.uk/collection/c19053/e/sexid">HESA ITT reference</a>)</li>
+        <li>sexual orientation</li>
+        <li>disability (<a href="https://www.hesa.ac.uk/collection/c19053/e/disable">HESA ITT reference</a>)</li>
+        <li>ethnicity (<a href="https://www.hesa.ac.uk/collection/c19053/e/ethnic">HESA ITT reference</a>)</li>
+        <li>religion</li>
+      </ul>
+
+      <p>We are not yet asking about gender identity.</p>
+
+      <p>Useful links:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://www.hesa.ac.uk/collection/c19053">HESA Initial Teacher Training record 2019/20</a></li>
+        <li><a href="https://www.hesa.ac.uk/collection/c18051/a/sexort">HESA sexual orientation reference (not ITT)</a></li>
+        <li><a href="https://www.hesa.ac.uk/collection/c18051/a/genderid">HESA gender identity reference (not ITT)</a></li>
+        <li><a href="https://www.hesa.ac.uk/collection/c18051/a/relblf">HESA religion or belief reference (not ITT)</a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1uY6ZzQePVoWgIzrdRKtuinj9NzQ5dgwaL6DMIYFUH_c/edit#gid=516435786">Spreadsheet showing what’s currently collected</a></li>
+        <li><a href="https://trello.com/c/ztd2hNAH/940-prototype-add-demographic-questions-prior-to-application-submission">Trello ticket</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-l">Where should this live?</h2>
+
+      <p>This design puts the equality monitoring questions after you’ve reviewed your completed application and are on the journey to submit. We wanted to create a separation between what goes to a provider and what doesn’t. To highlight that this information is being treated differently.</p>
+
+      <p>However having to fill in all of this extra information at this point, when a user is expecting to submit and finish, is an unexpected chore. If the user has awareness of this section ahead of submitting it might be a smoother journey.</p>
+
+      <h2 class="govuk-heading-l">Asking about disability</h2>
+
+      <p>This design was initially based on the <a href="https://www.england.nhs.uk/wp-content/uploads/2017/01/ais-review-diversity-monitoring-questions.docx">NHS’s Accessible Information Standard diversity monitoring questions</a>. This will be updated, given that the NHS version is slightly more health leaning than required here.</p>
+
+      <h2 class="govuk-heading-l">Asking about sex and gender</h2>
+
+      <p>We currently ask for sex, but not gender identity. Gender identity is not listed in the HESA collection nor the list of currently collected information. As noted in the link above though, there is precendent for collecting gender identity information in other HESA collections.</p>
+
+      <p>The <a href="https://design-system.service.gov.uk/patterns/gender-or-sex/">GOV.UK Design System</a> notes that we should not ask for sex, and does not yet make an exception for equality monitoring:</p>
+      <blockquote>
+        <p>If you do need to ask, use ‘sex’ when you need biological data (for example, if you’re providing a medical service). In all other cases, use ‘gender’.</p>
+      </blockquote>
+
+      <p>The design system backlog has a <a href="https://github.com/alphagov/govuk-design-system-backlog/issues/69">discussion about collecting gender information</a>.</p>
+
+      <h2 class="govuk-heading-l">Asking about ethnicity</h2>
+
+      <p>The design system provides a <a href="https://design-system.service.gov.uk/patterns/ethnic-group/">complete pattern for collecting ethnicity information</a> that we have reused.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Equality monitoring', id: 'equality-monitoring' },
+    { text: 'What is your sex?', id: 'what-is-your-sex' },
+    { text: 'Sexual orientation', id: 'sexual-orientation' },
+    { text: 'Disability status', id: 'disability-status' },
+    { text: 'Any health problems?', id: 'any-health-problems' },
+    { text: 'Ethnic group', id: 'ethnic-group' },
+    { text: 'Ethnic background', id: 'ethnic-background' },
+    { text: 'Religion', id: 'religion' },
+    { text: 'Check your answers', id: 'check-your-answers' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Equality monitoring', 'equality-monitoring', '/public/images/apply-teacher-training/equality-monitoring/thumbnails/equality-monitoring.png', '/public/images/apply-teacher-training/equality-monitoring/equality-monitoring.png', '') }}
+
+  {{ designHistory.screenshot('What is your sex?', 'what-is-your-sex', '/public/images/apply-teacher-training/equality-monitoring/thumbnails/what-is-your-sex.png', '/public/images/apply-teacher-training/equality-monitoring/what-is-your-sex.png', '') }}
+
+  {{ designHistory.screenshot('Sexual orientation', 'sexual-orientation', '/public/images/apply-teacher-training/equality-monitoring/thumbnails/sexual-orientation.png', '/public/images/apply-teacher-training/equality-monitoring/sexual-orientation.png', '') }}
+
+  {{ designHistory.screenshot('Disability status', 'disability-status', '/public/images/apply-teacher-training/equality-monitoring/thumbnails/disability-status.png', '/public/images/apply-teacher-training/equality-monitoring/disability-status.png', '') }}
+
+  {{ designHistory.screenshot('Any health problems?', 'any-health-problems', '/public/images/apply-teacher-training/equality-monitoring/thumbnails/any-health-problems.png', '/public/images/apply-teacher-training/equality-monitoring/any-health-problems.png', '') }}
+
+  {{ designHistory.screenshot('Ethnic group', 'ethnic-group', '/public/images/apply-teacher-training/equality-monitoring/thumbnails/ethnic-group.png', '/public/images/apply-teacher-training/equality-monitoring/ethnic-group.png', '') }}
+
+  {{ designHistory.screenshot('Ethnic background', 'ethnic-background', '/public/images/apply-teacher-training/equality-monitoring/thumbnails/ethnic-background.png', '/public/images/apply-teacher-training/equality-monitoring/ethnic-background.png', '') }}
+
+  {{ designHistory.screenshot('Religion', 'religion', '/public/images/apply-teacher-training/equality-monitoring/thumbnails/religion.png', '/public/images/apply-teacher-training/equality-monitoring/religion.png', '') }}
+
+  {{ designHistory.screenshot('Check your answers', 'check-your-answers', '/public/images/apply-teacher-training/equality-monitoring/thumbnails/check-your-answers.png', '/public/images/apply-teacher-training/equality-monitoring/check-your-answers.png', '') }}
+
+{% endblock %}
