@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% set title = 'Application states' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>A quick update to expand the 4 states in the <a href="/manage-applications/august-2019">August 2019 prototype</a> to better represent all states an application can be in.</p>
+
+      <p>Those original states have largely stayed the same, they are:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>New (unchanged)</li>
+        <li>Interviewing (previously In progress)</li>
+        <li>Offer made (newly added)</li>
+        <li>Confirmed (previously Recruited)</li>
+        <li>Rejected (unchanged)</li>
+      </ul>
+
+      <p>These states correspond to the ‘Change status’ actions a user can make.</p>
+
+      <h2 class="govuk-heading-l">Filters on a state</h2>
+
+      <p>We’ve added filters to most states which provide a means of further filtering that set of applications. These may not be needed if application volumes are small.</p>
+
+      <p>We need to test these filters and labels with providers to check their usefulness.</p>
+
+      <p>These filters might be better surfaced once a state has been selected.</p>
+
+      <h3 class="govuk-heading-m">New</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>References pending – not all references have been provided</li>
+        <li>References submitted</li>
+      </ul>
+
+      <p>Some providers may only want to respond to applications when references are available.</p>
+
+      <h3 class="govuk-heading-m">Offer made</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Conditional</li>
+        <li>Unconditional - rarely used</li>
+        <li>Accepted (conditional) – a conditional offer has been accepted but conditions are not yet met</li>
+      </ul>
+
+      <p>An unconditional offer (which would be ‘Accepted (unconditional)’) goes straight into the Confirmed state.</p>
+
+      <h3 class="govuk-heading-m">Rejected</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Rejected by us</li>
+        <li>Rejected by default – gone beyond the RBD date</li>
+        <li>Withdrawn – candidate has removed their application</li>
+        <li>Offer rejected – candidate was made an offer but refused</li>
+        <li>Declined by default – candidate didn’t respond to offer in time</li>
+      </ul>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Applications', id: 'applications' },
+    { text: 'New applications', id: 'new-applications' },
+    { text: 'Rejected', id: 'rejected' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Applications', 'applications', '/public/images/manage-applications/application-states/thumbnails/applications.png', '/public/images/manage-applications/application-states/applications.png', '') }}
+
+  {{ designHistory.screenshot('New applications', 'new-applications', '/public/images/manage-applications/application-states/thumbnails/new-applications.png', '/public/images/manage-applications/application-states/new-applications.png', '') }}
+
+  {{ designHistory.screenshot('Rejected', 'rejected', '/public/images/manage-applications/application-states/thumbnails/rejected.png', '/public/images/manage-applications/application-states/rejected.png', '') }}
+
+{% endblock %}
