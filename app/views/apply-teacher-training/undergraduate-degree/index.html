@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% set title = 'Asking for an undergraduate degree' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>A candidate’s undergraudate degree is the most important one. It’s what determines eligibity for postgraduate teacher training.</p>
+
+      <p>In research users have entered their most recent degree, not their first one. They have also not entered all of their degrees.</p>
+
+      <p>This design iteration asks for the undergraduate degree first, and includes a prompt to show its importance.</p>
+
+      <p><a href="https://github.com/DFE-Digital/apply-for-postgraduate-teacher-training-prototype/pull/167">Pull request</a></p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Add undergraduate degree', id: 'add-undergraduate-degree' },
+    { text: 'Add another degree', id: 'add-another-degree' },
+    { text: 'Edit undergraduate degree', id: 'edit-undergraduate-degree' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Add undergraduate degree', 'add-undergraduate-degree', '/public/images/apply-teacher-training/undergraduate-degree/thumbnails/add-undergraduate-degree.png', '/public/images/apply-teacher-training/undergraduate-degree/add-undergraduate-degree.png', '') }}
+
+  {{ designHistory.screenshot('Add another degree', 'add-another-degree', '/public/images/apply-teacher-training/undergraduate-degree/thumbnails/add-another-degree.png', '/public/images/apply-teacher-training/undergraduate-degree/add-another-degree.png', '') }}
+
+  {{ designHistory.screenshot('Edit undergraduate degree', 'edit-undergraduate-degree', '/public/images/apply-teacher-training/undergraduate-degree/thumbnails/edit-undergraduate-degree.png', '/public/images/apply-teacher-training/undergraduate-degree/edit-undergraduate-degree.png', '') }}
+
+{% endblock %}
