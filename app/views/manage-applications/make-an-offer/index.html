@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% set title = 'Make an offer' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>A simple flow to allow providers to change status and make an offer to a candidate.</p>
+      <p>The statuses have been updated to be active, and now match the new states.</p>
+      <p>When selecting a conditional offer, a provider needs to list conditions. On UCAS a single text box is provided.</p>
+      <p>This design presents a list of boxes to prompt conversation about what might go in them, lists of conditions, reuse of conditions and number of conditions. It’s not the final design.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Change status', id: 'change-status' },
+    { text: 'Make an offer', id: 'make-an-offer' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Change status', 'change-status', '/public/images/manage-applications/make-an-offer/thumbnails/change-status.png', '/public/images/manage-applications/make-an-offer/change-status.png', '') }}
+
+  {{ designHistory.screenshot('Make an offer', 'make-an-offer', '/public/images/manage-applications/make-an-offer/thumbnails/make-an-offer.png', '/public/images/manage-applications/make-an-offer/make-an-offer.png', '') }}
+
+{% endblock %}
