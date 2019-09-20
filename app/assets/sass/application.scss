@@ -72,7 +72,8 @@ $govuk-assets-path: '/govuk/assets/';
 .bat-email {
   border: 5px solid $govuk-border-colour;
   padding: govuk-spacing(6);
-  margin-bottom: govuk-spacing(4);
+  margin-bottom: govuk-spacing(8);
+  margin-top: govuk-spacing(6);
 }
 
 .bat-email-subject {
