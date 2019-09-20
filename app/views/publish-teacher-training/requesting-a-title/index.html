@@ -33,14 +33,14 @@
 
   <p><a href="https://docs.google.com/document/d/1d826D4c74V0MJ6UtuEOPDtmPn94nuoZWh58UsCGRlDI/edit">Google doc</a></p>
 
-  {% set content %}
+{% set content %}
 Dear colleague,
 
 Your request to change the title of course [insert code] has been approved. The course is now listed in Find postgraduate teacher training as [insert new name]. [OR:] The course will be listed in Find postgraduate teacher training as [insert new name] as soon as you publish it.
 
 Regards,
 Becoming a Teacher team
-  {% endset %}
+{% endset %}
 
   {{ bat.email('Your course title has been approved', content) }}
 
@@ -48,7 +48,7 @@ Becoming a Teacher team
 
   <p><a href="https://docs.google.com/document/d/1d826D4c74V0MJ6UtuEOPDtmPn94nuoZWh58UsCGRlDI/edit">Google doc</a></p>
 
-  {% set content %}
+{% set content %}
 Dear colleague,
 
 Your request to change the title of course [insert code] has not been approved, as your suggested title does not meet our guidelines. [IF published:] The course will continue to be listed in Find postgraduate teacher training as [insert name].
@@ -57,7 +57,7 @@ You can still change the course title in Publish teacher training courses, but p
 
 Regards,
 Becoming a Teacher team
-  {% endset %}
+{% endset %}
 
   {{ bat.email('Your course title has not been approved ', content) }}
 {% endblock %}

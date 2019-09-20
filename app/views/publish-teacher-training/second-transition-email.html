@@ -10,7 +10,7 @@
     <div class="govuk-grid-column-two-thirds">
       <p>Sent on Wednesday 13 March.</p>
 
-      {% set content %}
+{% set content %}
 Dear colleague,
 
 We wrote to you last month about new features we’re adding to [Publish teacher training courses](https://publish-teacher-training-courses.education.gov.uk) from April. These will mean you’ll no longer use [UCAS web-link](https://www.ucas.com/sign-web-link) to add or edit course information (though you’ll still need to use UCAS to manage teacher training applications).
@@ -37,7 +37,7 @@ If anyone else in your organisation needs to be aware of this email, please let 
 
 Many thanks
 Becoming a Teacher team
-      {% endset %}
+{% endset %}
 
       {{ bat.email('	Changes to Publish teacher training courses – process for April', content) }}
     </div>

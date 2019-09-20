@@ -10,7 +10,7 @@
     <div class="govuk-grid-column-two-thirds">
       <p>Sent on Monday 20 February.</p>
 
-      {% set content %}
+{% set content %}
 Dear colleague,
 
 We’d like to tell you about some new features that we’re introducing to [Publish teacher training courses](https://publish-teacher-training-courses.education.gov.uk) from April, that will apply to courses in the current recruitment cycle (2019/20) onwards.
@@ -32,7 +32,7 @@ We’ll be in contact later this month with more information about the changes w
 
 Regards,
 Becoming a Teacher team
-      {% endset %}
+{% endset %}
 
       {{ bat.email('Important changes to Publish teacher training courses – a chance to take part in research', content) }}
     </div>
