@@ -30,6 +30,14 @@
     </div>
   </div>
 
+  {% set contents = [
+    { text: 'Courses starting in different years', id: 'courses-starting-in-different-years' },
+    { text: 'Iteration showing closing dates', id: 'iteration-showing-closing-dates' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
   {{ designHistory.screenshot('Courses starting in different years', 'courses-starting-in-different-years', '/public/images/find-teacher-training/end-of-cycle-notice/thumbnails/courses-starting-in-different-years.png', '/public/images/find-teacher-training/end-of-cycle-notice/courses-starting-in-different-years.png', '') }}
+
+  {{ designHistory.screenshot('Iteration showing closing dates', 'iteration-showing-closing-dates', '/public/images/find-teacher-training/end-of-cycle-notice/thumbnails/iteration-showing-closing-dates.png', '/public/images/find-teacher-training/end-of-cycle-notice/iteration-showing-closing-dates.png', '') }}
 
 {% endblock %}
