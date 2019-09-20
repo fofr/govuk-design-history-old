@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% set title = 'End of cycle' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>A follow-up to our original <a href="/find-teacher-training/end-of-cycle-notice">end of cycle notice</a>. Now that nobody can apply to the 2019/2020 cycle we need to disable search until the new cycle opens on 1 October.</p>
+
+      <p>It is confusing to allow users to search for courses in the current cycle. Find returns a small set of courses that haven’t been filled, this will mislead candidates about their options for 2020/21. It is not clear that results shown are just for 2019/20.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Course search disabled', id: 'course-search-disabled' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Course search disabled', 'course-search-disabled', '/public/images/find-teacher-training/end-of-cycle/thumbnails/course-search-disabled.png', '/public/images/find-teacher-training/end-of-cycle/course-search-disabled.png', '') }}
+
+{% endblock %}
