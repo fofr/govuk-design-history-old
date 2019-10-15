@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+{% set title = 'Rollover – what we did in 2019' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">What is rollover?</h2>
+      <p>Rollover is the process of copying courses from the current cycle to the next.</p>
+      <p>The rollover period is the period in which a provider can edit two cycles – they are maintaining the courses that are currently live, and they are preparing new courses for the next cycle. We called these the ‘current cycle’ and the ‘next cycle’.</p>
+      <p>It began in July 2019 and ended when the UCAS application cycle ended – when no one could make an ew application in Apply 2, on 25 September. From then on providers could not edit the earlier cycle, and Find was closed for a week, until the new cycle opened on Tuesday 2 October.</p>
+
+      <h2 class="govuk-heading-l">What we did</h2>
+      <p>Following research we ditched the <a href="/publish-teacher-training/rollover-wizard">idea of a rollover wizard</a>. It tested poorly, and providers expressed a desire to change their answers. It was also a lot to build.</p>
+
+      <p>Instead we followed a model similar to UCAS, and familier with providers: we created a new “cycle” and copied everything to it.</p>
+
+      <p>In a subsequent cycle, location names and addresses can change, new locations are added, provider names can change, contact details can change – pretty much everything could change.</p>
+
+      <p>So we copied:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>every provider</li>
+        <li>every location for each provider</li>
+        <li>every course for each provider</li>
+        <li>the most recent enrichment for each course (published or draft)</li>
+        <li>organisation details</li>
+        <li>contact details</li>
+      </ul>
+
+      <p>Each of these things could then be edited independently in each cycle. For example – a provider could be renamed only in the next cycle, courses could be added to the next cycle and vacancies could be edited in the current cycle.</p>
+
+      <p>In the next cycle we had to indicate that:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>courses would not go live until October</li>
+        <li>publishing would mark them as ready</li>
+        <li>tell them if a course would be on Find or not</li>
+      </ul>
+
+      <p>
+        <a href="/publish-teacher-training/publishing-during-rollover">A write up of Publishing during rollover</a>
+      </p>
+
+      <p>Once the rollover period was enabled and providers could see two cycles, we notified users by email and with <a href="https://github.com/DFE-Digital/manage-courses-frontend/pull/430">a screen after logging in</a>.</p>
+
+      <p>At the end of rollover we considered whether to allow read-only access to the 2019 cycle. This was a lot to build, and we weren’t sure of the needs. Instead we removed all access with the intention of adding a link to previous cycles if a need arose. As of mid-October, no one has requested to see last year’s courses.</p>
+
+      <h2 class="govuk-heading-l">Settings for manage-courses-frontend</h2>
+
+      <p>There are 3 settings in manage-courses-frontend:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>rollover – true or false, are we in a rollover period (ie do we show multiple cycles)</li>
+        <li>current_cycle – a year, the current cycle</li>
+        <li>current_cycle_open – is the current cycle open, if it’s not it’s assumed it hasn’t opened yet</li>
+      </ul>
+
+      <p>When starting rollover, once all content has been copied, the rollover flag is switched to true.</p>
+
+      <p>When ending rollover, ie when the current cycle ends, the next cycle is promoted to be the current one – the year is increased, rollover is false and the current_cycle_open flag is switched to false. (see this <a href="https://github.com/DFE-Digital/manage-courses-frontend/pull/657/commits/c8b85d5bbd2bf27d497e431dbb12a2379bebb7c4">commit</a> in a related <a href="https://github.com/DFE-Digital/manage-courses-frontend/pull/657">pull request</a>)</p>
+
+      <p>When the cycle opens, the cycle is marked as open (<a href="https://github.com/DFE-Digital/manage-courses-frontend/pull/666">Pull request</a>)</p>
+
+      <p>
+        <a href="https://github.com/DFE-Digital/manage-courses-frontend/blob/baeaf4f28a51dea68c05f7641b03d65f831ecaf0/config/settings.yml#L46-L48">Rollover settings on Github</a>
+      </p>
+
+      <h2 class="govuk-heading-l">How this looked</h2>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Before rollover period', id: '01-before-rollover-period' },
+    { text: 'During rollover period', id: '02-during-rollover-period' },
+    { text: 'After rollover period', id: '03-after-rollover-period' },
+    { text: 'Courses for next cycle', id: '04-courses-for-next-cycle' },
+    { text: 'Courses after old cycle closed but new cycle not yet open', id: '05-courses-after-old-cycle-closed-but-new-cycle-not-yet-open' },
+    { text: 'Courses once cycle has opened', id: '06-courses-once-cycle-has-opened' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Before rollover period', '01-before-rollover-period', '/public/images/publish-teacher-training/what-we-did-for-rollover/thumbnails/01-before-rollover-period.png', '/public/images/publish-teacher-training/what-we-did-for-rollover/01-before-rollover-period.png', '') }}
+
+  {{ designHistory.screenshot('During rollover period', '02-during-rollover-period', '/public/images/publish-teacher-training/what-we-did-for-rollover/thumbnails/02-during-rollover-period.png', '/public/images/publish-teacher-training/what-we-did-for-rollover/02-during-rollover-period.png', '') }}
+
+  {{ designHistory.screenshot('After rollover period', '03-after-rollover-period', '/public/images/publish-teacher-training/what-we-did-for-rollover/thumbnails/03-after-rollover-period.png', '/public/images/publish-teacher-training/what-we-did-for-rollover/03-after-rollover-period.png', '') }}
+
+  {{ designHistory.screenshot('Before rollover period', '01-before-rollover-period', '/public/images/publish-teacher-training/what-we-did-for-rollover/thumbnails/01-before-rollover-period.png', '/public/images/publish-teacher-training/what-we-did-for-rollover/01-before-rollover-period.png', '') }}
+
+  {{ designHistory.screenshot('During rollover period', '02-during-rollover-period', '/public/images/publish-teacher-training/what-we-did-for-rollover/thumbnails/02-during-rollover-period.png', '/public/images/publish-teacher-training/what-we-did-for-rollover/02-during-rollover-period.png', '') }}
+
+  {{ designHistory.screenshot('After rollover period', '03-after-rollover-period', '/public/images/publish-teacher-training/what-we-did-for-rollover/thumbnails/03-after-rollover-period.png', '/public/images/publish-teacher-training/what-we-did-for-rollover/03-after-rollover-period.png', '') }}
+
+  {{ designHistory.screenshot('Courses for next cycle', '04-courses-for-next-cycle', '/public/images/publish-teacher-training/what-we-did-for-rollover/thumbnails/04-courses-for-next-cycle.png', '/public/images/publish-teacher-training/what-we-did-for-rollover/04-courses-for-next-cycle.png', '') }}
+
+  {{ designHistory.screenshot('Courses after old cycle closed but new cycle not yet open', '05-courses-after-old-cycle-closed-but-new-cycle-not-yet-open', '/public/images/publish-teacher-training/what-we-did-for-rollover/thumbnails/05-courses-after-old-cycle-closed-but-new-cycle-not-yet-open.png', '/public/images/publish-teacher-training/what-we-did-for-rollover/05-courses-after-old-cycle-closed-but-new-cycle-not-yet-open.png', '') }}
+
+  {{ designHistory.screenshot('Courses once cycle has opened', '06-courses-once-cycle-has-opened', '/public/images/publish-teacher-training/what-we-did-for-rollover/thumbnails/06-courses-once-cycle-has-opened.png', '/public/images/publish-teacher-training/what-we-did-for-rollover/06-courses-once-cycle-has-opened.png', '') }}
+
+{% endblock %}
