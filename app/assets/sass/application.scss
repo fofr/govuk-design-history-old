@@ -51,6 +51,11 @@ $govuk-assets-path: '/govuk/assets/';
     @extend .govuk-list--bullet;
   }
 
+  > ol {
+    @extend .govuk-list;
+    @extend .govuk-list--number;
+  }
+
   h1 {
     @extend .govuk-heading-xl;
   }
