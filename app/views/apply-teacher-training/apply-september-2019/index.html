@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% set title = 'Apply – September 2019' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>An overview of the design as it stood at the end of September 2019.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Your application', id: 'your-application' },
+    { text: 'Have you chosen a course to apply to', id: 'have-you-chosen-a-course-to-apply-to' },
+    { text: 'Find a course', id: 'find-a-course' },
+    { text: 'Which training provider', id: 'which-training-provider' },
+    { text: 'Personal details review', id: 'personal-details-review' },
+    { text: 'Contact details review', id: 'contact-details-review' },
+    { text: 'Work history review', id: 'work-history-review' },
+    { text: 'School experience review', id: 'school-experience-review' },
+    { text: 'Degree review', id: 'degree-review' },
+    { text: 'Maths GCSE review', id: 'maths-gcse-review' },
+    { text: 'English GCSE review', id: 'english-gcse-review' },
+    { text: 'Other qualifications review', id: 'other-qualifications-review' },
+    { text: 'Personal statement 1 review', id: 'personal-statement-1-review' },
+    { text: 'Personal statement 2 review', id: 'personal-statement-2-review' },
+    { text: 'References review', id: 'references-review' },
+    { text: 'Application review', id: 'application-review' },
+    { text: 'Degree 1', id: 'degree-1' },
+    { text: 'Degree 2', id: 'degree-2' },
+    { text: 'GCSE maths', id: 'gcse-maths' },
+    { text: 'GCSE English', id: 'gcse-english' },
+    { text: 'Contact details edit', id: 'contact-details-edit' },
+    { text: 'Address edit', id: 'address-edit' },
+    { text: 'Work history edit', id: 'work-history-edit' },
+    { text: 'School experience edit', id: 'school-experience-edit' },
+    { text: 'Other qualifications edit', id: 'other-quualifications-edit' },
+    { text: 'Referee edit', id: 'referee-edit' },
+    { text: 'Equality and diversity', id: 'equality-and-diversity' },
+    { text: 'Sex', id: 'sex' },
+    { text: 'Disability status', id: 'disability-status' },
+    { text: 'Disabilities', id: 'disabilities' },
+    { text: 'Ethnic group', id: 'ethnic-group' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Your application', 'your-application', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/your-application.png', '/public/images/apply-teacher-training/apply-september-2019/your-application.png', '') }}
+
+  {{ designHistory.screenshot('Have you chosen a course to apply to', 'have-you-chosen-a-course-to-apply-to', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/have-you-chosen-a-course-to-apply-to.png', '/public/images/apply-teacher-training/apply-september-2019/have-you-chosen-a-course-to-apply-to.png', '') }}
+
+  {{ designHistory.screenshot('Find a course', 'find-a-course', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/find-a-course.png', '/public/images/apply-teacher-training/apply-september-2019/find-a-course.png', '') }}
+
+  {{ designHistory.screenshot('Which training provider', 'which-training-provider', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/which-training-provider.png', '/public/images/apply-teacher-training/apply-september-2019/which-training-provider.png', '') }}
+
+  {{ designHistory.screenshot('Personal details review', 'personal-details-review', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/personal-details-review.png', '/public/images/apply-teacher-training/apply-september-2019/personal-details-review.png', '') }}
+
+  {{ designHistory.screenshot('Contact details review', 'contact-details-review', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/contact-details-review.png', '/public/images/apply-teacher-training/apply-september-2019/contact-details-review.png', '') }}
+
+  {{ designHistory.screenshot('Work history review', 'work-history-review', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/work-history-review.png', '/public/images/apply-teacher-training/apply-september-2019/work-history-review.png', '') }}
+
+  {{ designHistory.screenshot('School experience review', 'school-experience-review', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/school-experience-review.png', '/public/images/apply-teacher-training/apply-september-2019/school-experience-review.png', '') }}
+
+  {{ designHistory.screenshot('Degree review', 'degree-review', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/degree-review.png', '/public/images/apply-teacher-training/apply-september-2019/degree-review.png', '') }}
+
+  {{ designHistory.screenshot('Maths GCSE review', 'maths-gcse-review', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/maths-gcse-review.png', '/public/images/apply-teacher-training/apply-september-2019/maths-gcse-review.png', '') }}
+
+  {{ designHistory.screenshot('English GCSE review', 'english-gcse-review', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/english-gcse-review.png', '/public/images/apply-teacher-training/apply-september-2019/english-gcse-review.png', '') }}
+
+  {{ designHistory.screenshot('Other qualifications review', 'other-qualifications-review', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/other-qualifications-review.png', '/public/images/apply-teacher-training/apply-september-2019/other-qualifications-review.png', '') }}
+
+  {{ designHistory.screenshot('Personal statement 1 review', 'personal-statement-1-review', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/personal-statement-1-review.png', '/public/images/apply-teacher-training/apply-september-2019/personal-statement-1-review.png', '') }}
+
+  {{ designHistory.screenshot('Personal statement 2 review', 'personal-statement-2-review', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/personal-statement-2-review.png', '/public/images/apply-teacher-training/apply-september-2019/personal-statement-2-review.png', '') }}
+
+  {{ designHistory.screenshot('References review', 'references-review', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/references-review.png', '/public/images/apply-teacher-training/apply-september-2019/references-review.png', '') }}
+
+  {{ designHistory.screenshot('Application review', 'application-review', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/application-review.png', '/public/images/apply-teacher-training/apply-september-2019/application-review.png', '') }}
+
+  {{ designHistory.screenshot('Degree 1', 'degree-1', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/degree-1.png', '/public/images/apply-teacher-training/apply-september-2019/degree-1.png', '') }}
+
+  {{ designHistory.screenshot('Degree 2', 'degree-2', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/degree-2.png', '/public/images/apply-teacher-training/apply-september-2019/degree-2.png', '') }}
+
+  {{ designHistory.screenshot('GCSE maths', 'gcse-maths', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/gcse-maths.png', '/public/images/apply-teacher-training/apply-september-2019/gcse-maths.png', '') }}
+
+  {{ designHistory.screenshot('GCSE English', 'gcse-english', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/gcse-english.png', '/public/images/apply-teacher-training/apply-september-2019/gcse-english.png', '') }}
+
+  {{ designHistory.screenshot('Contact details edit', 'contact-details-edit', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/contact-details-edit.png', '/public/images/apply-teacher-training/apply-september-2019/contact-details-edit.png', '') }}
+
+  {{ designHistory.screenshot('Address edit', 'address-edit', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/address-edit.png', '/public/images/apply-teacher-training/apply-september-2019/address-edit.png', '') }}
+
+  {{ designHistory.screenshot('Work history edit', 'work-history-edit', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/work-history-edit.png', '/public/images/apply-teacher-training/apply-september-2019/work-history-edit.png', '') }}
+
+  {{ designHistory.screenshot('School experience edit', 'school-experience-edit', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/school-experience-edit.png', '/public/images/apply-teacher-training/apply-september-2019/school-experience-edit.png', '') }}
+
+  {{ designHistory.screenshot('Other qualifications edit', 'other-quualifications-edit', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/other-quualifications-edit.png', '/public/images/apply-teacher-training/apply-september-2019/other-quualifications-edit.png', '') }}
+
+  {{ designHistory.screenshot('Referee edit', 'referee-edit', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/referee-edit.png', '/public/images/apply-teacher-training/apply-september-2019/referee-edit.png', '') }}
+
+  {{ designHistory.screenshot('Equality and diversity', 'equality-and-diversity', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/equality-and-diversity.png', '/public/images/apply-teacher-training/apply-september-2019/equality-and-diversity.png', '') }}
+
+  {{ designHistory.screenshot('Sex', 'sex', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/sex.png', '/public/images/apply-teacher-training/apply-september-2019/sex.png', '') }}
+
+  {{ designHistory.screenshot('Disability status', 'disability-status', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/disability-status.png', '/public/images/apply-teacher-training/apply-september-2019/disability-status.png', '') }}
+
+  {{ designHistory.screenshot('Disabilities', 'disabilities', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/disabilities.png', '/public/images/apply-teacher-training/apply-september-2019/disabilities.png', '') }}
+
+  {{ designHistory.screenshot('Ethnic group', 'ethnic-group', '/public/images/apply-teacher-training/apply-september-2019/thumbnails/ethnic-group.png', '/public/images/apply-teacher-training/apply-september-2019/ethnic-group.png', '') }}
+
+{% endblock %}
