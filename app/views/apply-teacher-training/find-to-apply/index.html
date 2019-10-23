@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% set title = 'From Find to Apply' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>
+        An iteration following <a href="/find-teacher-training/choose-how-to-apply-2">an early 2019 design of the journey</a>.
+      </p>
+
+      <p>This design includes:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>an interstitial showing the choice between GOV.UK Apply and UCAS Apply</li>
+        <li>a page adding the selected course as a choice in a new application</li>
+      </ul>
+
+      <p>It doesn’t cover the journey from Find for a user with an existing account or application.</p>
+
+      <p>The journey intentionally skips the Apply start page, going straight from the interstitial to the eligibility questions. A ‘Start now’ button doesn’t fit well in the middle of a journey. For this to work, the content on the Apply and Find start pages must be consistent. With the start page also being hosted on GOV.UK, this would create a technical challenge: how would we maintain a choice from Find to GOV.UK and onwards to Apply.</p>
+
+      <p><a href="https://trello.com/c/h6HhGrR6/249-choose-an-opted-in-provider-journey-from-find-to-apply-revised">Trello ticket</a></p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'User journey', id: 'user-journey' },
+    { text: 'Choose how to apply', id: 'choose-how-to-apply' },
+    { text: 'Check you can use GOV.UK Apply', id: 'check-you-can-use-gov.uk-apply' },
+    { text: 'Give us your email', id: 'give-us-your-email' },
+    { text: 'Check your email', id: 'check-your-email' },
+    { text: 'Confirm email address', id: 'confirm-email-address' },
+    { text: 'Account created', id: 'account-created' },
+    { text: 'You selected a course', id: 'you-selected-a-course' },
+    { text: 'Pick a course location', id: 'pick-a-course-location' },
+    { text: 'Course choices', id: 'course-choices' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('User journey', 'user-journey', '/public/images/apply-teacher-training/find-to-apply/find-to-apply-journey.svg', '/public/images/apply-teacher-training/find-to-apply/find-to-apply-journey.svg', '
+    <p>
+      <a href="https://docs.google.com/drawings/d/1d30V3qtVYQNL_gWIMuGjgjm2doWMIDyIyYWchIKnPe8/edit?usp=sharing">Google drawing</a>
+    </p>
+  ') }}
+
+  {{ designHistory.screenshot('Choose how to apply', 'choose-how-to-apply', '/public/images/apply-teacher-training/find-to-apply/thumbnails/choose-how-to-apply.png', '/public/images/apply-teacher-training/find-to-apply/choose-how-to-apply.png', '
+    <p>The ‘Apply on UCAS or DfE’ page</p>
+  ') }}
+
+  {{ designHistory.screenshot('Check you can use GOV.UK Apply', 'check-you-can-use-gov.uk-apply', '/public/images/apply-teacher-training/find-to-apply/thumbnails/check-you-can-use-gov.uk-apply.png', '/public/images/apply-teacher-training/find-to-apply/check-you-can-use-gov.uk-apply.png', '
+    <p>Eligibility questions for the MVP</p>
+  ') }}
+
+  {{ designHistory.screenshot('Give us your email', 'give-us-your-email', '/public/images/apply-teacher-training/find-to-apply/thumbnails/give-us-your-email.png', '/public/images/apply-teacher-training/find-to-apply/give-us-your-email.png', '') }}
+
+  {{ designHistory.screenshot('Check your email', 'check-your-email', '/public/images/apply-teacher-training/find-to-apply/thumbnails/check-your-email.png', '/public/images/apply-teacher-training/find-to-apply/check-your-email.png', '') }}
+
+  {{ designHistory.screenshot('Confirm email address', 'confirm-email-address', '/public/images/apply-teacher-training/find-to-apply/thumbnails/confirm-email-address.png', '/public/images/apply-teacher-training/find-to-apply/confirm-email-address.png', '') }}
+
+  {{ designHistory.screenshot('Account created', 'account-created', '/public/images/apply-teacher-training/find-to-apply/thumbnails/account-created.png', '/public/images/apply-teacher-training/find-to-apply/account-created.png', '') }}
+
+  {{ designHistory.screenshot('You selected a course', 'you-selected-a-course', '/public/images/apply-teacher-training/find-to-apply/thumbnails/you-selected-a-course.png', '/public/images/apply-teacher-training/find-to-apply/you-selected-a-course.png', '
+    <p>The course selected on Find, with an option to choose something different.</p>
+    <p>Selecting yes takes you directly to the location picker.</p>
+    <p>Selecting no takes you back into the <a href="/apply-teacher-training/pick-a-course">pick a course workflow</a>.</p>
+  ') }}
+
+  {{ designHistory.screenshot('Pick a course location', 'pick-a-course-location', '/public/images/apply-teacher-training/find-to-apply/thumbnails/pick-a-course-location.png', '/public/images/apply-teacher-training/find-to-apply/pick-a-course-location.png', '') }}
+
+  {{ designHistory.screenshot('Course choices', 'course-choices', '/public/images/apply-teacher-training/find-to-apply/thumbnails/course-choices.png', '/public/images/apply-teacher-training/find-to-apply/course-choices.png', '') }}
+
+{% endblock %}
