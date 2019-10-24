@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% set title = 'UCAS teacher training (search)' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Screenshots of the UCAS seach tool that Find postgraduate teacher training replaced in 2018.</p>
+      <p>UCAS search gave each user a unique session that lasted only 5 minutes. After 5 minutes of inactivity a user needed to start again.</p>
+      <p>This session also formed part of the URL, meaning course pages couldn’t be linked to, bookmarked or shared. Once a session had expired the course would need to be found again through search.</p>
+      <p>UCAS search referred to courses as ‘training programmes’.</p>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Start page', id: '01-start-page' },
+    { text: 'Provider search', id: '02-provider-search' },
+    { text: 'Search results from different providers', id: '03-search-results-from-different-providers' },
+    { text: 'Search results from one provider', id: '04-search-results-from-one-provider' },
+    { text: 'Search results from another provider', id: '05-search-results-form-another' },
+    { text: 'A training programme profile', id: '06-a-training-programme-profile' },
+    { text: 'Another training programme profile', id: '06-a-training-programme' },
+    { text: 'View all for a training programme (full description)', id: '07-view-all-course-page' },
+    { text: 'Example locations for a training programme', id: '08-example-locations-for-a-course' },
+    { text: 'A different training programme', id: '09-a-different-training-programme' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Start page', '01-start-page', '/public/images/find-teacher-training/ucas-search/thumbnails/01-start-page.png', '/public/images/find-teacher-training/ucas-search/01-start-page.png', '') }}
+
+  {{ designHistory.screenshot('Provider search', '02-provider-search', '/public/images/find-teacher-training/ucas-search/thumbnails/02-provider-search.png', '/public/images/find-teacher-training/ucas-search/02-provider-search.png', '') }}
+
+  {{ designHistory.screenshot('Search results from different providers', '03-search-results-from-different-providers', '/public/images/find-teacher-training/ucas-search/thumbnails/03-search-results-from-different-providers.png', '/public/images/find-teacher-training/ucas-search/03-search-results-from-different-providers.png', '') }}
+
+  {{ designHistory.screenshot('Search results from one provider', '04-search-results-from-one-provider', '/public/images/find-teacher-training/ucas-search/thumbnails/04-search-results-from-one-provider.png', '/public/images/find-teacher-training/ucas-search/04-search-results-from-one-provider.png', '') }}
+
+  {{ designHistory.screenshot('Search results from another provider', '05-search-results-form-another', '/public/images/find-teacher-training/ucas-search/thumbnails/05-search-results-form-another.png', '/public/images/find-teacher-training/ucas-search/05-search-results-form-another.png', '') }}
+
+  {{ designHistory.screenshot('A training programme profile', '06-a-training-programme-profile', '/public/images/find-teacher-training/ucas-search/thumbnails/06-a-training-programme-profile.png', '/public/images/find-teacher-training/ucas-search/06-a-training-programme-profile.png', '') }}
+
+  {{ designHistory.screenshot('Another training programme profile', '06-a-training-programme', '/public/images/find-teacher-training/ucas-search/thumbnails/06-a-training-programme.png', '/public/images/find-teacher-training/ucas-search/06-a-training-programme.png', '') }}
+
+  {{ designHistory.screenshot('View all for a training programme (full description)', '07-view-all-course-page', '/public/images/find-teacher-training/ucas-search/thumbnails/07-view-all-course-page.png', '/public/images/find-teacher-training/ucas-search/07-view-all-course-page.png', '') }}
+
+  {{ designHistory.screenshot('Example locations for a training programme', '08-example-locations-for-a-course', '/public/images/find-teacher-training/ucas-search/thumbnails/08-example-locations-for-a-course.png', '/public/images/find-teacher-training/ucas-search/08-example-locations-for-a-course.png', '') }}
+
+  {{ designHistory.screenshot('A different training programme', '09-a-different-training-programme', '/public/images/find-teacher-training/ucas-search/thumbnails/09-a-different-training-programme.png', '/public/images/find-teacher-training/ucas-search/09-a-different-training-programme.png', '') }}
+
+{% endblock %}
