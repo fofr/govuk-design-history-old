@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% set title = 'Amending and withdrawing' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+{% set content %}
+First spike to support two features of the application process:
+
+* Amending an application
+* Withdrawing a course choice
+
+Changes made as part of this work included:
+
+* Changing the name of the logged in landing page that becomes available after submitting an application to ‘Application dashboard’. This page now uses the summary card pattern we are using elsewhere in the service.
+* When editing an application, we show three different states for sections:
+  * Unedited (a section that can be amended, but with no edits)
+  * Edited (a section that has been edited)
+  * Submitted (a section that can’t be amended – references)
+* Prior to editing an application, we provide an interstitial page that outlines the restrictions; limited to submitting one set of changes, can’t edit referees, etc. and the period of time in which changes can be made.
+* We also updated the language on some pages to include warnings about time remaining and checking changes before resubmitting.
+* For withdrawing an application, we ask users to confirm this action before proceeding. For MVP, this page asks them to submit a support request. A later iteration would allow them to confirm with a button press. When a course choice has been withdrawn, we update it’s status on the dashboard page.
+
+### Days and deadlines
+The business logic dictates that a candidate has 5 working days after submitting their application during which they can submit changes. This period will typically be 7 days, but longer if there are bank holidays. To avoid adding complexity, we decided to always show the date an application needs to be resubmitted alongside the number of calendar days remaining (calculated by counting back from that date).
+{% endset %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ markdown(content) | safe }}
+      {% set contents = [
+        { text: 'Dashboard post submission (within amendment period)', id: 'dashboard-submitted' },
+        { text: 'Dashboard post submission (within amendment period and with pending changes)', id: 'dashboard-amending' },
+        { text: 'Editing your application', id: 'edit-application' },
+        { text: 'Edit your application (with three states)', id: 'application-amending' },
+        { text: 'Review your application (with warning text)', id: 'review-amending' },
+        { text: 'Confirmation page (with updated title)', id: 'confirmation-amended' },
+        { text: 'Dashboard post amendment (with option to withdraw course choices)', id: 'dashboard-amended' },
+        { text: 'Withdrawing a course choice', id: 'withdraw-choice' },
+        { text: 'Dashboard post amendment (with a course choice withdrawn)', id: 'dashboard-withdrawn' }
+      ] %}
+      {{ designHistory.screenshotContents(contents) }}
+
+      {{ designHistory.screenshot('Dashboard post submission (within amendment period)', 'dashboard-submitted', '/public/images/apply-teacher-training/amend-withdraw/thumbnails/dashboard-submitted.png', '/public/images/apply-teacher-training/amend-withdraw/dashboard-submitted.png', '') }}
+
+      {{ designHistory.screenshot('Dashboard post submission (within amendment and with pending changes)', 'dashboard-amending', '/public/images/apply-teacher-training/amend-withdraw/thumbnails/dashboard-amending.png', '/public/images/apply-teacher-training/amend-withdraw/dashboard-amending.png', '') }}
+
+      {{ designHistory.screenshot('Editing your application', 'edit-application', '/public/images/apply-teacher-training/amend-withdraw/thumbnails/edit-application.png', '/public/images/apply-teacher-training/amend-withdraw/edit-application.png', '') }}
+
+      {{ designHistory.screenshot('Edit your application (with three states)', 'application-amending', '/public/images/apply-teacher-training/amend-withdraw/thumbnails/application-amending.png', '/public/images/apply-teacher-training/amend-withdraw/application-amending.png', '') }}
+
+      {{ designHistory.screenshot('Review your application (with warning text)', 'review-amending', '/public/images/apply-teacher-training/amend-withdraw/thumbnails/review-amending.png', '/public/images/apply-teacher-training/amend-withdraw/review-amending.png', '') }}
+
+      {{ designHistory.screenshot('Confirmation page (with updated title)', 'confirmation-amended', '/public/images/apply-teacher-training/amend-withdraw/thumbnails/confirmation-amended.png', '/public/images/apply-teacher-training/amend-withdraw/confirmation-amended.png', '') }}
+
+      {{ designHistory.screenshot('Dashboard post amendment (with option to withdraw course choices)', 'dashboard-amended', '/public/images/apply-teacher-training/amend-withdraw/thumbnails/dashboard-amended.png', '/public/images/apply-teacher-training/amend-withdraw/dashboard-amended.png', '') }}
+
+      {{ designHistory.screenshot('Withdrawing a course choice', 'withdraw-choice', '/public/images/apply-teacher-training/amend-withdraw/thumbnails/withdraw-choice.png', '/public/images/apply-teacher-training/amend-withdraw/withdraw-choice.png', '') }}
+
+      {{ designHistory.screenshot('Dashboard post amendment (with a course choice withdrawn)', 'dashboard-withdrawn', '/public/images/apply-teacher-training/amend-withdraw/thumbnails/dashboard-withdrawn.png', '/public/images/apply-teacher-training/amend-withdraw/dashboard-withdrawn.png', '') }}
+    </div>
+  </div>
+{% endblock %}
