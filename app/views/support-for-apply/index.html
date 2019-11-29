@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% set title = 'Support for Apply' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">
+    {{ title }}
+  </h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>
+        Prototype:<br>
+        <a href="https://support-for-apply-prototype.herokuapp.com/">https://support-for-apply-prototype.herokuapp.com/</a>
+      </p>
+      <!-- The password is only to stop people stumbling on it and thinking it’s real. There is no sensitive information -->
+      <p>
+        Username: apply<br>
+        Password: bat
+      </p>
+
+      <h2 class="govuk-heading-l">November 2019</h2>
+
+      <!-- {{ bat.item (
+        '/support-for-apply/1-production-v1',
+        'Support for Apply as launched for MVP',
+        'The initial pilot application'
+      )}} -->
+
+      {{ bat.item (
+        '/support-for-apply/1-prototype-v1',
+        'Support for Apply as designed for MVP',
+        'The initial pilot designs'
+      )}}
+
+    </div>
+  </div>
+{% endblock %}
