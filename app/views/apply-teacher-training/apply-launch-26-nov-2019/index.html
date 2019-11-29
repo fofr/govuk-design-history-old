@@ -1,0 +1,249 @@
+{% extends "layout.html" %}
+{% set title = 'Apply as launched on 26 November 2019' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>On 26 November we launched the initial Apply pilot with one provider, Royal Academy of Dance (RAD).</p>
+
+      <h2 class="govuk-heading-l">What we descoped for pilot</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Course selection simplified to account for single course and provider</li>
+        <li>International qualifications</li>
+        <li>International addresses</li>
+        <li>Features needed for non UK, EU and EEA citizens</li>
+        <li>Referee forms (we use a Google Form)</li>
+        <li>Individual work breaks ‘automatic breaks’ (replaced with a summary)</li>
+        <li>Structured qualification information</li>
+        <li>Tailoring of personal statements</li>
+        <li>Postcode based address lookups</li>
+        <li>Referee types</li>
+        <li>Amending an application after submission (can do via support)</li>
+        <li>Amending contact details (can do via support)</li>
+        <li>Withdrawing your application (can do via support)</li>
+      </ul>
+    </div>
+  </div>
+
+  {% set contents = [
+    { text: 'Start page', id: '01-start-page' },
+    { text: 'Course on find', id: '02-course-on-find' },
+    { text: 'Check eligibility', id: '03-check-eligibility' },
+    { text: 'Not eligible', id: '04-not-eligible' },
+    { text: 'Sign up', id: '05-sign-up' },
+    { text: 'Sign up with errors', id: '06-sign-up-with-errors' },
+    { text: 'Check your email after sign up', id: '07-check-your-email-after-sign-up' },
+    { text: 'Incomplete application', id: '08-incomplete-application' },
+    { text: 'Sign in', id: '09-sign-in' },
+    { text: 'Choosing your courses', id: '20-choosing-your-courses' },
+    { text: 'Have you chosen a course', id: '21-have-you-chosen-a-course' },
+    { text: 'Which training provider', id: '22-which-training-provider' },
+    { text: 'Which location', id: '24-which-location' },
+    { text: 'Which course', id: '25-which-course' },
+    { text: 'Course choices', id: '26-course-choices' },
+    { text: 'Delete course', id: '27-delete-course' },
+    { text: 'Application with choices complete', id: '28-application-with-choices-complete' },
+    { text: 'Personal details', id: '30-personal-details' },
+    { text: 'Personal details review', id: '31-personal-details-review' },
+    { text: 'Contact details', id: '32-contact-details' },
+    { text: 'What is your address', id: '33-what-is-your-address' },
+    { text: 'Contact details review', id: '34-contact-details-review' },
+    { text: 'Work history', id: '40-work-history' },
+    { text: 'Explain time out of workplace', id: '41-explain-time-out-of-workplace' },
+    { text: 'Add job', id: '42-add-job' },
+    { text: 'Work history review', id: '43-work-history-review' },
+    { text: 'Explain work breaks', id: '44-explain-work-breaks' },
+    { text: 'Delete job', id: '45-delete-job' },
+    { text: 'Volunteering', id: '50-volunteering' },
+    { text: 'No volunteering', id: '51-no-volunteering' },
+    { text: 'Add volunteering role', id: '52-add-volunteering-role' },
+    { text: 'Volunteering review', id: '53-volunteering-review' },
+    { text: 'Delete role', id: '54-delete-role' },
+    { text: 'Add undergraduate degree', id: '60-add-undergraduate-degree' },
+    { text: 'Degree review', id: '61-degree-review' },
+    { text: 'Add another degree', id: '62-add-another-degree' },
+    { text: 'Delete degree', id: '63-delete-degree' },
+    { text: 'Maths gcse', id: '64-maths-gcse' },
+    { text: 'Maths gcse year and grade', id: '65-maths-gcse-year-and-grade' },
+    { text: 'Maths review', id: '66-maths-review' },
+    { text: 'No maths qualification yet', id: '67-no-maths-qualification-yet' },
+    { text: 'Maths review without qualification', id: '68-maths-review-without-qualification' },
+    { text: 'Maths other qualification', id: '69-maths-other-qualification' },
+    { text: 'Maths review other qualificationpng', id: '70-maths-review-other-qualificationpng' },
+    { text: 'Science grade and year with guidance', id: '71-science-grade-and-year-with-guidance' },
+    { text: 'Other relevant qualifications', id: '72-other-relevant-qualifications' },
+    { text: 'Other qualifications review', id: '73-other-qualifications-review' },
+    { text: 'Delete qualification', id: '74-delete-qualification' },
+    { text: 'Why do you want to be a teacher', id: '75-why-do-you-want-to-be-a-teacher' },
+    { text: 'Why do you want to be a teacher review', id: '76-why-do-you-want-to-be-a-teacher-review' },
+    { text: 'Subject knowledge', id: '77-subject-knowledge' },
+    { text: 'Subject knowledge review', id: '78-subject-knowledge-review' },
+    { text: 'Interview preferences', id: '79-interview-preferences' },
+    { text: 'Interview preferences not set', id: '80-interview-preferences-not-set' },
+    { text: 'Interview preferences review', id: '81-interview-preferences-review' },
+    { text: 'Choosing your referees', id: '82-choosing-your-referees' },
+    { text: 'Details of referee', id: '83-details-of-referee' },
+    { text: 'Referee review 1 referee', id: '84-referee-review-1-referee' },
+    { text: 'Referee review 2 referees', id: '85-referee-review-2-referees' },
+    { text: 'Review application', id: '86-review-application' },
+    { text: 'Review with error', id: '87-review-with-error' },
+    { text: 'Submit application', id: '88-submit-application' },
+    { text: 'Application submitted email', id: '89-application-submitted-email' },
+    { text: 'Emails sent to referees', id: '89-emails-sent-to-referees' },
+    { text: 'Submitted application', id: '89-submitted-application' },
+    { text: 'Application dashboard', id: '90-application-dashboard' },
+    { text: 'Editing your application', id: '91-editing-your-application' },
+    { text: 'Accessibility statement', id: '96-accessibility-statement' },
+    { text: 'Terms of use', id: '97-terms-of-use' },
+    { text: 'Privacy policy', id: '98-privacy-policy' },
+    { text: 'Cookies', id: '99-cookies' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Start page', '01-start-page', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/01-start-page.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/01-start-page.png', '') }}
+
+  {{ designHistory.screenshot('Course on find', '02-course-on-find', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/02-course-on-find.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/02-course-on-find.png', '') }}
+
+  {{ designHistory.screenshot('Check eligibility', '03-check-eligibility', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/03-check-eligibility.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/03-check-eligibility.png', '') }}
+
+  {{ designHistory.screenshot('Not eligible', '04-not-eligible', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/04-not-eligible.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/04-not-eligible.png', '') }}
+
+  {{ designHistory.screenshot('Sign up', '05-sign-up', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/05-sign-up.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/05-sign-up.png', '') }}
+
+  {{ designHistory.screenshot('Sign up with errors', '06-sign-up-with-errors', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/06-sign-up-with-errors.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/06-sign-up-with-errors.png', '') }}
+
+  {{ designHistory.screenshot('Check your email after sign up', '07-check-your-email-after-sign-up', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/07-check-your-email-after-sign-up.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/07-check-your-email-after-sign-up.png', '') }}
+
+  {{ designHistory.screenshot('Incomplete application', '08-incomplete-application', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/08-incomplete-application.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/08-incomplete-application.png', '') }}
+
+  {{ designHistory.screenshot('Sign in', '09-sign-in', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/09-sign-in.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/09-sign-in.png', '') }}
+
+  {{ designHistory.screenshot('Choosing your courses', '20-choosing-your-courses', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/20-choosing-your-courses.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/20-choosing-your-courses.png', '') }}
+
+  {{ designHistory.screenshot('Have you chosen a course', '21-have-you-chosen-a-course', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/21-have-you-chosen-a-course.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/21-have-you-chosen-a-course.png', '') }}
+
+  {{ designHistory.screenshot('Which training provider', '22-which-training-provider', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/22-which-training-provider.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/22-which-training-provider.png', '') }}
+
+  {{ designHistory.screenshot('Which location', '24-which-location', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/24-which-location.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/24-which-location.png', '') }}
+
+  {{ designHistory.screenshot('Which course', '25-which-course', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/25-which-course.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/25-which-course.png', '') }}
+
+  {{ designHistory.screenshot('Course choices', '26-course-choices', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/26-course-choices.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/26-course-choices.png', '') }}
+
+  {{ designHistory.screenshot('Delete course', '27-delete-course', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/27-delete-course.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/27-delete-course.png', '') }}
+
+  {{ designHistory.screenshot('Application with choices complete', '28-application-with-choices-complete', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/28-application-with-choices-complete.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/28-application-with-choices-complete.png', '') }}
+
+  {{ designHistory.screenshot('Personal details', '30-personal-details', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/30-personal-details.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/30-personal-details.png', '') }}
+
+  {{ designHistory.screenshot('Personal details review', '31-personal-details-review', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/31-personal-details-review.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/31-personal-details-review.png', '') }}
+
+  {{ designHistory.screenshot('Contact details', '32-contact-details', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/32-contact-details.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/32-contact-details.png', '') }}
+
+  {{ designHistory.screenshot('What is your address', '33-what-is-your-address', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/33-what-is-your-address.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/33-what-is-your-address.png', '') }}
+
+  {{ designHistory.screenshot('Contact details review', '34-contact-details-review', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/34-contact-details-review.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/34-contact-details-review.png', '') }}
+
+  {{ designHistory.screenshot('Work history', '40-work-history', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/40-work-history.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/40-work-history.png', '') }}
+
+  {{ designHistory.screenshot('Explain time out of workplace', '41-explain-time-out-of-workplace', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/41-explain-time-out-of-workplace.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/41-explain-time-out-of-workplace.png', '') }}
+
+  {{ designHistory.screenshot('Add job', '42-add-job', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/42-add-job.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/42-add-job.png', '') }}
+
+  {{ designHistory.screenshot('Work history review', '43-work-history-review', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/43-work-history-review.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/43-work-history-review.png', '') }}
+
+  {{ designHistory.screenshot('Explain work breaks', '44-explain-work-breaks', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/44-explain-work-breaks.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/44-explain-work-breaks.png', '') }}
+
+  {{ designHistory.screenshot('Delete job', '45-delete-job', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/45-delete-job.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/45-delete-job.png', '') }}
+
+  {{ designHistory.screenshot('Volunteering', '50-volunteering', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/50-volunteering.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/50-volunteering.png', '') }}
+
+  {{ designHistory.screenshot('No volunteering', '51-no-volunteering', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/51-no-volunteering.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/51-no-volunteering.png', '') }}
+
+  {{ designHistory.screenshot('Add volunteering role', '52-add-volunteering-role', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/52-add-volunteering-role.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/52-add-volunteering-role.png', '') }}
+
+  {{ designHistory.screenshot('Volunteering review', '53-volunteering-review', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/53-volunteering-review.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/53-volunteering-review.png', '') }}
+
+  {{ designHistory.screenshot('Delete role', '54-delete-role', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/54-delete-role.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/54-delete-role.png', '') }}
+
+  {{ designHistory.screenshot('Add undergraduate degree', '60-add-undergraduate-degree', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/60-add-undergraduate-degree.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/60-add-undergraduate-degree.png', '') }}
+
+  {{ designHistory.screenshot('Degree review', '61-degree-review', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/61-degree-review.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/61-degree-review.png', '') }}
+
+  {{ designHistory.screenshot('Add another degree', '62-add-another-degree', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/62-add-another-degree.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/62-add-another-degree.png', '') }}
+
+  {{ designHistory.screenshot('Delete degree', '63-delete-degree', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/63-delete-degree.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/63-delete-degree.png', '') }}
+
+  {{ designHistory.screenshot('Maths gcse', '64-maths-gcse', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/64-maths-gcse.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/64-maths-gcse.png', '') }}
+
+  {{ designHistory.screenshot('Maths gcse year and grade', '65-maths-gcse-year-and-grade', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/65-maths-gcse-year-and-grade.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/65-maths-gcse-year-and-grade.png', '') }}
+
+  {{ designHistory.screenshot('Maths review', '66-maths-review', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/66-maths-review.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/66-maths-review.png', '') }}
+
+  {{ designHistory.screenshot('No maths qualification yet', '67-no-maths-qualification-yet', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/67-no-maths-qualification-yet.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/67-no-maths-qualification-yet.png', '') }}
+
+  {{ designHistory.screenshot('Maths review without qualification', '68-maths-review-without-qualification', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/68-maths-review-without-qualification.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/68-maths-review-without-qualification.png', '') }}
+
+  {{ designHistory.screenshot('Maths other qualification', '69-maths-other-qualification', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/69-maths-other-qualification.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/69-maths-other-qualification.png', '') }}
+
+  {{ designHistory.screenshot('Maths review other qualificationpng', '70-maths-review-other-qualificationpng', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/70-maths-review-other-qualificationpng.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/70-maths-review-other-qualificationpng.png', '') }}
+
+  {{ designHistory.screenshot('Science grade and year with guidance', '71-science-grade-and-year-with-guidance', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/71-science-grade-and-year-with-guidance.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/71-science-grade-and-year-with-guidance.png', '') }}
+
+  {{ designHistory.screenshot('Other relevant qualifications', '72-other-relevant-qualifications', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/72-other-relevant-qualifications.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/72-other-relevant-qualifications.png', '') }}
+
+  {{ designHistory.screenshot('Other qualifications review', '73-other-qualifications-review', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/73-other-qualifications-review.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/73-other-qualifications-review.png', '') }}
+
+  {{ designHistory.screenshot('Delete qualification', '74-delete-qualification', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/74-delete-qualification.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/74-delete-qualification.png', '') }}
+
+  {{ designHistory.screenshot('Why do you want to be a teacher', '75-why-do-you-want-to-be-a-teacher', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/75-why-do-you-want-to-be-a-teacher.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/75-why-do-you-want-to-be-a-teacher.png', '') }}
+
+  {{ designHistory.screenshot('Why do you want to be a teacher review', '76-why-do-you-want-to-be-a-teacher-review', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/76-why-do-you-want-to-be-a-teacher-review.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/76-why-do-you-want-to-be-a-teacher-review.png', '') }}
+
+  {{ designHistory.screenshot('Subject knowledge', '77-subject-knowledge', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/77-subject-knowledge.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/77-subject-knowledge.png', '') }}
+
+  {{ designHistory.screenshot('Subject knowledge review', '78-subject-knowledge-review', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/78-subject-knowledge-review.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/78-subject-knowledge-review.png', '') }}
+
+  {{ designHistory.screenshot('Interview preferences', '79-interview-preferences', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/79-interview-preferences.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/79-interview-preferences.png', '') }}
+
+  {{ designHistory.screenshot('Interview preferences not set', '80-interview-preferences-not-set', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/80-interview-preferences-not-set.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/80-interview-preferences-not-set.png', '') }}
+
+  {{ designHistory.screenshot('Interview preferences review', '81-interview-preferences-review', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/81-interview-preferences-review.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/81-interview-preferences-review.png', '') }}
+
+  {{ designHistory.screenshot('Choosing your referees', '82-choosing-your-referees', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/82-choosing-your-referees.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/82-choosing-your-referees.png', '') }}
+
+  {{ designHistory.screenshot('Details of referee', '83-details-of-referee', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/83-details-of-referee.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/83-details-of-referee.png', '') }}
+
+  {{ designHistory.screenshot('Referee review 1 referee', '84-referee-review-1-referee', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/84-referee-review-1-referee.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/84-referee-review-1-referee.png', '') }}
+
+  {{ designHistory.screenshot('Referee review 2 referees', '85-referee-review-2-referees', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/85-referee-review-2-referees.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/85-referee-review-2-referees.png', '') }}
+
+  {{ designHistory.screenshot('Review application', '86-review-application', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/86-review-application.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/86-review-application.png', '') }}
+
+  {{ designHistory.screenshot('Review with error', '87-review-with-error', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/87-review-with-error.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/87-review-with-error.png', '') }}
+
+  {{ designHistory.screenshot('Submit application', '88-submit-application', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/88-submit-application.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/88-submit-application.png', '') }}
+
+  {{ designHistory.screenshot('Application submitted email', '89-application-submitted-email', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/89-application-submitted-email.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/89-application-submitted-email.png', '') }}
+
+  {{ designHistory.screenshot('Emails sent to referees', '89-emails-sent-to-referees', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/89-emails-sent-to-referees.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/89-emails-sent-to-referees.png', '') }}
+
+  {{ designHistory.screenshot('Submitted application', '89-submitted-application', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/89-submitted-application.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/89-submitted-application.png', '') }}
+
+  {{ designHistory.screenshot('Application dashboard', '90-application-dashboard', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/90-application-dashboard.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/90-application-dashboard.png', '') }}
+
+  {{ designHistory.screenshot('Editing your application', '91-editing-your-application', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/91-editing-your-application.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/91-editing-your-application.png', '') }}
+
+  {{ designHistory.screenshot('Accessibility statement', '96-accessibility-statement', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/96-accessibility-statement.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/96-accessibility-statement.png', '') }}
+
+  {{ designHistory.screenshot('Terms of use', '97-terms-of-use', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/97-terms-of-use.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/97-terms-of-use.png', '') }}
+
+  {{ designHistory.screenshot('Privacy policy', '98-privacy-policy', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/98-privacy-policy.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/98-privacy-policy.png', '') }}
+
+  {{ designHistory.screenshot('Cookies', '99-cookies', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/thumbnails/99-cookies.png', '/public/images/apply-teacher-training/apply-launch-26-nov-2019/99-cookies.png', '') }}
+
+{% endblock %}
