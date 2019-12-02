@@ -315,6 +315,13 @@ app.use(function (req, res, next) {
       })
     }
 
+    if (req.path.includes('support-for-apply')) {
+      items.push({
+        text: 'Support for Apply',
+        href: '/support-for-apply'
+      })
+    }
+
     if (req.path.includes('apply-june-2019/')) {
       items.push({
         text: 'July 2019 prototype',
