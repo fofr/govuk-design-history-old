@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% set title = 'As launched on 26 November 2019' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'Applications', id: '01-applications' },
+    { text: 'Application with offer', id: '02-application-with-offer' },
+    { text: 'Application pending decision', id: '03-application-pending-decision' },
+    { text: 'Respond to application', id: '04-respond-to-application' },
+    { text: 'Make offer', id: '05-make-offer' },
+    { text: 'Confirm offer', id: '06-confirm-offer' },
+    { text: 'Reject application', id: '07-reject-application' },
+    { text: 'Confirm rejection', id: '08-confirm-rejection' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Applications', '01-applications', '/public/images/manage-applications/as-launched-26-nov-2019/thumbnails/01-applications.png', '/public/images/manage-applications/as-launched-26-nov-2019/01-applications.png', '') }}
+
+  {{ designHistory.screenshot('Application with offer', '02-application-with-offer', '/public/images/manage-applications/as-launched-26-nov-2019/thumbnails/02-application-with-offer.png', '/public/images/manage-applications/as-launched-26-nov-2019/02-application-with-offer.png', '') }}
+
+  {{ designHistory.screenshot('Application pending decision', '03-application-pending-decision', '/public/images/manage-applications/as-launched-26-nov-2019/thumbnails/03-application-pending-decision.png', '/public/images/manage-applications/as-launched-26-nov-2019/03-application-pending-decision.png', '') }}
+
+  {{ designHistory.screenshot('Respond to application', '04-respond-to-application', '/public/images/manage-applications/as-launched-26-nov-2019/thumbnails/04-respond-to-application.png', '/public/images/manage-applications/as-launched-26-nov-2019/04-respond-to-application.png', '') }}
+
+  {{ designHistory.screenshot('Make offer', '05-make-offer', '/public/images/manage-applications/as-launched-26-nov-2019/thumbnails/05-make-offer.png', '/public/images/manage-applications/as-launched-26-nov-2019/05-make-offer.png', '') }}
+
+  {{ designHistory.screenshot('Confirm offer', '06-confirm-offer', '/public/images/manage-applications/as-launched-26-nov-2019/thumbnails/06-confirm-offer.png', '/public/images/manage-applications/as-launched-26-nov-2019/06-confirm-offer.png', '') }}
+
+  {{ designHistory.screenshot('Reject application', '07-reject-application', '/public/images/manage-applications/as-launched-26-nov-2019/thumbnails/07-reject-application.png', '/public/images/manage-applications/as-launched-26-nov-2019/07-reject-application.png', '') }}
+
+  {{ designHistory.screenshot('Confirm rejection', '08-confirm-rejection', '/public/images/manage-applications/as-launched-26-nov-2019/thumbnails/08-confirm-rejection.png', '/public/images/manage-applications/as-launched-26-nov-2019/08-confirm-rejection.png', '') }}
+
+{% endblock %}
