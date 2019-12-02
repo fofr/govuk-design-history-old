@@ -6,25 +6,29 @@
 {% block content %}
   <h1 class="govuk-heading-xl">{{ title }}</h1>
 
-  <p class="govuk-body">On 26 November we launched the initial Support for Apply pilot application to let support agents amend applications and import references submitted via Google Forms.</p>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body">On 26 November we launched the initial Support for Apply pilot application to let support agents amend applications and import references submitted via Google Forms.</p>
 
-  <p class="govuk-body">Due to tight deadlines, referees submit their references ussing a Google Form. All submissions are saved automatically to a Google spreadsheet. Then support agents import them using Support for Apply.</p>
+      <p class="govuk-body">Due to tight deadlines, referees submit their references ussing a Google Form. All submissions are saved automatically to a Google spreadsheet. Then support agents import them using Support for Apply.</p>
 
-  <p class="govuk-body">Support agents can:</p>
+      <p class="govuk-body">Support agents can:</p>
 
-  <ul class="govuk-list govuk-list--bullet">
-    <li>check the status of applications (applications that need action appear at the top)</li>
-    <li>see an audit trail of everything that's happened to an application</li>
-    <li>create new vendor API tokens</li>
-  </ul>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>check the status of applications (applications that need action appear at the top)</li>
+        <li>see an audit trail of everything that's happened to an application</li>
+        <li>create new vendor API tokens</li>
+      </ul>
 
-  <p class="govuk-body">In future we'll look at:</p>
+      <p class="govuk-body">In future we’ll look at:</p>
 
-  <ul class="govuk-list govuk-list--bullet">
-    <li>letting referees submit references automatically via a GOV.UK styled form</li>
-    <li>letting support agents filter or sort the list of applications</li>
-    <li>add pagination to the application list</li>
-  </ul>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>letting referees submit references automatically via a GOV.UK styled form</li>
+        <li>letting support agents filter or sort the list of applications</li>
+        <li>add pagination to the application list</li>
+      </ul>
+    </div>
+  </div>
 
   {% set contents = [
     { text: 'Application list', id: 'application-list' },
