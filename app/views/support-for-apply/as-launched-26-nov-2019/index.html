@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% set title = 'As launched on 26 November 2019' %}
+{% block pageTitle %}{{ title }}{% endblock %}
+{% block breadcrumbs %}{{ designHistory.breadcrumbs(breadcrumbItems()) }}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  {% set contents = [
+    { text: 'Applications', id: '01-applications' },
+    { text: 'Unsubmitted application', id: '02-unsubmitted-application' },
+    { text: 'Submitted application awaiting references', id: '03-submitted-application-awaiting-references' },
+    { text: 'Application history', id: '04-application-history' },
+    { text: 'Import references', id: '05-import-references' },
+    { text: 'Imported references', id: '06-imported-references' },
+    { text: 'Feature flags', id: '07-feature-flags' },
+    { text: 'Service performance', id: '08-service-performance' },
+    { text: 'Providers', id: '09-providers' },
+    { text: 'Provider courses', id: '10-provider-courses' },
+    { text: 'API tokens', id: '11-api-tokens' },
+    { text: 'API token created', id: '12-api-token-created' }
+  ] %}
+  {{ designHistory.screenshotContents(contents) }}
+
+  {{ designHistory.screenshot('Applications', '01-applications', '/public/images/support-for-apply/as-launched-26-nov-2019/thumbnails/01-applications.png', '/public/images/support-for-apply/as-launched-26-nov-2019/01-applications.png', '') }}
+
+  {{ designHistory.screenshot('Unsubmitted application', '02-unsubmitted-application', '/public/images/support-for-apply/as-launched-26-nov-2019/thumbnails/02-unsubmitted-application.png', '/public/images/support-for-apply/as-launched-26-nov-2019/02-unsubmitted-application.png', '') }}
+
+  {{ designHistory.screenshot('Submitted application awaiting references', '03-submitted-application-awaiting-references', '/public/images/support-for-apply/as-launched-26-nov-2019/thumbnails/03-submitted-application-awaiting-references.png', '/public/images/support-for-apply/as-launched-26-nov-2019/03-submitted-application-awaiting-references.png', '') }}
+
+  {{ designHistory.screenshot('Application history', '04-application-history', '/public/images/support-for-apply/as-launched-26-nov-2019/thumbnails/04-application-history.png', '/public/images/support-for-apply/as-launched-26-nov-2019/04-application-history.png', '') }}
+
+  {{ designHistory.screenshot('Import references', '05-import-references', '/public/images/support-for-apply/as-launched-26-nov-2019/thumbnails/05-import-references.png', '/public/images/support-for-apply/as-launched-26-nov-2019/05-import-references.png', '') }}
+
+  {{ designHistory.screenshot('Imported references', '06-imported-references', '/public/images/support-for-apply/as-launched-26-nov-2019/thumbnails/06-imported-references.png', '/public/images/support-for-apply/as-launched-26-nov-2019/06-imported-references.png', '') }}
+
+  {{ designHistory.screenshot('Feature flags', '07-feature-flags', '/public/images/support-for-apply/as-launched-26-nov-2019/thumbnails/07-feature-flags.png', '/public/images/support-for-apply/as-launched-26-nov-2019/07-feature-flags.png', '') }}
+
+  {{ designHistory.screenshot('Service performance', '08-service-performance', '/public/images/support-for-apply/as-launched-26-nov-2019/thumbnails/08-service-performance.png', '/public/images/support-for-apply/as-launched-26-nov-2019/08-service-performance.png', '') }}
+
+  {{ designHistory.screenshot('Providers', '09-providers', '/public/images/support-for-apply/as-launched-26-nov-2019/thumbnails/09-providers.png', '/public/images/support-for-apply/as-launched-26-nov-2019/09-providers.png', '') }}
+
+  {{ designHistory.screenshot('Provider courses', '10-provider-courses', '/public/images/support-for-apply/as-launched-26-nov-2019/thumbnails/10-provider-courses.png', '/public/images/support-for-apply/as-launched-26-nov-2019/10-provider-courses.png', '') }}
+
+  {{ designHistory.screenshot('API tokens', '11-api-tokens', '/public/images/support-for-apply/as-launched-26-nov-2019/thumbnails/11-api-tokens.png', '/public/images/support-for-apply/as-launched-26-nov-2019/11-api-tokens.png', '') }}
+
+  {{ designHistory.screenshot('API token created', '12-api-token-created', '/public/images/support-for-apply/as-launched-26-nov-2019/thumbnails/12-api-token-created.png', '/public/images/support-for-apply/as-launched-26-nov-2019/12-api-token-created.png', '') }}
+
+{% endblock %}
